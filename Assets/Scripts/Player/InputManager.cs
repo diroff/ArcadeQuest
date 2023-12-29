@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    [SerializeField] private bool _isJoystickInput;
+    [SerializeField] private Joystick _joystick;
+
     private PlayerControls _playerControls;
     private PlayerAnimator _animator;
 
@@ -21,6 +24,30 @@ public class InputManager : MonoBehaviour
 
     private void OnEnable()
     {
+        if(_isJoystickInput)
+            SetupJoystick();
+        else
+            SetupInput();
+    }
+
+    private void OnDisable()
+    {
+        if (!_isJoystickInput)
+            _playerControls.Disable();
+        else
+            _joystick.DirectionChanged -= SetDirection;
+    }
+
+    public void HandleMovementInput()
+    {
+        _verticalInput = _movementInput.y;
+        _horizontalInput = _movementInput.x;
+        _moveAmount = Mathf.Clamp01(Mathf.Abs(_horizontalInput) + Mathf.Abs(_verticalInput));
+        _animator.UpdateAnimatorValues(0, _moveAmount);
+    }
+
+    private void SetupInput()
+    {
         if (_playerControls == null)
         {
             _playerControls = new PlayerControls();
@@ -30,16 +57,14 @@ public class InputManager : MonoBehaviour
         _playerControls.Enable();
     }
 
-    private void OnDisable()
+    private void SetupJoystick()
     {
-        _playerControls.Disable();
+        _joystick.DirectionChanged += SetDirection;
     }
 
-    public void HandleMovementInput()
+    private void SetDirection(Vector2 direction)
     {
-        _verticalInput = _movementInput.y;
-        _horizontalInput = _movementInput.x;
-        _moveAmount = Mathf.Clamp01(Mathf.Abs(_horizontalInput) + Mathf.Abs(_verticalInput));
-        _animator.UpdateAnimatorValues(0, _moveAmount);
+        _movementInput.x = direction.x;
+        _movementInput.y = direction.y;
     }
 }
