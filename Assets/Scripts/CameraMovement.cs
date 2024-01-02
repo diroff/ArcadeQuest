@@ -3,10 +3,20 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Transform _target;
-    [SerializeField] private Vector3 _offset;
-    [SerializeField] private float _smothing = 1f;
+
+    [SerializeField] private Vector3 _positionOffset;
+    [SerializeField] private Quaternion _rotationOffset;
+
+    [SerializeField] private float _positionSmothing = 7f;
+    [SerializeField] private float _rotationSmothing = 5f;
+
+    public Vector3 PositionOffset => _positionOffset;
+    public Quaternion RotationOffset => _rotationOffset;
 
     private Camera _camera;
+
+    private Vector3 _nextPosition;
+    private Quaternion _nextRotation;
 
     private void Awake()
     {
@@ -18,10 +28,22 @@ public class CameraMovement : MonoBehaviour
         Move();
     }
 
+    public void ChangeOffsetPosition(Vector3 position)
+    {
+        _positionOffset = position;
+    }
+
+    public void ChangeOffsetRotation(Quaternion rotation)
+    {
+        _rotationOffset = rotation;
+    }
+
     private void Move()
     {
-        var nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + _offset, Time.fixedDeltaTime * _smothing);
+        _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + _positionOffset, Time.fixedDeltaTime * _positionSmothing);
+        _nextRotation = Quaternion.Lerp(_camera.transform.rotation, _rotationOffset, Time.fixedDeltaTime * _rotationSmothing);
 
-        _camera.transform.position = nextPosition;
+        _camera.transform.position = _nextPosition;
+        _camera.transform.rotation = _nextRotation;
     }
 }
