@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Transform _cameraObject;
     private Rigidbody _playerRigidbody;
 
+    public float MovementSpeed => _movementSpeed;
+
     private void Awake()
     {
         _inputManager = GetComponent<InputManager>();
@@ -34,6 +36,14 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movementVelocity = _moveDirection;
         _playerRigidbody.velocity = movementVelocity;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        if (speed < 0)
+            speed = 0;
+
+        _movementSpeed = speed;
     }
 
     private void HandleRotation()
