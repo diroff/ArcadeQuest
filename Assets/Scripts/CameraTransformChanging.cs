@@ -5,6 +5,8 @@ public class CameraTransformChanging : MonoBehaviour
     [SerializeField] private CameraMovement _cameraMovement;
 
     [SerializeField] private Quaternion _rotation;
+
+    [SerializeField] private bool _isPositionChanged;
     [SerializeField] private Vector3 _position;
 
     private Quaternion _previouRotation;
@@ -16,12 +18,16 @@ public class CameraTransformChanging : MonoBehaviour
         _previouPosition = _cameraMovement.PositionOffset;
 
         _cameraMovement.ChangeOffsetRotation(_rotation);
-        _cameraMovement.ChangeOffsetPosition(_position);
+
+        if(_isPositionChanged)
+            _cameraMovement.ChangeOffsetPosition(_position);
     }
 
     public void UndoRotationOfCamera()
     {
         _cameraMovement.ChangeOffsetRotation(_previouRotation);
-        _cameraMovement.ChangeOffsetPosition(_previouPosition);
+
+        if(_isPositionChanged)
+            _cameraMovement.ChangeOffsetPosition(_previouPosition);
     }
 }

@@ -40,7 +40,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Move()
     {
-        _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + _positionOffset, Time.fixedDeltaTime * _positionSmothing);
+        _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + (_rotationOffset * _positionOffset), Time.fixedDeltaTime * _positionSmothing);
         _nextRotation = Quaternion.Lerp(_camera.transform.rotation, _rotationOffset, Time.fixedDeltaTime * _rotationSmothing);
 
         _camera.transform.position = _nextPosition;
