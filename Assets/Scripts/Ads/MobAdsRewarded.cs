@@ -3,6 +3,8 @@ using GoogleMobileAds.Api;
 
 public class MobAdsRewarded : MonoBehaviour
 {
+    [SerializeField] private LevelItems _levelItems;
+
     private const string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
     
     private RewardedAd _rewardedAd;
@@ -23,7 +25,8 @@ public class MobAdsRewarded : MonoBehaviour
 
     public void ShowHint() 
     {
-        
+        _levelItems.ShowItem();
+        LoadRewardedAd();
     }
 
     public void LoadRewardedAd()

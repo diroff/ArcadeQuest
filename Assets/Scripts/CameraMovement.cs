@@ -14,9 +14,12 @@ public class CameraMovement : MonoBehaviour
     public Quaternion RotationOffset => _rotationOffset;
 
     private Camera _camera;
+    private Transform _previousTarget;
 
     private Vector3 _nextPosition;
     private Quaternion _nextRotation;
+
+    private float _previousPositionSmoothing;
 
     private void Awake()
     {
@@ -38,8 +41,33 @@ public class CameraMovement : MonoBehaviour
         _rotationOffset = rotation;
     }
 
+    public void ChangeTarget(Transform target)
+    {
+        _previousTarget = _target;
+        _target = target;
+    }
+
+    public void UndoChangingTarget()
+    {
+        _target = _previousTarget;
+    }
+
+    public void ChangePositionSmoothing(float value)
+    {
+        _previousPositionSmoothing = _positionSmothing;
+        _positionSmothing = value;
+    }
+
+    public void UndoChangingPositionSmoothing()
+    {
+        _positionSmothing = _previousPositionSmoothing;
+    }
+
     private void Move()
     {
+        if (_target == null)
+            _target = _previousTarget;
+
         _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + (_rotationOffset * _positionOffset), Time.fixedDeltaTime * _positionSmothing);
         _nextRotation = Quaternion.Lerp(_camera.transform.rotation, _rotationOffset, Time.fixedDeltaTime * _rotationSmothing);
 

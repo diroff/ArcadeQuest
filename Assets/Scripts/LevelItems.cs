@@ -1,9 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class LevelItems : MonoBehaviour
 {
+    [SerializeField] private CameraMovement _cameraMovement;
     [SerializeField] private List<Item> _levelItems;
 
     private int _itemsCollectedCount;
@@ -35,5 +37,27 @@ public class LevelItems : MonoBehaviour
 
         if (_itemsCollectedCount == _levelItems.Count)
             AllItemsCollected?.Invoke();
+    }
+
+    [ContextMenu("help")]
+    public void ShowItem()
+    {
+        foreach (var item in _levelItems)
+        {
+            if (!item.IsCollected)
+            {
+                StartCoroutine(ShowItemCoroutine(item.transform));
+                return;
+            }
+        }
+    }
+
+    private IEnumerator ShowItemCoroutine(Transform item)
+    {
+        _cameraMovement.ChangePositionSmoothing(3f);
+        _cameraMovement.ChangeTarget(item);
+        yield return new WaitForSeconds(4f);
+        _cameraMovement.UndoChangingTarget();
+        _cameraMovement.UndoChangingPositionSmoothing();
     }
 }
