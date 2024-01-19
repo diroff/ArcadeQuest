@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class LevelItems : MonoBehaviour
 {
-    [SerializeField] private CameraMovement _cameraMovement;
     [SerializeField] private List<Item> _levelItems;
 
     private int _itemsCollectedCount;
@@ -17,17 +16,13 @@ public class LevelItems : MonoBehaviour
     private void OnEnable()
     {
         foreach (var item in _levelItems)
-        {
             item.ItemWasCollected += ItemCountChecker;
-        }
     }
 
     private void OnDisable()
     {
         foreach (var item in _levelItems)
-        {
             item.ItemWasCollected -= ItemCountChecker;
-        }
     }
 
     private void ItemCountChecker()
@@ -39,25 +34,13 @@ public class LevelItems : MonoBehaviour
             AllItemsCollected?.Invoke();
     }
 
-    [ContextMenu("help")]
-    public void ShowItem()
+    public Item GetNotCollectedItem()
     {
         foreach (var item in _levelItems)
-        {
-            if (!item.IsCollected)
-            {
-                StartCoroutine(ShowItemCoroutine(item.transform));
-                return;
-            }
-        }
-    }
 
-    private IEnumerator ShowItemCoroutine(Transform item)
-    {
-        _cameraMovement.ChangePositionSmoothing(3f);
-        _cameraMovement.ChangeTarget(item);
-        yield return new WaitForSeconds(4f);
-        _cameraMovement.UndoChangingTarget();
-        _cameraMovement.UndoChangingPositionSmoothing();
+            if (!item.IsCollected)
+                return item;
+
+        return null;
     }
 }

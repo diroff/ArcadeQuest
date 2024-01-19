@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - IconsCreationCamera
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -41,16 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 3503001827
-    locked: 0
-  - name: Item
-    uniqueID: 3606961531
-    locked: 0
-  - name: Topground
-    uniqueID: 4057230023
-    locked: 0
-  - name: UI
-    uniqueID: 724072429
     locked: 0

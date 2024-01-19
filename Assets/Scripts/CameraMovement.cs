@@ -15,6 +15,7 @@ public class CameraMovement : MonoBehaviour
 
     private Camera _camera;
     private Transform _previousTarget;
+    private Transform _defaultTarget;
 
     private Vector3 _nextPosition;
     private Quaternion _nextRotation;
@@ -24,6 +25,7 @@ public class CameraMovement : MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
+        _defaultTarget = _target;
     }
 
     private void FixedUpdate()
@@ -66,7 +68,7 @@ public class CameraMovement : MonoBehaviour
     private void Move()
     {
         if (_target == null)
-            _target = _previousTarget;
+            _target = _defaultTarget;
 
         _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + (_rotationOffset * _positionOffset), Time.fixedDeltaTime * _positionSmothing);
         _nextRotation = Quaternion.Lerp(_camera.transform.rotation, _rotationOffset, Time.fixedDeltaTime * _rotationSmothing);
