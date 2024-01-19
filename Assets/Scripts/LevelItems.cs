@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,17 +16,13 @@ public class LevelItems : MonoBehaviour
     private void OnEnable()
     {
         foreach (var item in _levelItems)
-        {
             item.ItemWasCollected += ItemCountChecker;
-        }
     }
 
     private void OnDisable()
     {
         foreach (var item in _levelItems)
-        {
             item.ItemWasCollected -= ItemCountChecker;
-        }
     }
 
     private void ItemCountChecker()
@@ -35,5 +32,15 @@ public class LevelItems : MonoBehaviour
 
         if (_itemsCollectedCount == _levelItems.Count)
             AllItemsCollected?.Invoke();
+    }
+
+    public Item GetNotCollectedItem()
+    {
+        foreach (var item in _levelItems)
+
+            if (!item.IsCollected)
+                return item;
+
+        return null;
     }
 }
