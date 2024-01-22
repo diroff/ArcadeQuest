@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class LevelDataProgression : MonoBehaviour
 {
+    [SerializeField] private string _defaultLevelName = "MainLevel_1";
+
     public const string Key = "LevelProgression";
 
     private IStorageService _storageService;
@@ -10,6 +12,12 @@ public class LevelDataProgression : MonoBehaviour
     private void Awake()
     {
         _storageService = new JsonToFileStorageService();
+
+        _storageService.Load<LevelProgression>(Key, data =>
+        {
+            if (data == default)
+                SetDefaultLevel();
+        });
     }
 
     [ContextMenu("Save current level")]
@@ -36,9 +44,12 @@ public class LevelDataProgression : MonoBehaviour
         return _levelData;
     }
 
-    public void SetDefaultSettings()
+    public void SetDefaultLevel()
     {
-        Save("MainLevel_1");
+        LevelProgression level = new LevelProgression();
+        level.LevelName = _defaultLevelName;
+
+        _storageService.Save(Key, level);
     }
 }
 
