@@ -25,13 +25,24 @@ public class LevelItems : MonoBehaviour
             item.ItemWasCollected -= ItemCountChecker;
     }
 
+    public void CollectAllItems()
+    {
+        foreach (var item in _levelItems)
+            if (item != null) item.Collect();
+    }
+
     private void ItemCountChecker()
     {
         _itemsCollectedCount++;
         Debug.Log($"Items:{_itemsCollectedCount}/{_levelItems.Count}");
 
         if (_itemsCollectedCount == _levelItems.Count)
-            AllItemsCollected?.Invoke();
+            CompleteLevel();
+    }
+
+    public void CompleteLevel()
+    {
+        AllItemsCollected?.Invoke();
     }
 
     public Item GetNotCollectedItem()

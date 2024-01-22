@@ -14,6 +14,11 @@ public class Item : MonoBehaviour, IInteractable
 
     public virtual void Interact(Player player)
     {
+        Collect();
+    }
+
+    public void Collect()
+    {
         ItemWasCollected?.Invoke();
         _isCollected = true;
 
