@@ -1625,7 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca7da45425d4ce42b9567a850dfb9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: 1
+  _sceneName: MainLevel_2
 --- !u!4 &311089190
 Transform:
   m_ObjectHideFlags: 0
@@ -5809,7 +5809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1044776263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7004,7 +7004,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 311089189}
         m_TargetAssemblyTypeName: LevelLoading, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: LoadLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
