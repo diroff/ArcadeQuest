@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000011097942200}
   - component: {fileID: 23000012914220848}
   - component: {fileID: 114000012140138052}
+  - component: {fileID: -2378376733341423465}
   m_Layer: 0
   m_Name: Cuboid
   m_TagString: Untagged
@@ -91,7 +92,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000013105924406}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ff967b7ed48f2441bcf509edf6b889a, type: 3}
   m_Name: 
@@ -99,12 +100,25 @@ MonoBehaviour:
   isAnimated: 1
   isRotating: 1
   isFloating: 1
-  isScaling: 1
+  isScaling: 0
   rotationAngle: {x: 0, y: 0, z: 10}
   rotationSpeed: 10
-  floatSpeed: 0.04
+  floatSpeed: 0.001
   floatRate: 0.5
   startScale: {x: 1, y: 1, z: 1}
   endScale: {x: 1.5, y: 1.5, z: 1.5}
   scaleSpeed: 1
   scaleRate: 0.5
+--- !u!114 &-2378376733341423465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013105924406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f322b0192dc4a044e9f650e6329edfe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 21300000, guid: 9657c5f1aaf26ea43bb2e3229efb2f6f, type: 3}
