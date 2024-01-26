@@ -15284,6 +15284,11 @@ PrefabInstance:
       propertyPath: _movementSpeed
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 883292368952452140, guid: 344ef740afa44f54a81223a544f5a812,
+        type: 3}
+      propertyPath: _baseMovementSpeed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 883292368952452143, guid: 344ef740afa44f54a81223a544f5a812,
         type: 3}
       propertyPath: _joystick

@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _movementSpeed = 7f;
-    [SerializeField] private float _rotationSpeed = 15f;
+    [SerializeField] private float _baseMovementSpeed = 12f;
+    [SerializeField] private float _baseRotationSpeed = 15f;
+
+    private float _currentMovementSpeed;
+    private float _currentRotationSpeed;
 
     private InputManager _inputManager;
 
@@ -11,13 +14,19 @@ public class PlayerMovement : MonoBehaviour
     private Transform _cameraObject;
     private Rigidbody _playerRigidbody;
 
-    public float MovementSpeed => _movementSpeed;
+    public float CurrentMovementSpeed => _currentMovementSpeed;
 
     private void Awake()
     {
         _inputManager = GetComponent<InputManager>();
         _playerRigidbody = GetComponent<Rigidbody>();
         _cameraObject = Camera.main.transform;
+    }
+
+    private void Start()
+    {
+        _currentMovementSpeed = _baseMovementSpeed;
+        _currentRotationSpeed = _baseRotationSpeed;
     }
 
     public void HandleAllMovement()
@@ -32,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         _moveDirection = _moveDirection + _cameraObject.right * _inputManager.HorizontalInput;
         _moveDirection.Normalize();
         _moveDirection.y = 0;
-        _moveDirection = _moveDirection * _movementSpeed;
+        _moveDirection = _moveDirection * _currentMovementSpeed;
 
         Vector3 movementVelocity = _moveDirection;
         _playerRigidbody.velocity = movementVelocity;
@@ -43,7 +52,12 @@ public class PlayerMovement : MonoBehaviour
         if (speed < 0)
             speed = 0;
 
-        _movementSpeed = speed;
+        _currentMovementSpeed = speed;
+    }
+
+    public void AddSpeed(float speed)
+    {
+        _currentMovementSpeed += speed;
     }
 
     private void HandleRotation()
@@ -58,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             targetDirection = transform.forward;
 
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-        Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+        Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, _currentRotationSpeed * Time.deltaTime);
 
         transform.rotation = playerRotation;
     }
