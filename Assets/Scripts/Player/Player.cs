@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
     private InputManager _inputManager;
     private PlayerMovement _movement;
 
+    public PlayerMovement Movement => _movement;
+
     private void Awake()
     {
         _inputManager = GetComponent<InputManager>();
