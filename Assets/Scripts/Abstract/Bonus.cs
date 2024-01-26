@@ -11,13 +11,15 @@ public abstract class Bonus : MonoBehaviour, IInteractable
 
     public UnityEvent BonusStarted;
     public UnityEvent BonusEnded;
-    public UnityEvent<float> BonusTimeChanged;
+    public UnityEvent<float, float> BonusTimeChanged;
 
     protected float CurrentTime;
     protected Player Player;
 
     private BoxCollider _boxCollider;
     private MeshRenderer _meshRenderer;
+
+    public Sprite BonusIcon => Icon;
 
     private void Awake()
     {
@@ -53,7 +55,7 @@ public abstract class Bonus : MonoBehaviour, IInteractable
         while (CurrentTime > 0)
         {
             CurrentTime -= Time.deltaTime;
-            BonusTimeChanged?.Invoke(CurrentTime);
+            BonusTimeChanged?.Invoke(CurrentTime, BonusTime);
             yield return null;
         }
 
