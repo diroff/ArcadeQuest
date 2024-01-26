@@ -1557,12 +1557,12 @@ PrefabInstance:
     - target: {fileID: 1098804307282743002, guid: dc1efc17f45a0c9478cdf2682df188aa,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1080
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1098804307282743002, guid: dc1efc17f45a0c9478cdf2682df188aa,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1920
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1098804307282743002, guid: dc1efc17f45a0c9478cdf2682df188aa,
         type: 3}
@@ -1602,12 +1602,12 @@ PrefabInstance:
     - target: {fileID: 1098804307282743002, guid: dc1efc17f45a0c9478cdf2682df188aa,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 540
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1098804307282743002, guid: dc1efc17f45a0c9478cdf2682df188aa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 960
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1098804307282743002, guid: dc1efc17f45a0c9478cdf2682df188aa,
         type: 3}
@@ -1628,6 +1628,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UIRewardErrors
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735273994453297827, guid: dc1efc17f45a0c9478cdf2682df188aa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
