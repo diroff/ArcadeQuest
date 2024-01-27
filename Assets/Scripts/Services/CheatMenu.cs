@@ -24,6 +24,8 @@ public class CheatMenu : MonoBehaviour
         _levelData.SetDefaultLevel();
         _levelData.Load();
 
+        _levelProgression.FirstLevelSave(_levelData.GetData().LevelName);
+
         var nextLevel = _levelData.GetData().LevelName;
 
         _levelLoading.LoadLevel(nextLevel);
