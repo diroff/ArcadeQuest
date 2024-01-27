@@ -5,6 +5,8 @@ using UnityEngine;
 public class CheatMenu : MonoBehaviour
 {
     [SerializeField] private CurrentLevelData _levelData;
+    [SerializeField] private LevelProgression _levelProgression;
+
     [SerializeField] private LevelLoading _levelLoading;
     [SerializeField] private LevelItems _levelItems;
     [SerializeField] private GameObject _UICheatMenu;
@@ -21,6 +23,7 @@ public class CheatMenu : MonoBehaviour
     {
         _levelData.SetDefaultLevel();
         _levelData.Load();
+
         var nextLevel = _levelData.GetData().LevelName;
 
         _levelLoading.LoadLevel(nextLevel);

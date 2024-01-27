@@ -12937,6 +12937,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1686446995}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1702309406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3218778921818102315, guid: c4c4c6738a221b2419905c0f26195f46,
+    type: 3}
+  m_PrefabInstance: {fileID: 5491341743266457349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b757c205be0ef30488a04c2f7a734976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1704215149 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee,
@@ -16146,7 +16158,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _levelData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1702309406}
     - target: {fileID: 8463646655622337066, guid: 606c641f761d29540a57c3fa7675341a,
         type: 3}
       propertyPath: _levelItems
@@ -16162,6 +16174,11 @@ PrefabInstance:
       propertyPath: _levelLoading
       value: 
       objectReference: {fileID: 311089189}
+    - target: {fileID: 8463646655622337066, guid: 606c641f761d29540a57c3fa7675341a,
+        type: 3}
+      propertyPath: _levelProgression
+      value: 
+      objectReference: {fileID: 2036020922}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

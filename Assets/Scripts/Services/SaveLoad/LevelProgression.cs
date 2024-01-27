@@ -26,6 +26,13 @@ public class LevelProgression : MonoBehaviour
 
             Load();
         });
+
+        if (_levelData.Level != SceneManager.GetActiveScene().name)
+        {
+            Debug.Log("Was first saved, because other level!");
+            FirstLevelSave(SceneManager.GetActiveScene().name);
+            Load();
+        }
     }
 
     private void OnEnable()
@@ -48,9 +55,6 @@ public class LevelProgression : MonoBehaviour
 
     private void Start()
     {
-        if (_levelData.CollectedItems == null || _levelData.CollectedItems.Count == 0)
-            return;
-
         DestroyCollectedItems();
 
         if (_levelData.PlayerPosition != null)
@@ -62,15 +66,24 @@ public class LevelProgression : MonoBehaviour
 
     private void DestroyCollectedItems()
     {
-        foreach (var item in _levelData.CollectedItems)
-            GameObject.Find(item).GetComponent<Item>().Collect();
+        if (_levelData.CollectedItems != null || _levelData.CollectedItems.Count != 0)
+        {
+            foreach (var item in _levelData.CollectedItems)
+                GameObject.Find(item).GetComponent<Item>().Collect();
+        }
 
-        foreach (var item in _levelData.CollectedBonus)
-            GameObject.Find(item).GetComponent<Bonus>().Collect();
+        if(_levelData.CollectedBonus != null || _levelData.CollectedBonus.Count != 0)
+        {
+            foreach (var item in _levelData.CollectedBonus)
+                GameObject.Find(item).GetComponent<Bonus>().Collect();
+        }
     }
 
     private void SetPlayerPositions()
     {
+        if (_levelData.PlayerPosition == null)
+            return;
+
         var position = _levelData.PlayerPosition;
         var rotation = _levelData.PlayerRotation;
 
@@ -80,6 +93,9 @@ public class LevelProgression : MonoBehaviour
 
     private void SetCameraPosition()
     {
+        if (_levelData.CameraPosition == null)
+            return;
+
         var position = _levelData.CameraPosition;
         var rotation = _levelData.CameraRotation;
 
@@ -131,6 +147,7 @@ public class LevelProgression : MonoBehaviour
     private void SaveCameraPlacement()
     {
         _levelData.CameraPosition = new CurrentPosition();
+        _levelData.CameraRotation = new CurrentRotation();
 
         _levelData.CameraPosition.x = _camera.gameObject.transform.position.x;
         _levelData.CameraPosition.y = _camera.gameObject.transform.position.y;
@@ -157,7 +174,15 @@ public class LevelProgression : MonoBehaviour
         level.LevelName = sceneName;
 
         LevelProgress levelProgress = new LevelProgress();
-        levelProgress.Level = level;
+        levelProgress.Level = sceneName;
+
+        levelProgress.CollectedItems = new List<string>();
+        levelProgress.CollectedBonus = new List<string>();
+
+        levelProgress.PlayerPosition = null;
+        levelProgress.PlayerRotation = null;
+        levelProgress.CameraPosition = null;
+        levelProgress.CameraRotation = null;
 
         _storageService.Save(Key, levelProgress);
     }
@@ -171,7 +196,7 @@ public class LevelProgression : MonoBehaviour
 
 public class LevelProgress
 {
-    public CurrentLevel Level;
+    public string Level;
     public List<string> CollectedItems = new List<string>();
     public List<string> CollectedBonus = new List<string>();
     
@@ -189,7 +214,7 @@ public class CurrentPosition
     public float z;
 }
 
-public struct CurrentRotation
+public class CurrentRotation
 {
     public float x;
     public float y;

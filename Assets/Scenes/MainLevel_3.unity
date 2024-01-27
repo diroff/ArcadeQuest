@@ -123,6 +123,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4575839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4575841}
+  - component: {fileID: 4575840}
+  m_Layer: 0
+  m_Name: LevelBonuses
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &4575840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4575839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69598be56f6cbd44abc693e5197ee462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bonuses:
+  - {fileID: 19585674}
+  - {fileID: 1608068752}
+  - {fileID: 1396864693}
+--- !u!4 &4575841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4575839}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &9859758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,11 +344,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8939056586391772504, guid: e79b6aa2591a4914d8f30da4a715b773,
+        type: 3}
+      propertyPath: _uiPlacement
+      value: 
+      objectReference: {fileID: 533654843}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79b6aa2591a4914d8f30da4a715b773, type: 3}
+--- !u!114 &19585674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6600857922063973006, guid: e79b6aa2591a4914d8f30da4a715b773,
+    type: 3}
+  m_PrefabInstance: {fileID: 19585673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b732e204b7d65a4c8f45d42b5656c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &26702581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1094,7 +1159,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1919,7 +1984,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2624,7 +2689,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4550,7 +4615,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -6380,6 +6445,11 @@ PrefabInstance:
       propertyPath: _levelLoading
       value: 
       objectReference: {fileID: 311089189}
+    - target: {fileID: 8463646655622337066, guid: 606c641f761d29540a57c3fa7675341a,
+        type: 3}
+      propertyPath: _levelProgression
+      value: 
+      objectReference: {fileID: 1977479017}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9766,7 +9836,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -10528,7 +10598,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -12941,7 +13011,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -16120,7 +16190,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -17030,11 +17100,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8939056586391772504, guid: e79b6aa2591a4914d8f30da4a715b773,
+        type: 3}
+      propertyPath: _uiPlacement
+      value: 
+      objectReference: {fileID: 533654843}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79b6aa2591a4914d8f30da4a715b773, type: 3}
+--- !u!114 &1396864693 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6600857922063973006, guid: e79b6aa2591a4914d8f30da4a715b773,
+    type: 3}
+  m_PrefabInstance: {fileID: 1396864692}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b732e204b7d65a4c8f45d42b5656c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1397911256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18897,7 +18984,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -19468,7 +19555,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -20641,11 +20728,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8939056586391772504, guid: e79b6aa2591a4914d8f30da4a715b773,
+        type: 3}
+      propertyPath: _uiPlacement
+      value: 
+      objectReference: {fileID: 533654843}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79b6aa2591a4914d8f30da4a715b773, type: 3}
+--- !u!114 &1608068752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6600857922063973006, guid: e79b6aa2591a4914d8f30da4a715b773,
+    type: 3}
+  m_PrefabInstance: {fileID: 1608068751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b732e204b7d65a4c8f45d42b5656c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1616617131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20877,7 +20981,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -21236,7 +21340,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -21709,7 +21813,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -22405,6 +22509,11 @@ PrefabInstance:
       propertyPath: _levelLoading
       value: 
       objectReference: {fileID: 311089189}
+    - target: {fileID: 5254724016901926886, guid: c4c4c6738a221b2419905c0f26195f46,
+        type: 3}
+      propertyPath: _levelProgression
+      value: 
+      objectReference: {fileID: 1977479017}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22412,14 +22521,14 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: c4c4c6738a221b2419905c0f26195f46, type: 3}
 --- !u!114 &1784664506 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2417437003071319790, guid: c4c4c6738a221b2419905c0f26195f46,
+  m_CorrespondingSourceObject: {fileID: 3218778921818102315, guid: c4c4c6738a221b2419905c0f26195f46,
     type: 3}
   m_PrefabInstance: {fileID: 1784664505}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f702788d9cc0e3d4f8163bb5a747e5ab, type: 3}
+  m_Script: {fileID: 11500000, guid: b757c205be0ef30488a04c2f7a734976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1785286183
@@ -24661,12 +24770,60 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.6329899, y: 1.6329902, z: 2.7760837}
   m_Center: {x: 0, y: 0, z: -0.00000005960466}
+--- !u!1 &1977479016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977479018}
+  - component: {fileID: 1977479017}
+  m_Layer: 0
+  m_Name: LevelProgression
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1977479017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977479016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8f7ff876039804eb82aaa4bbc7a38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelItems: {fileID: 1092693604}
+  _levelBonuses: {fileID: 4575840}
+  _player: {fileID: 883292369290873368}
+  _camera: {fileID: 330585545}
+--- !u!4 &1977479018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977479016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1986669245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24843,7 +25000,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -26711,7 +26868,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -27130,6 +27287,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 883292369290873366}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &883292369290873368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 883292368952452141, guid: 344ef740afa44f54a81223a544f5a812,
+    type: 3}
+  m_PrefabInstance: {fileID: 883292369290873366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f6d70f2314c2542bb99c12ddf99b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -27156,3 +27325,5 @@ SceneRoots:
   - {fileID: 19585673}
   - {fileID: 1608068751}
   - {fileID: 1396864692}
+  - {fileID: 4575841}
+  - {fileID: 1977479018}
