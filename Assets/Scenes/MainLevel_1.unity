@@ -14555,6 +14555,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelItems: {fileID: 1092693604}
   _levelBonuses: {fileID: 946027131}
+  _player: {fileID: 883292369290873372}
+  _camera: {fileID: 330585545}
 --- !u!4 &2036020923
 Transform:
   m_ObjectHideFlags: 0
@@ -15681,6 +15683,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 883292369290873366}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &883292369290873372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 883292368952452141, guid: 344ef740afa44f54a81223a544f5a812,
+    type: 3}
+  m_PrefabInstance: {fileID: 883292369290873366}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f6d70f2314c2542bb99c12ddf99b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1098804307621101347 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1522781298869219557, guid: 4dc3a22a5f6a5b042972bd1d46e739d3,
