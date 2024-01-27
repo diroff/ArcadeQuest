@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheatMenu : MonoBehaviour
 {
-    [SerializeField] private LevelDataProgression _levelData;
+    [SerializeField] private CurrentLevelData _levelData;
     [SerializeField] private LevelLoading _levelLoading;
     [SerializeField] private LevelItems _levelItems;
     [SerializeField] private GameObject _UICheatMenu;

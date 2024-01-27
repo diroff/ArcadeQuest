@@ -13,6 +13,8 @@ public abstract class Bonus : MonoBehaviour, IInteractable
     public UnityEvent BonusEnded;
     public UnityEvent<float, float> BonusTimeChanged;
 
+    public UnityAction <string> BonusTaked;
+
     protected float CurrentTime;
     protected Player Player;
 
@@ -27,8 +29,14 @@ public abstract class Bonus : MonoBehaviour, IInteractable
         _meshRenderer = GetComponent<MeshRenderer>();
     }
 
+    public void Collect()
+    {
+        Destroy(gameObject);
+    }
+
     public virtual void Interact(Player player)
     {
+        BonusTaked?.Invoke(gameObject.name);
         _boxCollider.enabled = false;
         _meshRenderer.enabled = false;
 

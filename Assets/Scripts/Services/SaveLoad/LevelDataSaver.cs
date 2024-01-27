@@ -3,7 +3,8 @@ using UnityEngine;
 public class LevelDataSaver : MonoBehaviour
 {
     [SerializeField] private LevelLoading _levelLoading;
-    [SerializeField] private LevelDataProgression _levelData;
+    [SerializeField] private CurrentLevelData _levelData;
+    [SerializeField] private LevelProgression _levelProgression;
     [SerializeField] private LevelItems _levelItems;
 
     private void OnEnable()
@@ -19,5 +20,6 @@ public class LevelDataSaver : MonoBehaviour
     private void SaveLevelData()
     {
         _levelData.Save(_levelLoading.SceneName);
+        _levelProgression.FirstLevelSave(_levelLoading.SceneName);
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class LastLevelLoading : MonoBehaviour
 {
     [SerializeField] private LevelLoading _levelLoading;
-    [SerializeField] private LevelDataProgression _progression;
+    [SerializeField] private CurrentLevelData _progression;
 
     public void LoadLastLevel()
     {

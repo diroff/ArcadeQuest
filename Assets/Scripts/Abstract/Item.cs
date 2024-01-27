@@ -11,6 +11,7 @@ public class Item : MonoBehaviour, IInteractable
     public bool IsCollected => _isCollected;
 
     public UnityAction ItemWasCollected;
+    public UnityAction<string> ItemWasCollectedWithName;
 
     public virtual void Interact(Player player)
     {
@@ -20,6 +21,7 @@ public class Item : MonoBehaviour, IInteractable
     public void Collect()
     {
         ItemWasCollected?.Invoke();
+        ItemWasCollectedWithName?.Invoke(gameObject.name);
         _isCollected = true;
 
         Destroy(gameObject);
