@@ -2,6 +2,7 @@
   <packages>
     <package>com.google.android.gms:play-services-ads:22.5.0</package>
     <package>com.google.android.ump:user-messaging-platform:2.1.0</package>
+    <package>com.yandex.android:mobmetricalib:5.2.0</package>
   </packages>
   <files />
   <settings>
