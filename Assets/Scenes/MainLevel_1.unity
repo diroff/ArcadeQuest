@@ -587,6 +587,72 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 27224259}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &34384975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34384978}
+  - component: {fileID: 34384977}
+  - component: {fileID: 34384976}
+  m_Layer: 0
+  m_Name: CarDestroyer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &34384976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34384975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b3ed6d342e8549bc02a3ad66b8532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &34384977
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34384975}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &34384978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34384975}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: 49}
+  m_LocalScale: {x: 14.097, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &35685287 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 9ccda285cd5f1ce4fa00133b50ba5cbc,
@@ -812,6 +878,72 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 704779095}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &109194016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 109194019}
+  - component: {fileID: 109194018}
+  - component: {fileID: 109194017}
+  m_Layer: 0
+  m_Name: CarDestroyer (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &109194017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109194016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b3ed6d342e8549bc02a3ad66b8532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &109194018
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109194016}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &109194019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109194016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -50, y: 0.75, z: -0.25}
+  m_LocalScale: {x: 14.097, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &129869839
 GameObject:
   m_ObjectHideFlags: 0
@@ -6607,6 +6739,72 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 965965185}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &967262668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 967262671}
+  - component: {fileID: 967262670}
+  - component: {fileID: 967262669}
+  m_Layer: 0
+  m_Name: CarDestroyer (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &967262669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967262668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b3ed6d342e8549bc02a3ad66b8532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &967262670
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967262668}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &967262671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967262668}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.75, z: -49.5}
+  m_LocalScale: {x: 14.097, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &968196184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6968,6 +7166,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044776262}
   m_CullTransparentMesh: 1
+--- !u!1 &1066611144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066611147}
+  - component: {fileID: 1066611146}
+  - component: {fileID: 1066611145}
+  m_Layer: 0
+  m_Name: CarDestroyer (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1066611145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066611144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b3ed6d342e8549bc02a3ad66b8532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1066611146
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066611144}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1066611147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066611144}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 49.5, y: 0.75, z: -0.25}
+  m_LocalScale: {x: 14.097, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1066686506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13464,6 +13728,73 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1830514060}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1832779563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832779565}
+  - component: {fileID: 1832779564}
+  m_Layer: 0
+  m_Name: CarSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1832779564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832779563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd4301bc141612458fd09e48a46841a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cars:
+  - {fileID: 5649067955974721688, guid: eaf2c0a9aea75b34caa941ecbecbcbb1, type: 3}
+  - {fileID: 8656022666040521598, guid: 3c37e66fb39616b4f8552710669ae70c, type: 3}
+  - {fileID: 5144747189619506560, guid: 94ae811f561acfa4f919b6e065a84036, type: 3}
+  - {fileID: 140000604171727523, guid: f7be0eb201a1584498123c8b3f8bef2b, type: 3}
+  - {fileID: 2400351471210738228, guid: 04d21b889c7a8614d98a144ee6019447, type: 3}
+  - {fileID: 3208674154733222135, guid: 7bade7baea8400d499b6d606679ae855, type: 3}
+  - {fileID: 760863318492883567, guid: 05fc75b3e6779ac43a069a422e3098e8, type: 3}
+  - {fileID: 6329589633835842060, guid: 87c8b339705b11644a0400f9a5fdc445, type: 3}
+  - {fileID: 7692708714653143639, guid: 2ac83bf904ba1a84f9b12450792420ec, type: 3}
+  - {fileID: 7525610634377487137, guid: a91f1f6cfeb43a6418c049385d3ecd00, type: 3}
+  - {fileID: 2720227171508724428, guid: e9b21c914b1a0d94199a2704b11205fe, type: 3}
+  - {fileID: 6662070742245693819, guid: f38d0b470c82fd34f9fe163db52ad28a, type: 3}
+  - {fileID: 6350721334577924501, guid: a8a1cb3206ae7dd4c8bdb737d7c6c341, type: 3}
+  - {fileID: 1913065864998607045, guid: 75c3af84c6d1c204c92e55f3ad114782, type: 3}
+  - {fileID: 1975338058156401615, guid: 5b1ec2c68cd5cea439d74c81f3c792b9, type: 3}
+  - {fileID: 8914672804726036276, guid: 54597cfdacb3cca4e8681fb242376512, type: 3}
+  - {fileID: 7303235738574472195, guid: 0530dcd4f5312a341b5e1de20cf5e0cd, type: 3}
+  - {fileID: 771566424070648817, guid: bca618a9c21ca6a47b3cb947b3ebd5b4, type: 3}
+  - {fileID: 9115382892180125332, guid: 991cd3df7696bfd40b7fcc9789322bb6, type: 3}
+  - {fileID: 4217968652023511039, guid: 742108bbb0aaf4b408238d902ea39c57, type: 3}
+  - {fileID: 8317802731550010302, guid: d0d6c1d08e539e04999d52a3a7a76798, type: 3}
+  _spawnDelay: 2
+--- !u!4 &1832779565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832779563}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5, y: 0, z: -42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1837243650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16384,3 +16715,8 @@ SceneRoots:
   - {fileID: 2036020923}
   - {fileID: 638161721}
   - {fileID: 1594286684}
+  - {fileID: 34384978}
+  - {fileID: 967262671}
+  - {fileID: 109194019}
+  - {fileID: 1066611147}
+  - {fileID: 1832779565}

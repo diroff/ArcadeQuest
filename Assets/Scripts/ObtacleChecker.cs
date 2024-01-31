@@ -9,7 +9,6 @@ public class ObtacleChecker : MonoBehaviour
         if (!other.CompareTag("Obtacle"))
             return;
 
-        Debug.Log("Moving of {" + gameObject.name + "} was stopped, because: {" + other.gameObject.name);
         _car.LetMove(false);
     }
 
@@ -18,7 +17,6 @@ public class ObtacleChecker : MonoBehaviour
         if (!other.CompareTag("Obtacle"))
             return;
 
-        Debug.Log("Moving of {" + gameObject.name + "} was continue, because: {" + other.gameObject.name);
         _car.LetMove(true);
     }
 }
