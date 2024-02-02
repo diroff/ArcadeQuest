@@ -10,9 +10,12 @@ public class CarSpawner : MonoBehaviour
 
     private bool _isSpawnEnabled = true;
 
-    private void Start()
+    public void SetSpawnerState(bool isActive)
     {
-        StartCoroutine(SpawnCar());
+        _isSpawnEnabled = isActive;
+
+        if(_isSpawnEnabled)
+            StartCoroutine(SpawnCar());
     }
 
     private IEnumerator SpawnCar()

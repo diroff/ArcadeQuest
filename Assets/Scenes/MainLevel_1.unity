@@ -7272,6 +7272,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1027733519}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1034595657
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1034595659}
+  - component: {fileID: 1034595658}
+  m_Layer: 0
+  m_Name: CarsTrafficController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1034595658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034595657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d41b9845b810914dbcb8c3493593806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _horizontalSpawners:
+  - {fileID: 1858953698}
+  - {fileID: 1496059360}
+  _verticalSpawners:
+  - {fileID: 1832779564}
+  - {fileID: 1372971817}
+  _isHorizontalSpawnersEnabledFirst: 1
+  _timeToSpawn: 5
+  _timeToWait: 4
+--- !u!4 &1034595659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034595657}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1044776262
 GameObject:
   m_ObjectHideFlags: 0
@@ -10290,7 +10343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1372971817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10325,7 +10378,7 @@ MonoBehaviour:
   - {fileID: 9115382892180125332, guid: 991cd3df7696bfd40b7fcc9789322bb6, type: 3}
   - {fileID: 4217968652023511039, guid: 742108bbb0aaf4b408238d902ea39c57, type: 3}
   - {fileID: 8317802731550010302, guid: d0d6c1d08e539e04999d52a3a7a76798, type: 3}
-  _spawnDelay: 5
+  _spawnDelay: 2
 --- !u!4 &1372971818
 Transform:
   m_ObjectHideFlags: 0
@@ -11439,7 +11492,7 @@ MonoBehaviour:
   - {fileID: 9115382892180125332, guid: 991cd3df7696bfd40b7fcc9789322bb6, type: 3}
   - {fileID: 4217968652023511039, guid: 742108bbb0aaf4b408238d902ea39c57, type: 3}
   - {fileID: 8317802731550010302, guid: d0d6c1d08e539e04999d52a3a7a76798, type: 3}
-  _spawnDelay: 5
+  _spawnDelay: 2
 --- !u!4 &1496059361
 Transform:
   m_ObjectHideFlags: 0
@@ -14152,7 +14205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1832779564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14187,7 +14240,7 @@ MonoBehaviour:
   - {fileID: 9115382892180125332, guid: 991cd3df7696bfd40b7fcc9789322bb6, type: 3}
   - {fileID: 4217968652023511039, guid: 742108bbb0aaf4b408238d902ea39c57, type: 3}
   - {fileID: 8317802731550010302, guid: d0d6c1d08e539e04999d52a3a7a76798, type: 3}
-  _spawnDelay: 5
+  _spawnDelay: 2
 --- !u!4 &1832779565
 Transform:
   m_ObjectHideFlags: 0
@@ -14579,7 +14632,7 @@ MonoBehaviour:
   - {fileID: 9115382892180125332, guid: 991cd3df7696bfd40b7fcc9789322bb6, type: 3}
   - {fileID: 4217968652023511039, guid: 742108bbb0aaf4b408238d902ea39c57, type: 3}
   - {fileID: 8317802731550010302, guid: d0d6c1d08e539e04999d52a3a7a76798, type: 3}
-  _spawnDelay: 5
+  _spawnDelay: 2
 --- !u!4 &1858953699
 Transform:
   m_ObjectHideFlags: 0
@@ -17177,3 +17230,4 @@ SceneRoots:
   - {fileID: 1372971818}
   - {fileID: 1858953699}
   - {fileID: 1496059361}
+  - {fileID: 1034595659}
