@@ -9,6 +9,8 @@ public class ObtacleChecker : MonoBehaviour
         if (!other.CompareTag("Obtacle"))
             return;
 
+        Debug.Log(gameObject.name + ":Car was stopped");
+
         _car.LetMove(false);
     }
 
@@ -16,6 +18,8 @@ public class ObtacleChecker : MonoBehaviour
     {
         if (!other.CompareTag("Obtacle"))
             return;
+
+        Debug.Log(gameObject.name + ":Car was started");
 
         _car.LetMove(true);
     }
