@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,24 +7,29 @@ public class CarSpawner : MonoBehaviour
 
     [SerializeField] private float _spawnDelay = 2f;
 
+    private float _currentTime;
+
     private bool _isSpawnEnabled = true;
 
     public void SetSpawnerState(bool isActive)
     {
         _isSpawnEnabled = isActive;
-
-        if(_isSpawnEnabled)
-            StartCoroutine(SpawnCar());
     }
 
-    private IEnumerator SpawnCar()
+    private void Update()
     {
-        while (_isSpawnEnabled)
-        {
-            int carNumber = Random.Range(0, _cars.Count);
+        if (!_isSpawnEnabled)
+            return;
 
-            Instantiate(_cars[carNumber], transform.position, transform.rotation);
-            yield return new WaitForSeconds(_spawnDelay);
-        }
+        _currentTime += Time.deltaTime;
+
+        if (_currentTime < _spawnDelay)
+            return;
+
+        int carNumber = Random.Range(0, _cars.Count);
+
+        Instantiate(_cars[carNumber], transform.position, transform.rotation);
+
+        _currentTime = 0;
     }
 }

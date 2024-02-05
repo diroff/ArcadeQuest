@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,12 +11,45 @@ public class CarsTrafficController : MonoBehaviour
     [SerializeField] private float _timeToSpawn;
     [SerializeField] private float _timeToWait;
 
+    private float _currentTimeToSpawn;
+    private float _currentTimeToWait;
+
     private bool _isHorizontalDirection;
-    private bool _isTrafficEnabled;
+    private bool _isHorizontalDirectionNext;
+
+    private bool _isTrafficStopped = false;
 
     private void Start()
     {
-        StartCoroutine(StartTrafficLighter());
+        if (_isHorizontalSpawnersEnabledFirst)
+        {
+            DisableVerticalSpawners();
+            EnableHorizontalSpawners();
+        }
+        else
+        {
+            DisableHorizontalSpawners();
+            EnableVerticalSpawners();
+        }
+    }
+
+    private void Update()
+    {
+        _currentTimeToSpawn += Time.deltaTime;
+
+        if (_currentTimeToSpawn < _timeToSpawn)
+            return;
+
+        DisableCurrentSpawners();
+
+        _currentTimeToWait += Time.deltaTime;
+
+        if (_currentTimeToWait < _timeToWait)
+            return;
+
+        EnableNextDirection();
+        _currentTimeToSpawn = 0;
+        _currentTimeToWait = 0;
     }
 
     private void EnableHorizontalSpawners()
@@ -26,15 +58,12 @@ public class CarsTrafficController : MonoBehaviour
             item.SetSpawnerState(true);
 
         _isHorizontalDirection = true;
-        DisableVerticalSpawners();
     }
 
     private void EnableVerticalSpawners()
     {
         foreach (var item in _verticalSpawners)
             item.SetSpawnerState(true);
-
-        DisableHorizontalSpawners();
     }
 
     private void DisableHorizontalSpawners()
@@ -51,41 +80,32 @@ public class CarsTrafficController : MonoBehaviour
             item.SetSpawnerState(false);
     }
 
-    private void SwitchTrafficDirection()
+    private void DisableCurrentSpawners()
     {
+        if (_isTrafficStopped)
+            return;
+
         if (_isHorizontalDirection)
-            EnableVerticalSpawners();
+        {
+            DisableHorizontalSpawners();
+            _isHorizontalDirectionNext = false;
+        }
         else
-            EnableHorizontalSpawners();
+        {
+            DisableVerticalSpawners();
+            _isHorizontalDirectionNext = true;
+        }
+
+        _isTrafficStopped = true;
     }
 
-    private IEnumerator StartTrafficLighter()
+    private void EnableNextDirection()
     {
-        if (_isHorizontalDirection)
-        {
-            EnableVerticalSpawners();
-
-            yield return new WaitForSeconds(_timeToSpawn);
-
-            DisableVerticalSpawners();
-
-            yield return new WaitForSeconds(_timeToWait);
-
+        if (_isHorizontalDirectionNext)
             EnableHorizontalSpawners();
-            StartCoroutine(StartTrafficLighter());
-        }
         else
-        {
-            EnableHorizontalSpawners();
-
-            yield return new WaitForSeconds(_timeToSpawn);
-
-            DisableHorizontalSpawners();
-
-            yield return new WaitForSeconds(_timeToWait);
-
             EnableVerticalSpawners();
-            StartCoroutine(StartTrafficLighter());
-        }
+
+        _isTrafficStopped = false;
     }
 }

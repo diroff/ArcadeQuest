@@ -7288,7 +7288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1034595658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7308,8 +7308,8 @@ MonoBehaviour:
   - {fileID: 1832779564}
   - {fileID: 1372971817}
   _isHorizontalSpawnersEnabledFirst: 1
-  _timeToSpawn: 5
-  _timeToWait: 4
+  _timeToSpawn: 20
+  _timeToWait: 5
 --- !u!4 &1034595659
 Transform:
   m_ObjectHideFlags: 0
@@ -10343,7 +10343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1372971817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11457,7 +11457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1496059360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14205,7 +14205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1832779564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14597,7 +14597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1858953698
 MonoBehaviour:
   m_ObjectHideFlags: 0
