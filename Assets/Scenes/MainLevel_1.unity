@@ -7308,7 +7308,7 @@ MonoBehaviour:
   - {fileID: 1832779564}
   - {fileID: 1372971817}
   _isHorizontalSpawnersEnabledFirst: 1
-  _timeToSpawn: 20
+  _timeToSpawn: 10
   _timeToWait: 5
 --- !u!4 &1034595659
 Transform:
@@ -10379,6 +10379,7 @@ MonoBehaviour:
   - {fileID: 4217968652023511039, guid: 742108bbb0aaf4b408238d902ea39c57, type: 3}
   - {fileID: 8317802731550010302, guid: d0d6c1d08e539e04999d52a3a7a76798, type: 3}
   _spawnDelay: 2
+  _isHorizontalSpawner: 0
 --- !u!4 &1372971818
 Transform:
   m_ObjectHideFlags: 0
@@ -11493,6 +11494,7 @@ MonoBehaviour:
   - {fileID: 4217968652023511039, guid: 742108bbb0aaf4b408238d902ea39c57, type: 3}
   - {fileID: 8317802731550010302, guid: d0d6c1d08e539e04999d52a3a7a76798, type: 3}
   _spawnDelay: 2
+  _isHorizontalSpawner: 1
 --- !u!4 &1496059361
 Transform:
   m_ObjectHideFlags: 0
@@ -11502,7 +11504,7 @@ Transform:
   m_GameObject: {fileID: 1496059359}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -45.5, y: 0, z: -3.5}
+  m_LocalPosition: {x: -40, y: 0, z: -3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14241,6 +14243,7 @@ MonoBehaviour:
   - {fileID: 4217968652023511039, guid: 742108bbb0aaf4b408238d902ea39c57, type: 3}
   - {fileID: 8317802731550010302, guid: d0d6c1d08e539e04999d52a3a7a76798, type: 3}
   _spawnDelay: 2
+  _isHorizontalSpawner: 0
 --- !u!4 &1832779565
 Transform:
   m_ObjectHideFlags: 0
@@ -14633,6 +14636,7 @@ MonoBehaviour:
   - {fileID: 4217968652023511039, guid: 742108bbb0aaf4b408238d902ea39c57, type: 3}
   - {fileID: 8317802731550010302, guid: d0d6c1d08e539e04999d52a3a7a76798, type: 3}
   _spawnDelay: 2
+  _isHorizontalSpawner: 1
 --- !u!4 &1858953699
 Transform:
   m_ObjectHideFlags: 0

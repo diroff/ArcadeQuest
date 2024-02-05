@@ -11,6 +11,8 @@ public class Car : MonoBehaviour
     private Vector3 _moveDirection;
     private Vector3 _movementVelocity;
 
+    private CarSpawner _spawner;
+
     private bool _isMoving = true;
 
     private void Awake()
@@ -44,5 +46,15 @@ public class Car : MonoBehaviour
     public void LetMove(bool canMove)
     {
         _isMoving = canMove;
+
+        if (_isMoving)
+            _spawner.SetTrafficState(true);
+        else
+            _spawner.SetTrafficState(false);
+    }
+
+    public void SetSpawner(CarSpawner spawner)
+    {
+        _spawner = spawner;
     }
 }

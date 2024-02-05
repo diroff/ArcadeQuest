@@ -18,6 +18,20 @@ public class CarsTrafficController : MonoBehaviour
     private bool _isHorizontalDirectionNext;
 
     private bool _isTrafficStopped = false;
+    private bool _isControllerEnabled = true;
+    private bool _isWaitTime = false;
+
+    public bool IsHorizontalDirection => _isHorizontalDirection;
+    public bool IsWaitTime => _isWaitTime;
+
+    private void Awake()
+    {
+        foreach (var item in _horizontalSpawners)
+            item.SetTrafficController(this);
+
+        foreach (var item in _verticalSpawners)
+            item.SetTrafficController(this);
+    }
 
     private void Start()
     {
@@ -35,6 +49,9 @@ public class CarsTrafficController : MonoBehaviour
 
     private void Update()
     {
+        if (!_isControllerEnabled)
+            return;
+
         _currentTimeToSpawn += Time.deltaTime;
 
         if (_currentTimeToSpawn < _timeToSpawn)
@@ -47,9 +64,16 @@ public class CarsTrafficController : MonoBehaviour
         if (_currentTimeToWait < _timeToWait)
             return;
 
+        StopAllSpawners();
         EnableNextDirection();
         _currentTimeToSpawn = 0;
         _currentTimeToWait = 0;
+        _isWaitTime = false;
+    }
+
+    public void SetTrafficState(bool enabled)
+    {
+        _isControllerEnabled = enabled;
     }
 
     private void EnableHorizontalSpawners()
@@ -97,6 +121,7 @@ public class CarsTrafficController : MonoBehaviour
         }
 
         _isTrafficStopped = true;
+        _isWaitTime = true;
     }
 
     private void EnableNextDirection()
@@ -107,5 +132,14 @@ public class CarsTrafficController : MonoBehaviour
             EnableVerticalSpawners();
 
         _isTrafficStopped = false;
+    }
+
+    private void StopAllSpawners()
+    {
+        foreach (var item in _horizontalSpawners)
+            item.SetSpawnerState(false);
+
+        foreach (var item in _verticalSpawners)
+            item.SetSpawnerState(false);
     }
 }
