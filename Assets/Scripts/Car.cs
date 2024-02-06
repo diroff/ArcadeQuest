@@ -5,6 +5,8 @@ public class Car : MonoBehaviour
 {
     [SerializeField] private float _baseMovementSpeed = 12f;
 
+    [SerializeField] private bool _isIndependent = false;
+
     private float _currentMovementSpeed;
 
     private Rigidbody _rigidbody;
@@ -46,6 +48,9 @@ public class Car : MonoBehaviour
     public void LetMove(bool canMove)
     {
         _isMoving = canMove;
+
+        if (_isIndependent)
+            return;
 
         if (_isMoving)
             _spawner.SetTrafficState(true);
