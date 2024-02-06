@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
-  - component: {fileID: 7204744670294757502}
+  - component: {fileID: 1524097763237689658}
   m_Layer: 0
   m_Name: Natures_Rock_Big
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7204744670294757502
-BoxCollider:
+--- !u!135 &1524097763237689658
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,5 +103,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.8977594, y: 1.0031165, z: 2.5016723}
-  m_Center: {x: 0.0009471178, y: 0.501558, z: 0.0026056767}
+  m_Radius: 1.265109
+  m_Center: {x: 0.011097789, y: 0.50155807, z: 0.022274494}
