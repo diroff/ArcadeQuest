@@ -7046,7 +7046,7 @@ PrefabInstance:
     - target: {fileID: 883292368952452131, guid: 344ef740afa44f54a81223a544f5a812,
         type: 3}
       propertyPath: m_TagString
-      value: Obtacle
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 883292368952452140, guid: 344ef740afa44f54a81223a544f5a812,
         type: 3}

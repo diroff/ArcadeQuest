@@ -6,20 +6,16 @@ public class ObtacleChecker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Obtacle"))
+        if (!other.CompareTag("Obtacle") || !other.CompareTag("Player"))
             return;
-
-        Debug.Log(gameObject.name + ":Car was stopped");
 
         _car.LetMove(false);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Obtacle"))
+        if (!other.CompareTag("Obtacle") || !other.CompareTag("Player"))
             return;
-
-        Debug.Log(gameObject.name + ":Car was started");
 
         _car.LetMove(true);
     }
