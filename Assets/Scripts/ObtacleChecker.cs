@@ -6,7 +6,7 @@ public class ObtacleChecker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Obtacle") || !other.CompareTag("Player"))
+        if (!other.CompareTag("Obtacle") && !other.CompareTag("Player"))
             return;
 
         _car.LetMove(false);
@@ -14,7 +14,7 @@ public class ObtacleChecker : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.CompareTag("Obtacle") || !other.CompareTag("Player"))
+        if (!other.CompareTag("Obtacle") && !other.CompareTag("Player"))
             return;
 
         _car.LetMove(true);

@@ -2550,7 +2550,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bonuses:
   - {fileID: 898443104}
-  - {fileID: 0}
 --- !u!1001 &953744112
 PrefabInstance:
   m_ObjectHideFlags: 0
