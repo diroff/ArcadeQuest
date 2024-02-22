@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CurrentLevelData : MonoBehaviour
 {
-    [SerializeField] private string _defaultLevelName = "MainLevel_1";
+    [SerializeField] private string _defaultLevelName = "Level1";
 
     public const string Key = "CurrentLevel";
 

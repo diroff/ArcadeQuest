@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca7da45425d4ce42b9567a850dfb9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: Level2
+  _sceneName: Meta_1
 --- !u!4 &311089190
 Transform:
   m_ObjectHideFlags: 0
@@ -6624,6 +6624,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218778921818102315, guid: c4c4c6738a221b2419905c0f26195f46,
+        type: 3}
+      propertyPath: _defaultLevelName
+      value: Level1
       objectReference: {fileID: 0}
     - target: {fileID: 3790158840980744258, guid: c4c4c6738a221b2419905c0f26195f46,
         type: 3}
