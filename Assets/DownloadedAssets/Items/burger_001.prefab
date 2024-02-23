@@ -95,10 +95,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b9e0dc1ab0567274ca3d07fa03c545f0,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -5028330000826690571}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b9e0dc1ab0567274ca3d07fa03c545f0,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3814293010381827410}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b9e0dc1ab0567274ca3d07fa03c545f0,
         type: 3}
@@ -115,30 +111,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6547045536378072361}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-5028330000826690571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6204463763682365560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff967b7ed48f2441bcf509edf6b889a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 1
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 10, z: 0}
-  rotationSpeed: 10
-  floatSpeed: 0.001
-  floatRate: 0.5
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
 --- !u!65 &3814293010381827410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -172,18 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff967b7ed48f2441bcf509edf6b889a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 1
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 10, z: 0}
-  rotationSpeed: 10
-  floatSpeed: 0.001
-  floatRate: 0.5
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
+  _isRotating: 1
+  _speed: 90
 --- !u!114 &6971563759838153986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,4 +158,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f322b0192dc4a044e9f650e6329edfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 87b96a3ac2f93014489799d982073494, type: 3}

@@ -20,6 +20,9 @@ public class Item : MonoBehaviour, IInteractable
 
     public void Collect()
     {
+        if (_isCollected)
+            return;
+
         ItemWasCollected?.Invoke();
         ItemWasCollectedWithName?.Invoke(gameObject.name);
         _isCollected = true;

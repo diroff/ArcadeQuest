@@ -7,7 +7,7 @@ public class LevelItems : MonoBehaviour
 {
     [SerializeField] private List<Item> _levelItems;
 
-    private int _itemsCollectedCount;
+    private int _itemsCollectedCount = 0;
 
     public List<Item> Items => _levelItems;
 

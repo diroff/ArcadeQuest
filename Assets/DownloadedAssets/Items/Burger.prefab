@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 2622810988331101551}
   - component: {fileID: 253028392321391013}
   - component: {fileID: 6590085518315833816}
-  - component: {fileID: -7981708685582023412}
-  - component: {fileID: 943799962681995306}
   - component: {fileID: 8888456337106440409}
   - component: {fileID: 4134710136422101866}
   m_Layer: 0
@@ -109,51 +107,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.13453068, y: 0.08499592, z: 0.13242115}
   m_Center: {x: -0.0010726675, y: 0.041006554, z: -0.00041902065}
---- !u!114 &-7981708685582023412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765995492758009968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff967b7ed48f2441bcf509edf6b889a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 1
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 10, z: 0}
-  rotationSpeed: 10
-  floatSpeed: 0.001
-  floatRate: 0.5
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
---- !u!65 &943799962681995306
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765995492758009968}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.13453068, y: 0.08499592, z: 0.13242115}
-  m_Center: {x: -0.0010726675, y: 0.041006554, z: -0.00041902065}
 --- !u!114 &8888456337106440409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,18 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff967b7ed48f2441bcf509edf6b889a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 1
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 10, z: 0}
-  rotationSpeed: 10
-  floatSpeed: 0.001
-  floatRate: 0.5
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
+  _isRotating: 1
+  _speed: 90
 --- !u!114 &4134710136422101866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,4 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f322b0192dc4a044e9f650e6329edfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 87b96a3ac2f93014489799d982073494, type: 3}

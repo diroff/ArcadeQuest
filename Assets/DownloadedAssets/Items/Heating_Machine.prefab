@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3114084431260660196}
   - component: {fileID: -5064547192405902976}
   - component: {fileID: 4670482429836324290}
-  - component: {fileID: 2943196570055819889}
   - component: {fileID: 7725303750550265210}
   m_Layer: 0
   m_Name: Heating_Machine
@@ -122,18 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff967b7ed48f2441bcf509edf6b889a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 1
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 10, z: 0}
-  rotationSpeed: 10
-  floatSpeed: 0.001
-  floatRate: 0.5
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
+  _isRotating: 1
+  _speed: 90
 --- !u!65 &4670482429836324290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -155,30 +144,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.30205458, y: 0.23288329, z: 0.08644287}
   m_Center: {x: 0.08608803, y: 0.11624191, z: 0.00008728169}
---- !u!114 &2943196570055819889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7590964634423934608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff967b7ed48f2441bcf509edf6b889a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 1
-  isFloating: 1
-  isScaling: 0
-  rotationAngle: {x: 0, y: 10, z: 0}
-  rotationSpeed: 10
-  floatSpeed: 0.001
-  floatRate: 0.5
-  startScale: {x: 0, y: 0, z: 0}
-  endScale: {x: 0, y: 0, z: 0}
-  scaleSpeed: 0
-  scaleRate: 0
 --- !u!114 &7725303750550265210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,4 +156,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f322b0192dc4a044e9f650e6329edfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 1aac96c5bb442234cb04d4f923b29926, type: 3}

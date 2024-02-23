@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class UIItemSlot : MonoBehaviour
 {
     [SerializeField] private Image _itemIcon;
-    [SerializeField] private GameObject _itemCompletedPlaceholder;
 
     private Item _item;
 
@@ -22,6 +21,6 @@ public class UIItemSlot : MonoBehaviour
 
     private void CompleteIcon()
     {
-        _itemCompletedPlaceholder.SetActive(true);
+        Destroy(gameObject);
     }
 }
