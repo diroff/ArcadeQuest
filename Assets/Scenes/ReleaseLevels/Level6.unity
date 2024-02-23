@@ -4065,8 +4065,8 @@ MonoBehaviour:
   _target: {fileID: 883292369290873367}
   _positionOffset: {x: 0, y: 0, z: -28}
   _rotationOffset: {x: 0.46174878, y: 0, z: 0, w: 0.88701075}
-  _positionSmothing: 7
-  _rotationSmothing: 7
+  _positionSmothing: 6
+  _rotationSmothing: 6
 --- !u!1001 &331832633
 PrefabInstance:
   m_ObjectHideFlags: 0
