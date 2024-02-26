@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -37,6 +38,19 @@ public class MetaSlotPanel : MonoBehaviour
 
         foreach (var pair in pairs)
             pair.CollectItem();
+
+        StartCoroutine(CollectItems(pairs));
+    }
+
+    private IEnumerator CollectItems(List<MetaItem> items)
+    {
+        while(items[items.Count - 1].IsRestanding)
+        {
+            yield return null;
+        }
+
+        foreach (var item in items)
+            item.PlayCollectAnimation();
     }
 
     private MetaSlot GetFreeSlot()

@@ -20,13 +20,13 @@ public class Meta : MonoBehaviour
     private void OnEnable()
     {
         foreach (var item in _items)
-            item.ItemWasCollected += OnItemWasCollected;
+            item.ItemWasDestroyed += OnItemWasCollected;
     }
 
     private void OnDisable()
     {
         foreach (var item in _items)
-            item.ItemWasCollected -= OnItemWasCollected;
+            item.ItemWasDestroyed -= OnItemWasCollected;
     }
 
     private void OnItemWasCollected()

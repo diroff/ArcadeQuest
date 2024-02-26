@@ -332,6 +332,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6890795204284267121, guid: 838c31f0befe3424cbeb932996c17602,
+        type: 3}
+      propertyPath: _movingTime
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1025,6 +1030,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1050537738201198698, guid: 368cca4fffed2bd45b54a61e9ec0fab0,
+        type: 3}
+      propertyPath: _movingTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1510589511856487360, guid: 368cca4fffed2bd45b54a61e9ec0fab0,
         type: 3}
       propertyPath: m_Name
@@ -1152,6 +1162,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Burger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050513779807074330, guid: 6d6fc1a6237ccaa4086dd424cf68135b,
+        type: 3}
+      propertyPath: _movingTime
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5256190392645989718, guid: 6d6fc1a6237ccaa4086dd424cf68135b,
         type: 3}
@@ -2070,6 +2085,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6890795204284267121, guid: 838c31f0befe3424cbeb932996c17602,
+        type: 3}
+      propertyPath: _movingTime
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2472,6 +2492,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Burger
       objectReference: {fileID: 0}
+    - target: {fileID: 2050513779807074330, guid: 6d6fc1a6237ccaa4086dd424cf68135b,
+        type: 3}
+      propertyPath: _movingTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5256190392645989718, guid: 6d6fc1a6237ccaa4086dd424cf68135b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2757,6 +2782,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1050537738201198698, guid: 368cca4fffed2bd45b54a61e9ec0fab0,
+        type: 3}
+      propertyPath: _movingTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1510589511856487360, guid: 368cca4fffed2bd45b54a61e9ec0fab0,
         type: 3}
       propertyPath: m_Name

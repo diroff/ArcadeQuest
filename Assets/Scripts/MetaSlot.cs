@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MetaSlot : MonoBehaviour
@@ -13,20 +14,31 @@ public class MetaSlot : MonoBehaviour
         if (IsFull())
             return;
 
-        Debug.Log("Item was added");
         _currentItem = item;
         _currentItem.AddToSlot(this);
-        _currentItem.transform.position = new Vector3(_placement.position.x, _placement.position.y + 0.5f, _placement.position.z);
+    }
+
+    public Vector3 GetPlacementPosition()
+    {
+        return new Vector3(_placement.position.x, _placement.position.y + 0.5f, _placement.position.z);
     }
 
     public void DeleteItem()
     {
-        Debug.Log("Trying to delete item");
         if (!IsFull())
             return;
 
-        Debug.Log("Item was deleted");
-        _currentItem.ReturnFromSlot();
+        if (_currentItem == null)
+            return;
+
+        if(!_currentItem.IsCollected)
+            _currentItem.ReturnFromSlot();
+
+        ClearItem();
+    }
+
+    public void ClearItem()
+    {
         _currentItem = null;
     }
 
