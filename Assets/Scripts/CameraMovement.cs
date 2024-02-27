@@ -70,8 +70,8 @@ public class CameraMovement : MonoBehaviour
         if (_target == null)
             _target = _defaultTarget;
 
-        _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + (_rotationOffset * _positionOffset), Time.fixedDeltaTime * _positionSmothing);
-        _nextRotation = Quaternion.Lerp(_camera.transform.rotation, _rotationOffset, Time.fixedDeltaTime * _rotationSmothing);
+        _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + (_rotationOffset * _positionOffset), _positionSmothing);
+        _nextRotation = Quaternion.Lerp(_camera.transform.rotation, _rotationOffset, _rotationSmothing);
 
         _camera.transform.position = _nextPosition;
         _camera.transform.rotation = _nextRotation;
