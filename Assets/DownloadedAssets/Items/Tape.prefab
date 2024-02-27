@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 23951599734232808}
   - component: {fileID: 65923226156230326}
   - component: {fileID: -1549970946749433796}
-  - component: {fileID: 5979136751539175250}
   - component: {fileID: 8835572937379599640}
   m_Layer: 0
   m_Name: Tape
@@ -122,27 +121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isRotating: 1
   _speed: 90
---- !u!65 &5979136751539175250
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206594443558004}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.10118788, y: 0.13218287, z: 0.03231692}
-  m_Center: {x: 0, y: -0.014717005, z: -0.016158456}
 --- !u!114 &8835572937379599640
 MonoBehaviour:
   m_ObjectHideFlags: 0
