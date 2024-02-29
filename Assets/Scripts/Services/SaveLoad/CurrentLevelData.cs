@@ -11,6 +11,11 @@ public class CurrentLevelData : MonoBehaviour
 
     private void Awake()
     {
+        SetupStorageService();
+    }
+
+    private void SetupStorageService()
+    {
         _storageService = new JsonToFileStorageService();
 
         _storageService.Load<CurrentLevel>(Key, data =>
@@ -23,6 +28,9 @@ public class CurrentLevelData : MonoBehaviour
     [ContextMenu("Save current level")]
     public void Save(string sceneName)
     {
+        if (_storageService == null)
+            SetupStorageService();
+
         CurrentLevel data = new CurrentLevel();
 
         data.LevelName = sceneName;

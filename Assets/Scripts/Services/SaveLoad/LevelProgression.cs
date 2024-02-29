@@ -6,6 +6,8 @@ public class LevelProgression : MonoBehaviour
 {
     public const string Key = "LevelProgression";
 
+    [SerializeField] private CurrentLevelData _currentLevelData;
+
     [SerializeField] private LevelItems _levelItems;
     [SerializeField] private LevelBonuses _levelBonuses;
 
@@ -172,6 +174,7 @@ public class LevelProgression : MonoBehaviour
         CurrentLevel level = new CurrentLevel();
 
         level.LevelName = sceneName;
+        _currentLevelData.Save(sceneName);
 
         LevelProgress levelProgress = new LevelProgress();
         levelProgress.Level = sceneName;

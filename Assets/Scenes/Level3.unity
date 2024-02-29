@@ -1062,6 +1062,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &150304001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1609404846795187950, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelProgression
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786864599072853819, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 330585545}
+    - target: {fileID: 2786864599072853819, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 883292369290873372}
+    - target: {fileID: 2786864599072853819, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: _levelItems
+      value: 
+      objectReference: {fileID: 1092693604}
+    - target: {fileID: 2786864599072853819, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: _levelBonuses
+      value: 
+      objectReference: {fileID: 946027131}
+    - target: {fileID: 2786864599072853819, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: _currentLevelData
+      value: 
+      objectReference: {fileID: 1702309406}
+    - target: {fileID: 7360670501628809408, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360670501628809408, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360670501628809408, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360670501628809408, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360670501628809408, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360670501628809408, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360670501628809408, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360670501628809408, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360670501628809408, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360670501628809408, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 37305ec9c391c4e4d852d8e4cbb513d2, type: 3}
+--- !u!114 &150304002 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2786864599072853819, guid: 37305ec9c391c4e4d852d8e4cbb513d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 150304001}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8f7ff876039804eb82aaa4bbc7a38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &162201937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10025,54 +10130,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1031721676}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2036020921
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2036020923}
-  - component: {fileID: 2036020922}
-  m_Layer: 0
-  m_Name: LevelProgression
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2036020922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036020921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8f7ff876039804eb82aaa4bbc7a38a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _levelItems: {fileID: 1092693604}
-  _levelBonuses: {fileID: 946027131}
-  _player: {fileID: 883292369290873372}
-  _camera: {fileID: 330585545}
---- !u!4 &2036020923
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036020921}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2040755706
 GameObject:
   m_ObjectHideFlags: 0
@@ -11177,7 +11234,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _levelProgression
       value: 
-      objectReference: {fileID: 2036020922}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11270,7 +11327,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _levelProgression
       value: 
-      objectReference: {fileID: 2036020922}
+      objectReference: {fileID: 150304002}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11528,7 +11585,6 @@ SceneRoots:
   - {fileID: 250546103}
   - {fileID: 999347498}
   - {fileID: 696243657}
-  - {fileID: 2036020923}
   - {fileID: 638161721}
   - {fileID: 1594286684}
   - {fileID: 42940306}
@@ -11545,3 +11601,4 @@ SceneRoots:
   - {fileID: 392585530}
   - {fileID: 322906169}
   - {fileID: 1153983226}
+  - {fileID: 150304001}
