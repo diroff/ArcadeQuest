@@ -59,7 +59,6 @@ public class MobAds : MonoBehaviour
             if (error != null || ad == null)
             {
                 AdLoadingError?.Invoke("Rewarded ad failed to load an ad with error : " + error);
-                LoadRewardedAd();
                 return;
             }
 

@@ -5,7 +5,7 @@ public class UIItemList : MonoBehaviour
     [SerializeField] private UIItemSlot _slotPrefab;
     [SerializeField] private LevelItems _levelItems;
 
-    private void Start()
+    private void Awake()
     {
         CreateGrid();
     }

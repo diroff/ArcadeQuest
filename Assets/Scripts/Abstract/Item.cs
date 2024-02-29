@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(BoxCollider))]
 public class Item : MonoBehaviour, IInteractable
 {
     [SerializeField] private Sprite _icon;
@@ -13,15 +14,22 @@ public class Item : MonoBehaviour, IInteractable
     public UnityAction ItemWasCollected;
     public UnityAction<string> ItemWasCollectedWithName;
 
+    private BoxCollider _boxCollider;
+
+    private void Awake()
+    {
+        _boxCollider = GetComponent<BoxCollider>();
+    }
+
     public virtual void Interact(Player player)
     {
         Collect();
     }
 
+    [ContextMenu("Collect")]
     public void Collect()
     {
-        if (_isCollected)
-            return;
+        _boxCollider.enabled = false;
 
         ItemWasCollected?.Invoke();
         ItemWasCollectedWithName?.Invoke(gameObject.name);

@@ -28,7 +28,15 @@ public class LevelItems : MonoBehaviour
     public void CollectAllItems()
     {
         foreach (var item in _levelItems)
-            if (item != null) item.Collect();
+        {
+            if (item != null)
+                continue;
+
+            if (item.IsCollected)
+                continue;
+
+            item.Collect();
+        }
     }
 
     private void ItemCountChecker()
