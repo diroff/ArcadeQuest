@@ -22,12 +22,13 @@ public class MobAds : MonoBehaviour
 
         MobileAds.Initialize(initStatus => {
             AdInitialised?.Invoke();
-            LoadRewardedAd();
         });
     }
 
     public void ShowRewardedAd()
     {
+        LoadRewardedAd();
+
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
             _rewardedAd.Show((Reward reward) => {

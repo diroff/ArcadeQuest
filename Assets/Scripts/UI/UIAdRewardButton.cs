@@ -9,13 +9,11 @@ public class UIAdRewardButton : MonoBehaviour
     private void OnEnable()
     {
         _levelItems.AllItemsCollected += DisableButton;
-        _adMob.AdInitialised += EnableButton;
     }
 
     private void OnDisable()
     {
         _levelItems.AllItemsCollected -= DisableButton;
-        _adMob.AdInitialised -= EnableButton;
     }
 
     private void DisableButton()

@@ -31,7 +31,7 @@ public class Hint : MonoBehaviour
 
     private IEnumerator ShowItemCoroutine(Transform item)
     {
-        _cameraMovement.ChangePositionSmoothing(3f);
+        _cameraMovement.ChangePositionSmoothing(0.1f);
         _cameraMovement.ChangeTarget(item);
         yield return new WaitForSeconds(4f);
         _cameraMovement.UndoChangingTarget();
