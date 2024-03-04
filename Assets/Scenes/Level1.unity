@@ -257,6 +257,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1829714132}
     m_Modifications:
+    - target: {fileID: 611967290884561042, guid: bfc74d81e469b4b4cb0ac06227c8ded7,
+        type: 3}
+      propertyPath: m_HorizontalFit
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1010198358055253960, guid: bfc74d81e469b4b4cb0ac06227c8ded7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -377,6 +382,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIItemPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 1648964537046554436, guid: bfc74d81e469b4b4cb0ac06227c8ded7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4523356998784858976, guid: bfc74d81e469b4b4cb0ac06227c8ded7,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -405,7 +415,7 @@ PrefabInstance:
     - target: {fileID: 8878057790950472891, guid: bfc74d81e469b4b4cb0ac06227c8ded7,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00001692772
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
