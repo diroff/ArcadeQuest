@@ -119,3 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemId: 0
+  _movingTime: 0.2
+  _positionOffset: {x: 0, y: 0, z: 0.1}
