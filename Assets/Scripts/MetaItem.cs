@@ -9,7 +9,10 @@ public class MetaItem : MonoBehaviour
 
     [SerializeField] private float _movingTime = 0.8f;
 
+    [SerializeField] private Vector3 _positionOffset;
+
     private Vector3 _startPosition;
+    private Quaternion _startRotation;
 
     private bool _isOnSlot = false;
     private bool _isCollected = false;
@@ -33,6 +36,7 @@ public class MetaItem : MonoBehaviour
     private void Awake()
     {
         _startPosition = transform.position;
+        _startRotation = transform.rotation;
         _boxCollider = GetComponent<BoxCollider>();
     }
 
@@ -71,6 +75,7 @@ public class MetaItem : MonoBehaviour
         _isOnSlot = true;
 
         Vector3 targetPosition = _slot.GetPlacementPosition();
+        targetPosition += _positionOffset;
         StartCoroutine(MoveObjectCoroutine(transform.position, targetPosition));
     }
 
