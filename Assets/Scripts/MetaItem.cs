@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class MetaItem : MonoBehaviour
 {
     [SerializeField] private int _itemId;
+    [SerializeField] private Sprite _itemIcon;
 
     [SerializeField] private float _movingTime = 0.8f;
 
@@ -24,6 +25,7 @@ public class MetaItem : MonoBehaviour
     private BoxCollider _boxCollider;
 
     public int ItemId => _itemId;
+    public Sprite ItemIcon => _itemIcon;
 
     public MetaSlot MetaSlot => _slot;
 
@@ -32,6 +34,7 @@ public class MetaItem : MonoBehaviour
 
     public UnityAction ItemWasCollected;
     public UnityAction ItemWasDestroyed;
+    public UnityAction<int> ItemWasDestroyedWithId;
 
     private void Awake()
     {
@@ -131,6 +134,7 @@ public class MetaItem : MonoBehaviour
             yield return null;
 
         ItemWasDestroyed?.Invoke();
+        ItemWasDestroyedWithId?.Invoke(_itemId);
         Destroy(gameObject);
     }
 

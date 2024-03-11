@@ -119,5 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemId: 6
+  _itemIcon: {fileID: 21300000, guid: fec166558bc1f454c86216bc2e7a665c, type: 3}
   _movingTime: 0.2
   _positionOffset: {x: 0, y: 0, z: -0.9}

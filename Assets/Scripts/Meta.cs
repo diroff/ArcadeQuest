@@ -11,6 +11,8 @@ public class Meta : MonoBehaviour
 
     public UnityAction LevelWasCompleted;
 
+    public List<MetaItem> Items => _items;
+
     private void Awake()
     {
         foreach (var item in _items)
