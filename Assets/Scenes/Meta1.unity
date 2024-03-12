@@ -902,7 +902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520069415e7a3f945aadf48b71bd57af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelTime: 10
+  _levelTime: 60
   _meta: {fileID: 1046103416}
 --- !u!4 &914592075
 Transform:
