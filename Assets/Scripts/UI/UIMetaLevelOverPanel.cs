@@ -5,6 +5,8 @@ public class UIMetaLevelOverPanel : MonoBehaviour
     [SerializeField] private GameObject _levelOverPanel;
     [SerializeField] private Meta _meta;
 
+    [SerializeField] private UIMetaLevelOver _levelOver;
+
     private void Start()
     {
         _meta.LevelWasCompleted += DisplayPanel;
@@ -18,5 +20,6 @@ public class UIMetaLevelOverPanel : MonoBehaviour
     private void DisplayPanel()
     {
         _levelOverPanel.SetActive(true);
+        _levelOver.gameObject.SetActive(false);
     }
 }
