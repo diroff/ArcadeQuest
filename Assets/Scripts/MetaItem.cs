@@ -19,6 +19,8 @@ public class MetaItem : MonoBehaviour
     private bool _isCollected = false;
     private bool _isRestanding = false;
 
+    private Rigidbody _rigidbody;
+
     private MetaSlotPanel _slotPanel;
     private MetaSlot _slot;
 
@@ -40,7 +42,9 @@ public class MetaItem : MonoBehaviour
     {
         _startPosition = transform.position;
         _startRotation = transform.rotation;
+
         _boxCollider = GetComponent<BoxCollider>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void OnMouseDown()
@@ -101,6 +105,7 @@ public class MetaItem : MonoBehaviour
         ItemWasCollected?.Invoke();
         _slot.DeleteItem();
         _boxCollider.enabled = false;
+        _rigidbody.isKinematic = true;
     }
 
     private IEnumerator MoveObjectCoroutine(Vector3 startPoint, Vector3 endPoint, float timeModificator = 0f)
@@ -112,7 +117,9 @@ public class MetaItem : MonoBehaviour
         while (elapsedTime < totalTime && _isRestanding)
         {
             float t = elapsedTime / totalTime;
-            transform.position = Vector3.Lerp(startPoint, endPoint, t);
+            Vector3 newPosition = Vector3.Lerp(startPoint, endPoint, t);
+
+            _rigidbody.MovePosition(newPosition);
 
             elapsedTime += Time.deltaTime;
 
