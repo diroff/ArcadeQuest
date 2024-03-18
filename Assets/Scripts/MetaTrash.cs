@@ -4,12 +4,12 @@ public class MetaTrash : MonoBehaviour
 {
     [SerializeField] private float _force = 50f;
 
-    private Vector3 mousePosition;
-    private Rigidbody rb;
+    private Vector3 _mousePosition;
+    private Rigidbody _rigidbody;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     private Vector3 GetMousePosition()
@@ -19,13 +19,13 @@ public class MetaTrash : MonoBehaviour
 
     private void OnMouseDown()
     {
-        mousePosition = Input.mousePosition - GetMousePosition();
+        _mousePosition = Input.mousePosition - GetMousePosition();
     }
 
     private void OnMouseDrag()
     {
-        Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosition);
-        Vector3 force = (targetPos - rb.position) * _force;
-        rb.AddForce(force);
+        Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition - _mousePosition);
+        Vector3 force = (targetPos - _rigidbody.position) * _force;
+        _rigidbody.AddForce(force);
     }
 }
