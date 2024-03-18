@@ -1,9 +1,16 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class MetaTrash : MonoBehaviour
 {
+    [SerializeField] private float _force = 50f;
+
     private Vector3 mousePosition;
+    private Rigidbody rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     private Vector3 GetMousePosition()
     {
@@ -17,6 +24,8 @@ public class MetaTrash : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosition);
+        Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosition);
+        Vector3 force = (targetPos - rb.position) * _force;
+        rb.AddForce(force);
     }
 }
