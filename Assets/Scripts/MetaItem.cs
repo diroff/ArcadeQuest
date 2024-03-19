@@ -12,12 +12,16 @@ public class MetaItem : MonoBehaviour
 
     [SerializeField] private Vector3 _positionOffset;
 
+    private Vector3 _mousePosition;
     private Vector3 _startPosition;
     private Quaternion _startRotation;
 
     private bool _isOnSlot = false;
     private bool _isCollected = false;
     private bool _isRestanding = false;
+    private bool _isDraging = false;
+
+    private float _startTime;
 
     private Rigidbody _rigidbody;
 
@@ -47,9 +51,34 @@ public class MetaItem : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void OnMouseUp()
+    {
+        if (!(Time.time - _startTime > 0.1f) || _isOnSlot)
+            Interact();
+
+        _isDraging = false;
+    }
+
     private void OnMouseDown()
     {
-        Interact();
+        _mousePosition = Input.mousePosition - GetMousePosition();
+    }
+
+    private void OnMouseDrag()
+    {
+        if (_isOnSlot)
+            return;
+
+        if (!_isDraging)
+        {
+            _startTime = Time.time;
+            _isDraging = true;
+        }
+
+        Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition - _mousePosition);
+        targetPos.y = transform.position.y;
+
+        _rigidbody.MovePosition(targetPos);
     }
 
     public void Interact()
@@ -64,6 +93,11 @@ public class MetaItem : MonoBehaviour
             _slot.DeleteItem();
         else
             SetToSlot();
+    }
+
+    private Vector3 GetMousePosition()
+    {
+        return Camera.main.WorldToScreenPoint(transform.position);
     }
 
     private void RestandPosition()

@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class MetaTrash : MonoBehaviour
 {
-    [SerializeField] private float _force = 50f;
-
     private Vector3 _mousePosition;
     private Rigidbody _rigidbody;
 
@@ -25,7 +23,8 @@ public class MetaTrash : MonoBehaviour
     private void OnMouseDrag()
     {
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition - _mousePosition);
-        Vector3 force = (targetPos - _rigidbody.position) * _force;
-        _rigidbody.AddForce(force);
+        targetPos.y = transform.position.y;
+
+        _rigidbody.MovePosition(targetPos);
     }
 }
