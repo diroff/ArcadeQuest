@@ -2,12 +2,19 @@ using UnityEngine;
 
 public class MetaTrash : MonoBehaviour
 {
+    [SerializeField] private float _maxAngularVelocity;
+
     private Vector3 _mousePosition;
     private Rigidbody _rigidbody;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void FixedUpdate()
+    {
+        _rigidbody.angularVelocity = Vector3.ClampMagnitude(_rigidbody.angularVelocity, _maxAngularVelocity);
     }
 
     private Vector3 GetMousePosition()
@@ -25,6 +32,7 @@ public class MetaTrash : MonoBehaviour
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition - _mousePosition);
         targetPos.y = transform.position.y;
 
-        _rigidbody.MovePosition(targetPos);
+        Vector3 direction = targetPos - transform.position;
+        _rigidbody.velocity = direction / Time.fixedDeltaTime;
     }
 }

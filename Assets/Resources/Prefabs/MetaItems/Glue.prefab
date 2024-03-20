@@ -122,8 +122,8 @@ MonoBehaviour:
   _itemId: 5
   _itemIcon: {fileID: 21300000, guid: a820d493a939fc94fb516dc1567544e6, type: 3}
   _movingTime: 0.2
-  _movementForce: 12
   _positionOffset: {x: 0, y: 0, z: -0.75}
+  _maxAngularVelocity: 1
 --- !u!54 &554291868428686070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9049574608055150809}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

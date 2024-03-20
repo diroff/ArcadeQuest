@@ -11,6 +11,7 @@ public class MetaItem : MonoBehaviour
     [SerializeField] private float _movingTime = 0.8f;
 
     [SerializeField] private Vector3 _positionOffset;
+    [SerializeField] private float _maxAngularVelocity = 1f;
 
     private Vector3 _mousePosition;
     private Vector3 _startPosition;
@@ -20,6 +21,7 @@ public class MetaItem : MonoBehaviour
     private bool _isCollected = false;
     private bool _isRestanding = false;
     private bool _isDraging = false;
+    private bool _isNeedClamp = true;
 
     private float _startTime;
 
@@ -51,6 +53,12 @@ public class MetaItem : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void FixedUpdate()
+    {
+        if(_isNeedClamp)
+            _rigidbody.angularVelocity = Vector3.ClampMagnitude(_rigidbody.angularVelocity, _maxAngularVelocity);
+    }
+
     private void OnMouseUp()
     {
         if (!(Time.time - _startTime > 0.1f) || _isOnSlot)
@@ -78,7 +86,8 @@ public class MetaItem : MonoBehaviour
         Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition - _mousePosition);
         targetPos.y = transform.position.y;
 
-        _rigidbody.MovePosition(targetPos);
+        Vector3 direction = targetPos - transform.position;
+        _rigidbody.velocity = direction / Time.fixedDeltaTime;
     }
 
     public void Interact()
@@ -150,6 +159,10 @@ public class MetaItem : MonoBehaviour
 
         while (elapsedTime < totalTime && _isRestanding)
         {
+            _isNeedClamp = !_isOnSlot;
+            _boxCollider.isTrigger = _isOnSlot;
+            _rigidbody.isKinematic = _isOnSlot;
+
             float t = elapsedTime / totalTime;
             Vector3 newPosition = Vector3.Lerp(startPoint, endPoint, t);
 
