@@ -3,7 +3,7 @@ using UnityEditor;
 
 public class RandomizeTransformEditorWindow : EditorWindow
 {
-    private static Vector3 _minPosition = new Vector3(-2f, -7f, -2.5f);
+    private static Vector3 _minPosition = new Vector3(-2f, 7f, -2.5f);
     private static Vector3 _maxPosition = new Vector3(2f, 8f, 2.5f);
 
     private static Vector3 _minRotation = new Vector3(-90f, -90f, -90f);
@@ -44,10 +44,14 @@ public class RandomizeTransformEditorWindow : EditorWindow
         foreach (GameObject obj in selectedObjects)
         {
             Vector3 randomPosition = Vector3.zero;
+            
             bool positionValid = false;
+            int attemptCount = 0;
 
-            while (!positionValid)
+            while (!positionValid && attemptCount < 100)
             {
+                attemptCount++;
+
                 randomPosition = new Vector3(
                     Random.Range(_minPosition.x, _maxPosition.x),
                     Random.Range(_minPosition.y, _maxPosition.y),
