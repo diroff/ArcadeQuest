@@ -129,6 +129,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxAngularVelocity: 1
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!54 &6988138474926430605
 Rigidbody:
   m_ObjectHideFlags: 0

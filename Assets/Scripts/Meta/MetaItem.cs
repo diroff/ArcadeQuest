@@ -12,6 +12,7 @@ public class MetaItem : MonoBehaviour
 
     [SerializeField] private Vector3 _positionOffset;
     [SerializeField] private float _maxAngularVelocity = 1f;
+    [SerializeField] private LayerMask _collisionLayerMask;
 
     private Vector3 _mousePosition;
     private Vector3 _startPosition;
@@ -83,11 +84,18 @@ public class MetaItem : MonoBehaviour
             _isDraging = true;
         }
 
-        Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition - _mousePosition);
-        targetPos.y = transform.position.y;
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition - _mousePosition);
+        mouseWorldPosition.y = transform.position.y;
 
-        Vector3 direction = targetPos - transform.position;
-        _rigidbody.velocity = direction / Time.fixedDeltaTime;
+        Vector3 direction = mouseWorldPosition - transform.position;
+        float distance = direction.magnitude;
+
+        if (!Physics.Raycast(transform.position, direction.normalized, distance, _collisionLayerMask))
+        {
+            Vector3 targetPos = transform.position + direction;
+
+            _rigidbody.MovePosition(targetPos);
+        }
     }
 
     public void Interact()

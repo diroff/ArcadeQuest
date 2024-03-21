@@ -3,6 +3,7 @@ using UnityEngine;
 public class MetaTrash : MonoBehaviour
 {
     [SerializeField] private float _maxAngularVelocity;
+    [SerializeField] private LayerMask _collisionLayerMask;
 
     private Vector3 _mousePosition;
     private Rigidbody _rigidbody;
@@ -33,6 +34,9 @@ public class MetaTrash : MonoBehaviour
         targetPos.y = transform.position.y;
 
         Vector3 direction = targetPos - transform.position;
-        _rigidbody.velocity = direction / Time.fixedDeltaTime;
+        float distance = direction.magnitude;
+
+        if (!Physics.Raycast(transform.position, direction.normalized, distance, _collisionLayerMask))
+            _rigidbody.velocity = direction / Time.fixedDeltaTime;
     }
 }

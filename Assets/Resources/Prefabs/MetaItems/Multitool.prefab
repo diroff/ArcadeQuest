@@ -124,6 +124,9 @@ MonoBehaviour:
   _movingTime: 0.2
   _positionOffset: {x: 0, y: 0, z: 0.8}
   _maxAngularVelocity: 1
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!54 &-8837966508082860716
 Rigidbody:
   m_ObjectHideFlags: 0
