@@ -30,13 +30,17 @@ public class MetaTrash : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition - _mousePosition);
-        targetPos.y = transform.position.y;
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition - _mousePosition);
+        mouseWorldPosition.y = transform.position.y;
 
-        Vector3 direction = targetPos - transform.position;
+        Vector3 direction = mouseWorldPosition - transform.position;
         float distance = direction.magnitude;
 
         if (!Physics.Raycast(transform.position, direction.normalized, distance, _collisionLayerMask))
-            _rigidbody.velocity = direction / Time.fixedDeltaTime;
+        {
+            Vector3 targetPos = transform.position + direction;
+
+            _rigidbody.MovePosition(targetPos);
+        }
     }
 }
