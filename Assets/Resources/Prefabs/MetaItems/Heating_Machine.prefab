@@ -102,6 +102,7 @@ MonoBehaviour:
   _itemIcon: {fileID: 21300000, guid: 1aac96c5bb442234cb04d4f923b29926, type: 3}
   _movingTime: 0.2
   _positionOffset: {x: -0.25, y: 0, z: -0.5}
+  _rotationOnSlot: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   _maxAngularVelocity: 1
   _collisionLayerMask:
     serializedVersion: 2

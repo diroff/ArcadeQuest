@@ -10,6 +10,8 @@ public class MetaItem : MonoBehaviour
     [SerializeField] private float _movingTime = 0.8f;
 
     [SerializeField] private Vector3 _positionOffset;
+    [SerializeField] private Quaternion _rotationOnSlot;
+
     [SerializeField] private float _maxAngularVelocity = 1f;
     [SerializeField] private LayerMask _collisionLayerMask;
 
@@ -133,7 +135,7 @@ public class MetaItem : MonoBehaviour
 
         Vector3 targetPosition = _slot.GetPlacementPosition();
         targetPosition += _positionOffset;
-        StartCoroutine(MoveObjectCoroutine(transform.position, targetPosition));
+        StartCoroutine(MoveObjectCoroutine(transform.position, targetPosition, _rotationOnSlot));
     }
 
     public void SetSlotPanel(MetaSlotPanel panel)
@@ -146,7 +148,7 @@ public class MetaItem : MonoBehaviour
         _slot = null;
         _isOnSlot = false;
 
-        StartCoroutine(MoveObjectCoroutine(transform.position, _startPosition));
+        StartCoroutine(MoveObjectCoroutine(transform.position, _startPosition, _startRotation));
     }
 
     public void CollectItem()
@@ -158,7 +160,7 @@ public class MetaItem : MonoBehaviour
         _rigidbody.isKinematic = true;
     }
 
-    private IEnumerator MoveObjectCoroutine(Vector3 startPoint, Vector3 endPoint, float timeModificator = 0f)
+    private IEnumerator MoveObjectCoroutine(Vector3 startPoint, Vector3 endPoint, Quaternion endRotation,float timeModificator = 0f)
     {
         float totalTime = _movingTime + timeModificator;
         _isRestanding = true;
@@ -172,8 +174,10 @@ public class MetaItem : MonoBehaviour
 
             float t = elapsedTime / totalTime;
             Vector3 newPosition = Vector3.Lerp(startPoint, endPoint, t);
+            Quaternion newRotation = Quaternion.Lerp(transform.localRotation, endRotation, t);
 
             _rigidbody.MovePosition(newPosition);
+            _rigidbody.MoveRotation(newRotation);
 
             elapsedTime += Time.deltaTime;
 
@@ -189,7 +193,7 @@ public class MetaItem : MonoBehaviour
         Vector3 targetPosition = transform.position;
         targetPosition.z += 5f;
 
-        StartCoroutine(MoveObjectCoroutine(transform.position, targetPosition, 0.5f));
+        StartCoroutine(MoveObjectCoroutine(transform.position, targetPosition, _rotationOnSlot, 0.5f));
 
         while (_isRestanding)
             yield return null;
