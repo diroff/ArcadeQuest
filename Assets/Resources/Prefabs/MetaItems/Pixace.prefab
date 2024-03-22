@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7456674607202983519}
   - component: {fileID: 6854529550506528779}
   - component: {fileID: 930858650754962534}
-  - component: {fileID: 1512848798743804778}
   - component: {fileID: 3036226830149012649}
   - component: {fileID: 7531013967698940143}
+  - component: {fileID: 4102508441130635902}
   m_Layer: 0
   m_Name: Pixace
   m_TagString: Untagged
@@ -86,27 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1512848798743804778
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3771605565150008966}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.31788084, y: 0.47706008, z: 0.039765626}
-  m_Center: {x: -0.003598407, y: 0.23901108, z: -0.001628113}
 --- !u!114 &3036226830149012649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +133,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &4102508441130635902
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771605565150008966}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6029386305152064225, guid: bc1ebebea84d79a4ab87072f7a432b5d, type: 3}

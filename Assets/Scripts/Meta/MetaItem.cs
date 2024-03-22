@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(BoxCollider))]
 public class MetaItem : MonoBehaviour
 {
     [SerializeField] private int _itemId;
@@ -31,7 +30,7 @@ public class MetaItem : MonoBehaviour
     private MetaSlotPanel _slotPanel;
     private MetaSlot _slot;
 
-    private BoxCollider _boxCollider;
+    private MeshCollider _meshCollider;
 
     public int ItemId => _itemId;
     public Sprite ItemIcon => _itemIcon;
@@ -50,7 +49,7 @@ public class MetaItem : MonoBehaviour
         _startPosition = transform.position;
         _startRotation = transform.rotation;
 
-        _boxCollider = GetComponent<BoxCollider>();
+        _meshCollider = GetComponent<MeshCollider>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -155,7 +154,7 @@ public class MetaItem : MonoBehaviour
         _isCollected = true;
         ItemWasCollected?.Invoke();
         _slot.DeleteItem();
-        _boxCollider.enabled = false;
+        _meshCollider.enabled = false;
         _rigidbody.isKinematic = true;
     }
 
@@ -168,7 +167,7 @@ public class MetaItem : MonoBehaviour
         while (elapsedTime < totalTime && _isRestanding)
         {
             _isNeedClamp = !_isOnSlot;
-            _boxCollider.isTrigger = _isOnSlot;
+            _meshCollider.isTrigger = _isOnSlot;
             _rigidbody.isKinematic = _isOnSlot;
 
             float t = elapsedTime / totalTime;
