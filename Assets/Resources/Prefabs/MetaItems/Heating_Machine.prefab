@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6512070346122130345}
   - component: {fileID: 2975689648184734096}
   - component: {fileID: 4785370767439615217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Heating_Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

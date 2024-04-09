@@ -57,16 +57,33 @@ public class MetaItem : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_isNeedClamp)
+        if (_isNeedClamp)
             _rigidbody.angularVelocity = Vector3.ClampMagnitude(_rigidbody.angularVelocity, _maxAngularVelocity);
     }
 
     private void OnMouseUp()
     {
         if (!(Time.time - _startTime > 0.1f) || _isOnSlot)
+        {
             Interact();
+            return;
+        }
 
         _isDraging = false;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        int layerMask = ~(1 << LayerMask.NameToLayer("MetaItem"));
+
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
+        {
+            MetaSlotPanel slotPanel = hit.collider.GetComponent<MetaSlotPanel>();
+
+            if (slotPanel == null)
+                return;
+
+            Interact();
+        }
     }
 
     private void OnMouseDown()
@@ -160,7 +177,7 @@ public class MetaItem : MonoBehaviour
         _rigidbody.isKinematic = true;
     }
 
-    private IEnumerator MoveObjectCoroutine(Vector3 startPoint, Vector3 endPoint, Quaternion endRotation,float timeModificator = 0f)
+    private IEnumerator MoveObjectCoroutine(Vector3 startPoint, Vector3 endPoint, Quaternion endRotation, float timeModificator = 0f)
     {
         float totalTime = _movingTime + timeModificator;
         _isRestanding = true;

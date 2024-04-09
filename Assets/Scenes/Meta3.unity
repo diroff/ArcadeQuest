@@ -1206,7 +1206,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967231
+    m_Bits: 4294967295
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -3174,6 +3174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1529386508}
   - component: {fileID: 1529386507}
+  - component: {fileID: 1529386509}
   m_Layer: 0
   m_Name: SlotPanel
   m_TagString: Untagged
@@ -3218,6 +3219,27 @@ Transform:
   - {fileID: 2051578797}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1529386509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529386506}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.021043, y: 4.450087, z: 1.4147594}
+  m_Center: {x: -0.0039475304, y: 2.39, z: 0.0014046431}
 --- !u!1 &1552808524
 GameObject:
   m_ObjectHideFlags: 0

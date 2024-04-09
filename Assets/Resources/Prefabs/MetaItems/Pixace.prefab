@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3036226830149012649}
   - component: {fileID: 7531013967698940143}
   - component: {fileID: 4102508441130635902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pixace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
