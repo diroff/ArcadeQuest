@@ -24,6 +24,7 @@ public class MetaItem : MonoBehaviour
     private bool _isRestanding = false;
     private bool _isDraging = false;
     private bool _isNeedClamp = true;
+    private bool _wasAdding = false;
 
     private float _startTime;
 
@@ -63,6 +64,12 @@ public class MetaItem : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (_wasAdding)
+        {
+            _wasAdding = false;
+            return;
+        }
+
         if (!(Time.time - _startTime > 0.1f) || _isOnSlot)
         {
             Interact();
@@ -70,20 +77,6 @@ public class MetaItem : MonoBehaviour
         }
 
         _isDraging = false;
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        int layerMask = ~(1 << LayerMask.NameToLayer("MetaItem"));
-
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
-        {
-            MetaSlotPanel slotPanel = hit.collider.GetComponent<MetaSlotPanel>();
-
-            if (slotPanel == null)
-                return;
-
-            Interact();
-        }
     }
 
     private void OnMouseDown()
@@ -113,6 +106,21 @@ public class MetaItem : MonoBehaviour
             Vector3 targetPos = transform.position + direction;
 
             _rigidbody.MovePosition(targetPos);
+        }
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        int layerMask = ~(1 << LayerMask.NameToLayer("MetaItem"));
+
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
+        {
+            MetaSlotPanel slotPanel = hit.collider.GetComponent<MetaSlotPanel>();
+
+            if (slotPanel == null)
+                return;
+
+            Interact();
+            _wasAdding = true;
         }
     }
 
