@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4728328650705401557}
   - component: {fileID: 7801979620911752910}
   - component: {fileID: 6614158931399105907}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ObtacleChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 1294961976132205517}
   - component: {fileID: 1228226350517963714}
   - component: {fileID: 7692708714653143639}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Car_8
   m_TagString: Obtacle
   m_Icon: {fileID: 0}
@@ -215,3 +215,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseMovementSpeed: 12
+  _isIndependent: 0

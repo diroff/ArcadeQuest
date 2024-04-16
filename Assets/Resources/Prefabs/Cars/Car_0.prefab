@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3438849047363499538}
   - component: {fileID: 4295643640217012306}
   - component: {fileID: 5649067955974721688}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Car_0
   m_TagString: Obtacle
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 5462794723561855402}
   - component: {fileID: 2934557622581863161}
   - component: {fileID: 3199664707392923446}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ObtacleChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -24,7 +24,7 @@ public class MetaItem : MonoBehaviour
     private bool _isRestanding = false;
     private bool _isDraging = false;
     private bool _isNeedClamp = true;
-    private bool _wasAdding = false;
+    private bool _wasAddingOnSlot = false;
 
     private float _startTime;
 
@@ -64,9 +64,9 @@ public class MetaItem : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (_wasAdding)
+        if (_wasAddingOnSlot)
         {
-            _wasAdding = false;
+            _wasAddingOnSlot = false;
             return;
         }
 
@@ -120,7 +120,7 @@ public class MetaItem : MonoBehaviour
                 return;
 
             Interact();
-            _wasAdding = true;
+            _wasAddingOnSlot = true;
         }
     }
 
