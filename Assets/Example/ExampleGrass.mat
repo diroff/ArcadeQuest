@@ -29,7 +29,7 @@ Material:
     - _BendDelta: 0.062
     - _BladeBendCurve: 4
     - _BladeBendDistance: 0.719
-    - _BladeHeight: 0.85
+    - _BladeHeight: 1
     - _BladeHeightRandom: 0.727
     - _BladeWidth: 0.099
     - _BladeWidthRandom: 0.709
@@ -41,8 +41,8 @@ Material:
     - _FadeDistance: 3
     - _MaxDistance: 57
     - _TessDensity: 20
-    - _WindSpeed: 0
-    - _WindStrength: 0
+    - _WindSpeed: 50
+    - _WindStrength: 0.04
     - _WindTintScale: 0.2
     m_Colors:
     - _AmbientColour: {r: 0.25, g: 0.25, b: 0.25, a: 1}
