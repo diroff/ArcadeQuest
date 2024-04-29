@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _playerRigidbody;
 
     public float CurrentMovementSpeed => _currentMovementSpeed;
+    public Rigidbody PlayerRigidbody => _playerRigidbody;
 
     private void Awake()
     {
