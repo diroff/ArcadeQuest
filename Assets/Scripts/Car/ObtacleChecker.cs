@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ObtacleChecker : MonoBehaviour
 {
-    [SerializeField] private Car _car;
+    private Car _car;
+
+    private void Awake()
+    {
+        _car = GetComponentInParent<Car>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {

@@ -5,8 +5,6 @@ public class Car : MonoBehaviour
 {
     [SerializeField] private float _baseMovementSpeed = 12f;
 
-    [SerializeField] private bool _isIndependent = false;
-
     private float _currentMovementSpeed;
 
     private Rigidbody _rigidbody;
@@ -16,11 +14,18 @@ public class Car : MonoBehaviour
     private CarSpawner _spawner;
 
     private bool _isMoving = true;
+    private bool _isIndependent = false;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _currentMovementSpeed = _baseMovementSpeed;
+    }
+
+    private void Start()
+    {
+        if (_spawner == null)
+            _isIndependent = true;
     }
 
     private void FixedUpdate()
