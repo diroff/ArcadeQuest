@@ -18,6 +18,19 @@ public class NPC : Creature
         StartState(DoPatrol());
     }
 
+    public override void StartMove()
+    {
+        StartState(DoPatrol());
+    }
+
+    public override void StopMove()
+    {
+        if (_currentState != null)
+            StopCoroutine(_currentState);
+
+        base.StopMove();
+    }
+
     public IEnumerator DoPatrol()
     {
         while (enabled)
@@ -38,21 +51,9 @@ public class NPC : Creature
         }
     }
 
-    [ContextMenu("Start moving")]
-    public void TestMoving()
-    {
-        StartState(DoPatrol());
-    }
-
-    [ContextMenu("Stop moving")]
-    public void TestWaiting()
-    {
-        StartState(Wait());
-    }
-
     private IEnumerator Wait()
     {
-        StopMoving();
+        ResetVelocity();
         yield return new WaitForSeconds(_waitTime);
         StartState(DoPatrol());
     }

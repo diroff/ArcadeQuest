@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class Creature : MonoBehaviour
+public class Creature : MonoBehaviour, IMoveableController
 {
     [SerializeField] protected float BaseMovementSpeed = 12f;
     [SerializeField] protected float BaseRotationSpeed = 15f;
@@ -14,7 +13,7 @@ public class Creature : MonoBehaviour
 
     protected Vector3 MoveDirection;
     protected Rigidbody CreatureRigidbody;
-    
+
     public Rigidbody RigidBody => CreatureRigidbody;
 
     protected virtual void Awake()
@@ -46,7 +45,7 @@ public class Creature : MonoBehaviour
         Vector3 movementVelocity = MoveDirection * CurrentMovementSpeed;
         CreatureRigidbody.velocity = movementVelocity;
 
-        if(movementVelocity ==  Vector3.zero)
+        if (movementVelocity == Vector3.zero)
             CreatureRigidbody.velocity = Vector3.zero;
     }
 
@@ -66,13 +65,6 @@ public class Creature : MonoBehaviour
         _moveAmount = Mathf.Clamp01(Mathf.Abs(direction.x) + Mathf.Abs(direction.z));
     }
 
-    public void StopMoving()
-    {
-        MoveDirection = Vector3.zero;
-        _moveAmount = 0f;
-        CreatureRigidbody.velocity = Vector3.zero;
-    }
-
     public void SetSpeed(float speed)
     {
         if (speed < 0)
@@ -84,5 +76,22 @@ public class Creature : MonoBehaviour
     public void AddSpeed(float speed)
     {
         CurrentMovementSpeed += speed;
+    }
+
+    public virtual void StartMove()
+    {
+        SetDirection(MoveDirection);
+    }
+
+    public virtual void StopMove()
+    {
+        ResetVelocity();
+    }
+
+    protected void ResetVelocity()
+    {
+        _moveAmount = 0f;
+        CreatureRigidbody.velocity = Vector3.zero;
+        MoveDirection = Vector3.zero;
     }
 }
