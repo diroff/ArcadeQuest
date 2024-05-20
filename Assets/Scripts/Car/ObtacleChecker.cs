@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class ObtacleChecker : MonoBehaviour
 {
-    private Car _car;
+    private IMoveableController _movable;
 
     private void Awake()
     {
-        _car = GetComponentInParent<Car>();
+        _movable = GetComponentInParent<IMoveableController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -14,7 +14,7 @@ public class ObtacleChecker : MonoBehaviour
         if (!other.CompareTag("Obtacle") && !other.CompareTag("Player"))
             return;
 
-        _car.LetMove(false);
+        _movable.StopMove();
     }
 
     private void OnTriggerExit(Collider other)
@@ -22,6 +22,6 @@ public class ObtacleChecker : MonoBehaviour
         if (!other.CompareTag("Obtacle") && !other.CompareTag("Player"))
             return;
 
-        _car.LetMove(true);
+        _movable.StartMove();
     }
 }

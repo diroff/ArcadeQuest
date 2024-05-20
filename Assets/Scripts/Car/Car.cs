@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Car : MonoBehaviour
+public class Car : MonoBehaviour, IMoveableController
 {
     [SerializeField] private float _baseMovementSpeed = 12f;
 
@@ -50,21 +50,22 @@ public class Car : MonoBehaviour
         _rigidbody.velocity = _movementVelocity;
     }
 
-    public void LetMove(bool canMove)
-    {
-        _isMoving = canMove;
-
-        if (_isIndependent)
-            return;
-
-        if (_isMoving)
-            _spawner.SetTrafficState(true);
-        else
-            _spawner.SetTrafficState(false);
-    }
-
     public void SetSpawner(CarSpawner spawner)
     {
         _spawner = spawner;
+    }
+
+    public void StartMove()
+    {
+        _isMoving = true;
+
+        _spawner?.SetTrafficState(true);
+    }
+
+    public void StopMove()
+    {
+        _isMoving = false;
+
+        _spawner?.SetTrafficState(false);
     }
 }
