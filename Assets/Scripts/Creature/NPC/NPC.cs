@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class NPC : Creature
 {
-    [SerializeField] private Transform[] _points;
+    [SerializeField] private Waypoint[] _points;
     
     [SerializeField] private float _treshold = 1f;
-    [SerializeField] private float _waitTime = 2f;
 
     private IEnumerator _currentState;
     private int _destinationPointIndex;
+    private Waypoint _destinationPoint;
 
     protected override void Start()
     {
@@ -38,12 +38,12 @@ public class NPC : Creature
             if (IsOnPoint())
             {
                 _destinationPointIndex = (int)Mathf.Repeat(_destinationPointIndex + 1, _points.Length);
-                Debug.Log("I'm on the point");
+                _destinationPoint = _points[_destinationPointIndex];
                 StartState(Wait());
                 yield break;
             }
 
-            var direction = _points[_destinationPointIndex].position - transform.position;
+            var direction = _points[_destinationPointIndex].transform.position - transform.position;
             direction.y = 0;
             SetDirection(direction.normalized);
 
@@ -54,13 +54,13 @@ public class NPC : Creature
     private IEnumerator Wait()
     {
         ResetVelocity();
-        yield return new WaitForSeconds(_waitTime);
+        yield return new WaitForSeconds(_destinationPoint.WaitTime);
         StartState(DoPatrol());
     }
 
     private bool IsOnPoint()
     {
-        return (_points[_destinationPointIndex].position - transform.position).magnitude < _treshold;
+        return (_points[_destinationPointIndex].transform.position - transform.position).magnitude < _treshold;
     }
 
     private void StartState(IEnumerator coroutine)
