@@ -3,12 +3,12 @@ public class SpeedBonus : Bonus
     public override void UseBonus()
     {
         base.UseBonus();
-        Player.Movement.AddSpeed(Value);
+        Player.AddSpeed(Value);
     }
 
     public override void StopBonus()
     {
-        Player.Movement.AddSpeed(-Value);
+        Player.AddSpeed(-Value);
         base.StopBonus();
     }
 }
