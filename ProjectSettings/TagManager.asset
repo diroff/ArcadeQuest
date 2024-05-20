@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obtacle
   - IconsCreationCamera
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Car
   - Tunnel
   - Player
-  - 
+  - NPC
   - 
   - 
   - 

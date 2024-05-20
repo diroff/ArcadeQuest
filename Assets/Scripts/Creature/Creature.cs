@@ -1,21 +1,26 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Creature : MonoBehaviour
 {
     [SerializeField] protected float BaseMovementSpeed = 12f;
     [SerializeField] protected float BaseRotationSpeed = 15f;
 
+    private CreatureAnimator _animator;
+    private float _moveAmount;
+
     protected float CurrentMovementSpeed;
     protected float CurrentRotationSpeed;
 
-    protected Vector3 moveDirection;
-    protected Rigidbody creatureRigidbody;
-
-    public Rigidbody RigidBody => creatureRigidbody;
+    protected Vector3 MoveDirection;
+    protected Rigidbody CreatureRigidbody;
+    
+    public Rigidbody RigidBody => CreatureRigidbody;
 
     protected virtual void Awake()
     {
-        creatureRigidbody = GetComponent<Rigidbody>();
+        CreatureRigidbody = GetComponent<Rigidbody>();
+        _animator = GetComponent<CreatureAnimator>();
     }
 
     protected virtual void Start()
@@ -33,19 +38,23 @@ public class Creature : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
+        _animator.UpdateAnimatorValues(0, _moveAmount);
     }
 
     protected void HandleMovement()
     {
-        Vector3 movementVelocity = moveDirection * CurrentMovementSpeed;
-        creatureRigidbody.velocity = movementVelocity;
+        Vector3 movementVelocity = MoveDirection * CurrentMovementSpeed;
+        CreatureRigidbody.velocity = movementVelocity;
+
+        if(movementVelocity ==  Vector3.zero)
+            CreatureRigidbody.velocity = Vector3.zero;
     }
 
     protected void HandleRotation()
     {
-        if (moveDirection != Vector3.zero)
+        if (MoveDirection != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            Quaternion targetRotation = Quaternion.LookRotation(MoveDirection);
             Quaternion creatureRotation = Quaternion.Slerp(transform.rotation, targetRotation, CurrentRotationSpeed * Time.deltaTime);
             transform.rotation = creatureRotation;
         }
@@ -53,7 +62,15 @@ public class Creature : MonoBehaviour
 
     public void SetDirection(Vector3 direction)
     {
-        moveDirection = direction.normalized;
+        MoveDirection = direction.normalized;
+        _moveAmount = Mathf.Clamp01(Mathf.Abs(direction.x) + Mathf.Abs(direction.z));
+    }
+
+    public void StopMoving()
+    {
+        MoveDirection = Vector3.zero;
+        _moveAmount = 0f;
+        CreatureRigidbody.velocity = Vector3.zero;
     }
 
     public void SetSpeed(float speed)
