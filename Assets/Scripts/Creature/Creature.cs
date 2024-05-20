@@ -2,30 +2,26 @@ using UnityEngine;
 
 public class Creature : MonoBehaviour
 {
-    [SerializeField] protected float baseMovementSpeed = 12f;
-    [SerializeField] protected float baseRotationSpeed = 15f;
+    [SerializeField] protected float BaseMovementSpeed = 12f;
+    [SerializeField] protected float BaseRotationSpeed = 15f;
 
-    protected float currentMovementSpeed;
-    protected float currentRotationSpeed;
+    protected float CurrentMovementSpeed;
+    protected float CurrentRotationSpeed;
 
-    protected InputManager inputManager;
     protected Vector3 moveDirection;
-    protected Transform cameraObject;
     protected Rigidbody creatureRigidbody;
 
     public Rigidbody RigidBody => creatureRigidbody;
 
     protected virtual void Awake()
     {
-        inputManager = GetComponent<InputManager>();
         creatureRigidbody = GetComponent<Rigidbody>();
-        cameraObject = Camera.main.transform;
     }
 
     protected virtual void Start()
     {
-        currentMovementSpeed = baseMovementSpeed;
-        currentRotationSpeed = baseRotationSpeed;
+        CurrentMovementSpeed = BaseMovementSpeed;
+        CurrentRotationSpeed = BaseRotationSpeed;
     }
 
     protected virtual void FixedUpdate()
@@ -41,31 +37,23 @@ public class Creature : MonoBehaviour
 
     protected void HandleMovement()
     {
-        moveDirection = cameraObject.forward * inputManager.VerticalInput;
-        moveDirection = moveDirection + cameraObject.right * inputManager.HorizontalInput;
-        moveDirection.Normalize();
-        moveDirection.y = 0;
-        moveDirection *= currentMovementSpeed;
-
-        Vector3 movementVelocity = moveDirection;
+        Vector3 movementVelocity = moveDirection * CurrentMovementSpeed;
         creatureRigidbody.velocity = movementVelocity;
     }
 
     protected void HandleRotation()
     {
-        Vector3 targetDirection = Vector3.zero;
-        targetDirection = cameraObject.forward * inputManager.VerticalInput;
-        targetDirection = targetDirection + cameraObject.right * inputManager.HorizontalInput;
-        targetDirection.Normalize();
-        targetDirection.y = 0;
+        if (moveDirection != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            Quaternion creatureRotation = Quaternion.Slerp(transform.rotation, targetRotation, CurrentRotationSpeed * Time.deltaTime);
+            transform.rotation = creatureRotation;
+        }
+    }
 
-        if (targetDirection == Vector3.zero)
-            targetDirection = transform.forward;
-
-        Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-        Quaternion creatureRotation = Quaternion.Slerp(transform.rotation, targetRotation, currentRotationSpeed * Time.deltaTime);
-
-        transform.rotation = creatureRotation;
+    public void SetDirection(Vector3 direction)
+    {
+        moveDirection = direction.normalized;
     }
 
     public void SetSpeed(float speed)
@@ -73,11 +61,11 @@ public class Creature : MonoBehaviour
         if (speed < 0)
             speed = 0;
 
-        currentMovementSpeed = speed;
+        CurrentMovementSpeed = speed;
     }
 
     public void AddSpeed(float speed)
     {
-        currentMovementSpeed += speed;
+        CurrentMovementSpeed += speed;
     }
 }
