@@ -37,8 +37,8 @@ public class NPC : Creature
         {
             if (IsOnPoint())
             {
-                _destinationPointIndex = (int)Mathf.Repeat(_destinationPointIndex + 1, _points.Length);
                 _destinationPoint = _points[_destinationPointIndex];
+                _destinationPointIndex = (int)Mathf.Repeat(_destinationPointIndex + 1, _points.Length);
                 StartState(Wait());
                 yield break;
             }
