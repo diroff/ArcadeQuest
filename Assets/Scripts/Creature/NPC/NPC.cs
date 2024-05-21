@@ -4,7 +4,7 @@ using UnityEngine;
 public class NPC : Creature
 {
     [SerializeField] private Waypoint[] _points;
-    
+
     [SerializeField] private float _treshold = 1f;
 
     private IEnumerator _currentState;
@@ -37,11 +37,20 @@ public class NPC : Creature
         {
             if (IsOnPoint())
             {
+                if (_destinationPoint != null)
+                {
+                    _destinationPoint.DoExitAction();
+                }
+
                 _destinationPoint = _points[_destinationPointIndex];
-                _destinationPoint.DoAction();
+                _destinationPoint.DoEnterAction();
                 _destinationPointIndex = (int)Mathf.Repeat(_destinationPointIndex + 1, _points.Length);
-                StartState(Wait());
-                yield break;
+
+                if (_destinationPoint.WaitTime > 0)
+                {
+                    StartState(Wait());
+                    yield break;
+                }
             }
 
             var direction = _points[_destinationPointIndex].transform.position - transform.position;
@@ -55,7 +64,11 @@ public class NPC : Creature
     private IEnumerator Wait()
     {
         ResetVelocity();
+        _destinationPoint.DoWaitAction();
         yield return new WaitForSeconds(_destinationPoint.WaitTime);
+        _destinationPoint.DoExitAction();
+        _destinationPoint = null;
+
         StartState(DoPatrol());
     }
 
