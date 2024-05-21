@@ -77,7 +77,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseMovementSpeed: 12
-  BaseRotationSpeed: 15
+  RotationSpeed: 15
+  Acceleration: 7
+  Deceleration: 5
 --- !u!114 &883292368952452143
 MonoBehaviour:
   m_ObjectHideFlags: 0

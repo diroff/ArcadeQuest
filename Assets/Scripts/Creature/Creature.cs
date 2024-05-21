@@ -4,6 +4,8 @@ public class Creature : MonoBehaviour, IMoveableController
 {
     [SerializeField] protected float BaseMovementSpeed = 12f;
     [SerializeField] protected float BaseRotationSpeed = 15f;
+    [SerializeField] private float Acceleration = 5f;
+    [SerializeField] private float Deceleration = 5f;
 
     private CreatureAnimator _animator;
     private float _moveAmount;
@@ -12,6 +14,7 @@ public class Creature : MonoBehaviour, IMoveableController
     protected float CurrentRotationSpeed;
 
     protected Vector3 MoveDirection;
+    protected Vector3 SmoothMoveDirection;
     protected Rigidbody CreatureRigidbody;
 
     public Rigidbody RigidBody => CreatureRigidbody;
@@ -42,18 +45,19 @@ public class Creature : MonoBehaviour, IMoveableController
 
     protected void HandleMovement()
     {
-        Vector3 movementVelocity = MoveDirection * CurrentMovementSpeed;
+        SmoothMoveDirection = Vector3.MoveTowards(SmoothMoveDirection, MoveDirection, Time.deltaTime * (MoveDirection != Vector3.zero ? Acceleration : Deceleration));
+
+        Vector3 movementVelocity = SmoothMoveDirection * CurrentMovementSpeed;
         CreatureRigidbody.velocity = movementVelocity;
 
-        if (movementVelocity == Vector3.zero)
-            CreatureRigidbody.velocity = Vector3.zero;
+        _moveAmount = SmoothMoveDirection.magnitude;
     }
 
     protected void HandleRotation()
     {
-        if (MoveDirection != Vector3.zero)
+        if (SmoothMoveDirection != Vector3.zero)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(MoveDirection);
+            Quaternion targetRotation = Quaternion.LookRotation(SmoothMoveDirection);
             Quaternion creatureRotation = Quaternion.Slerp(transform.rotation, targetRotation, CurrentRotationSpeed * Time.deltaTime);
             transform.rotation = creatureRotation;
         }
@@ -62,7 +66,6 @@ public class Creature : MonoBehaviour, IMoveableController
     public void SetDirection(Vector3 direction)
     {
         MoveDirection = direction.normalized;
-        _moveAmount = Mathf.Clamp01(Mathf.Abs(direction.x) + Mathf.Abs(direction.z));
     }
 
     public void SetSpeed(float speed)
@@ -76,6 +79,7 @@ public class Creature : MonoBehaviour, IMoveableController
     public void AddSpeed(float speed)
     {
         CurrentMovementSpeed += speed;
+        CurrentRotationSpeed += speed;
     }
 
     public virtual void StartMove()
@@ -91,7 +95,8 @@ public class Creature : MonoBehaviour, IMoveableController
     protected void ResetVelocity()
     {
         _moveAmount = 0f;
-        CreatureRigidbody.velocity = Vector3.zero;
         MoveDirection = Vector3.zero;
+        SmoothMoveDirection = Vector3.zero;
+        CreatureRigidbody.velocity = Vector3.zero;
     }
 }
