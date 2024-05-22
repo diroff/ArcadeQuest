@@ -34,6 +34,11 @@ public abstract class Bonus : MonoBehaviour, IInteractable
         Destroy(gameObject);
     }
 
+    private void OnDestroy()
+    {
+        StopBonus();
+    }
+
     public virtual void Interact(Player player)
     {
         BonusTaked?.Invoke(gameObject.name);
