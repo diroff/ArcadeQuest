@@ -13,19 +13,16 @@ public class Waypoint : MonoBehaviour
 
     public void DoEnterAction()
     {
-        Debug.Log("Enter action:" + gameObject);
         _enterAction?.Invoke();
     }
 
     public void DoWaitAction()
     {
-        Debug.Log("Wait action:" + gameObject);
         _waitAction?.Invoke();
     }
 
     public void DoExitAction()
     {
-        Debug.Log("Exit action:" + gameObject);
         _exitAction?.Invoke();
     }
 }
