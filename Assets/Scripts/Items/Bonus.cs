@@ -29,14 +29,20 @@ public abstract class Bonus : MonoBehaviour, IInteractable
         _meshRenderer = GetComponent<MeshRenderer>();
     }
 
+    protected virtual void Start()
+    {
+        StartCoroutine(WaitBeforeEnabled());
+    }
+
     public void Collect()
     {
         Destroy(gameObject);
     }
 
-    private void OnDestroy()
+    private IEnumerator WaitBeforeEnabled()
     {
-        StopBonus();
+        yield return new WaitForSeconds(0.1f);
+        _boxCollider.enabled = true;
     }
 
     public virtual void Interact(Player player)
