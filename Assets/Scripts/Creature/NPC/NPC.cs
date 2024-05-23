@@ -67,6 +67,7 @@ public class NPC : Creature
         _destinationPoint.DoWaitAction();
         yield return new WaitForSeconds(_destinationPoint.WaitTime);
         _destinationPoint.DoExitAction();
+        yield return new WaitForSeconds(0.5f); // for switch animations
         _destinationPoint = null;
 
         StartState(DoPatrol());
