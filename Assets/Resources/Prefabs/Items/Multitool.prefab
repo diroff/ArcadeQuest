@@ -120,7 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isRotating: 1
-  _speed: 90
+  _isScaling: 1
+  _rotatingSpeed: 75
+  _scalingSpeed: 0.5
+  _maxScaleMultiplier: 1.5
 --- !u!114 &7484853555973127203
 MonoBehaviour:
   m_ObjectHideFlags: 0
