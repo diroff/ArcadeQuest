@@ -124,7 +124,7 @@ MonoBehaviour:
   _isScaling: 1
   _rotatingSpeed: 75
   _scalingSpeed: 0.5
-  _maxScaleMultiplier: 1.5
+  _maxScaleMultiplier: 1.05
 --- !u!114 &8835572937379599640
 MonoBehaviour:
   m_ObjectHideFlags: 0
