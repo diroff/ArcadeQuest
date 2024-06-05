@@ -12,6 +12,6 @@ public class CarDestroyer : MonoBehaviour
         if (car == null)
             return;
 
-        Destroy(car.gameObject);
+        car.DestroyCar();
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
 {
-    [SerializeField] private List<Car> _cars;
+    [SerializeField] private CarPool _carPool;
 
     [SerializeField] private float _spawnDelay = 2f;
 
@@ -50,11 +50,7 @@ public class CarSpawner : MonoBehaviour
         if (_currentTime < _spawnDelay)
             return;
 
-        int carNumber = Random.Range(0, _cars.Count);
-
-        var car = Instantiate(_cars[carNumber], transform.position, transform.rotation);
-        car.SetSpawner(this);
-
+        _carPool.SpawnFromPool(transform.position, transform.localRotation, this);
         _currentTime = 0;
     }
 }

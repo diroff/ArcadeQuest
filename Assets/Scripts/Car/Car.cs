@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Car : MonoBehaviour, IMoveableController
@@ -16,16 +17,20 @@ public class Car : MonoBehaviour, IMoveableController
     private bool _isMoving = true;
     private bool _isIndependent = false;
 
+    public UnityAction<Car> CarWasDestroyed;
+
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _currentMovementSpeed = _baseMovementSpeed;
     }
 
-    private void Start()
+    private void OnEnable()
     {
         if (_spawner == null)
             _isIndependent = true;
+        else
+            _isIndependent = false;
     }
 
     private void FixedUpdate()
@@ -48,6 +53,14 @@ public class Car : MonoBehaviour, IMoveableController
 
          _movementVelocity = _moveDirection;
         _rigidbody.velocity = _movementVelocity;
+    }
+
+    public void DestroyCar()
+    {
+        CarWasDestroyed?.Invoke(this);
+
+        if (_isIndependent)
+            Destroy(gameObject);
     }
 
     public void SetSpawner(CarSpawner spawner)
