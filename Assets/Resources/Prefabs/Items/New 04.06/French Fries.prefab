@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7479515015279054330}
   - component: {fileID: 5792553614654800479}
   - component: {fileID: 8613063487326221973}
-  - component: {fileID: 5738430307084327961}
   - component: {fileID: 6869868232799659873}
   - component: {fileID: -369937005939498146}
   - component: {fileID: -8548716010079603898}
@@ -87,28 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5738430307084327961
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7820293957289039680}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7141986200231653785, guid: 5d95d39281f6d3b4aad03b6929480e52, type: 3}
 --- !u!65 &6869868232799659873
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -145,8 +122,8 @@ MonoBehaviour:
   _isRotating: 1
   _isScaling: 1
   _rotatingSpeed: 75
-  _scalingSpeed: 0.5
-  _maxScaleMultiplier: 1.5
+  _scalingSpeed: 0.25
+  _maxScaleMultiplier: 1.3
 --- !u!114 &-8548716010079603898
 MonoBehaviour:
   m_ObjectHideFlags: 0

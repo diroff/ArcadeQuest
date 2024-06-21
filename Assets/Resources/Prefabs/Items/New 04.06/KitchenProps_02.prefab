@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8547312327611020277}
   - component: {fileID: 5871233828508567359}
   - component: {fileID: 4386852850664008332}
-  - component: {fileID: 4353052359484533863}
   - component: {fileID: 7546225989543608770}
   - component: {fileID: 4658167758753679313}
   m_Layer: 0
@@ -108,27 +107,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.37966746, y: 0.05921105, z: 0.67571205}
   m_Center: {x: -0.000608556, y: -0.008607993, z: -0.22971806}
---- !u!65 &4353052359484533863
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5366650831601739498}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.37966746, y: 0.05921105, z: 0.67571205}
-  m_Center: {x: -0.000608556, y: -0.008607993, z: -0.22971806}
 --- !u!114 &7546225989543608770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,8 +122,8 @@ MonoBehaviour:
   _isRotating: 1
   _isScaling: 1
   _rotatingSpeed: 75
-  _scalingSpeed: 0.5
-  _maxScaleMultiplier: 1.5
+  _scalingSpeed: 0.25
+  _maxScaleMultiplier: 1.3
 --- !u!114 &4658167758753679313
 MonoBehaviour:
   m_ObjectHideFlags: 0
