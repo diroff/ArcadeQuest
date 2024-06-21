@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7676795349321846310}
   - component: {fileID: 5957194526641398954}
   - component: {fileID: 6568633916780454685}
-  - component: {fileID: 2888774472848984908}
   - component: {fileID: 6590048646146171603}
+  - component: {fileID: -3299200024312920200}
   m_Layer: 0
   m_Name: Hot Dog
   m_TagString: Untagged
@@ -125,27 +125,6 @@ MonoBehaviour:
   _collisionLayerMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!65 &2888774472848984908
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181220566361747443}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.13919328, y: 0.14863539, z: 0.3998503}
-  m_Center: {x: -0.014732329, y: 0.07431769, z: 0.00021275133}
 --- !u!54 &6590048646146171603
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -173,3 +152,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 0
+--- !u!64 &-3299200024312920200
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8181220566361747443}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2724565264121733829, guid: 0ab566d89db2bf74e9531cc927c63bb3, type: 3}

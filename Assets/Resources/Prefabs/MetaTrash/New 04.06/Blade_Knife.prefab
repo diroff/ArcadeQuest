@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8225285047278649225}
   - component: {fileID: 401689740996493222}
   - component: {fileID: -929926293308812058}
-  - component: {fileID: -2304932462294540448}
   - component: {fileID: -7885788726662040288}
+  - component: {fileID: 5481812283246233212}
   m_Layer: 0
   m_Name: Blade_Knife
   m_TagString: Untagged
@@ -125,27 +125,6 @@ MonoBehaviour:
   _collisionLayerMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!65 &-2304932462294540448
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7577000004406976092}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.07994751, y: 0.28344327, z: 0.017228393}
-  m_Center: {x: 0.002454225, y: 0.14226902, z: 0.0018618775}
 --- !u!54 &-7885788726662040288
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -173,3 +152,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 0
+--- !u!64 &5481812283246233212
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577000004406976092}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4416874170662179375, guid: 00f028843b1c0c64d84503edad43858d, type: 3}

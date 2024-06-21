@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 455744}
   - component: {fileID: 3369110}
   - component: {fileID: 2397418}
-  - component: {fileID: 6438024}
+  - component: {fileID: -5026871674711251753}
+  - component: {fileID: 710583682957857777}
+  - component: {fileID: 8504382784440645077}
   m_Layer: 0
   m_Name: Mug
   m_TagString: Untagged
@@ -84,14 +86,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6438024
+--- !u!54 &-5026871674711251753
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108274}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &710583682957857777
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108274}
-  m_Material: {fileID: 13400000, guid: 81e91c1b1b2ef0f47b5f1f601e6c3609, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -103,6 +132,22 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300182, guid: 8635ad619200dd0488f99cbb185e8363, type: 3}
+--- !u!114 &8504382784440645077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c2be777b3c5574698de6329186b2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxAngularVelocity: 1
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 8

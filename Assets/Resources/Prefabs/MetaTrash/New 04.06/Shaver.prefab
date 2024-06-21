@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8533790345505083790}
   - component: {fileID: 1277911648261234180}
   - component: {fileID: -8939917371950953212}
-  - component: {fileID: -3006496510634627585}
   - component: {fileID: -6808256761627906821}
+  - component: {fileID: 2475557361924377021}
   m_Layer: 0
   m_Name: Shaver
   m_TagString: Untagged
@@ -125,27 +125,6 @@ MonoBehaviour:
   _collisionLayerMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!65 &-3006496510634627585
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7885487846274019419}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.07344149, y: 0.2748056, z: 0.08165092}
-  m_Center: {x: 0.00042769313, y: 0.13691145, z: 0.0063135624}
 --- !u!54 &-6808256761627906821
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -173,3 +152,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 0
+--- !u!64 &2475557361924377021
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885487846274019419}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1571980821993814540, guid: 7113a222d86cd1c49a47ce6bdc15f81c, type: 3}

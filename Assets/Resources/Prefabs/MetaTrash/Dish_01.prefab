@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4606709085943526}
   - component: {fileID: 33601467263623922}
   - component: {fileID: 23188203334050400}
-  - component: {fileID: 95845639083938650}
-  - component: {fileID: 136140940490912472}
+  - component: {fileID: -4397819738742028879}
+  - component: {fileID: 4039920565456192692}
+  - component: {fileID: 4405077883653749136}
   m_Layer: 0
   m_Name: Dish_01
   m_TagString: Untagged
@@ -85,29 +86,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &95845639083938650
-Animator:
-  serializedVersion: 5
+--- !u!54 &-4397819738742028879
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317359274629748}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c4b3acfb672a1af4f93ef53f0b720e69, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!136 &136140940490912472
-CapsuleCollider:
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4039920565456192692
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -124,8 +131,23 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.11106247
-  m_Height: 0.016851954
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.0000000023283064, z: 0}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: c4b3acfb672a1af4f93ef53f0b720e69, type: 3}
+--- !u!114 &4405077883653749136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317359274629748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c2be777b3c5574698de6329186b2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxAngularVelocity: 1
+  _collisionLayerMask:
+    serializedVersion: 2
+    m_Bits: 8

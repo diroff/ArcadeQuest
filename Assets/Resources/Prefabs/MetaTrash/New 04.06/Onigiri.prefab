@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6285696767658125967}
   - component: {fileID: 290427765019022966}
   - component: {fileID: -8279923110520655591}
-  - component: {fileID: -3369725886459058126}
   - component: {fileID: -1696613463862186167}
+  - component: {fileID: 6576566930550204289}
   m_Layer: 0
   m_Name: Onigiri
   m_TagString: Untagged
@@ -103,27 +103,6 @@ MonoBehaviour:
   _collisionLayerMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!65 &-3369725886459058126
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034246662423880362}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.6148415, y: 1.4847113, z: 0.7870393}
-  m_Center: {x: 0, y: 0.1710524, z: 0.000000014901161}
 --- !u!54 &-1696613463862186167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -151,3 +130,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 0
+--- !u!64 &6576566930550204289
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034246662423880362}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3695663513024813939, guid: 0647694be20423c43981f4ab093c53dd, type: 3}

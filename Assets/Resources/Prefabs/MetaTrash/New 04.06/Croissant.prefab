@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7521752445149409706}
   - component: {fileID: 5784840260716452646}
   - component: {fileID: -3664073981933314047}
-  - component: {fileID: -6980641004260642460}
   - component: {fileID: -4385713965008496573}
+  - component: {fileID: -7831905667163961585}
   m_Layer: 0
   m_Name: Croissant
   m_TagString: Untagged
@@ -125,27 +125,6 @@ MonoBehaviour:
   _collisionLayerMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!65 &-6980641004260642460
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8314310730893611135}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3311085, y: 0.16648111, z: 0.3361097}
-  m_Center: {x: -0.02918306, y: 0.06491436, z: 0.022817247}
 --- !u!54 &-4385713965008496573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -173,3 +152,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 0
+--- !u!64 &-7831905667163961585
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8314310730893611135}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7151485785541977250, guid: 8b79a0c93725533418273cc7f407df16, type: 3}
