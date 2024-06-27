@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Meta6.unity
     guid: d7c41d8a2dc200242bc84c585dd2dad6
+  - enabled: 1
+    path: Assets/Scenes/TestObjects.unity
+    guid: ace930e85056e40448847e0a63c32704
   m_configObjects: {}

@@ -44,6 +44,8 @@ public class AdIronSourceLoader : MonoBehaviour
     {
         IronSource.Agent.init(_apiKey);
         IronSource.Agent.validateIntegration();
+
+        Debug.Log("Ad was load with user id:" + IronSource.Agent.getAdvertiserId());
     }
 
     private void OnApplicationPause(bool pause)
