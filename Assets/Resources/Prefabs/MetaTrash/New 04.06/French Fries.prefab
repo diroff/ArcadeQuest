@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5738430307084327961}
   - component: {fileID: 1826227472884311769}
   - component: {fileID: 5550019020517452162}
-  - component: {fileID: -1286992930087386388}
   m_Layer: 0
   m_Name: French Fries
   m_TagString: Untagged
@@ -152,25 +151,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 0
---- !u!64 &-1286992930087386388
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7820293957289039680}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7141986200231653785, guid: 5d95d39281f6d3b4aad03b6929480e52, type: 3}

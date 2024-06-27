@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6248521584608075637}
   - component: {fileID: 7993047766225947569}
   - component: {fileID: -3463481779325923968}
-  - component: {fileID: -181045833053768334}
   m_Layer: 0
   m_Name: Blueberry Jam
   m_TagString: Untagged
@@ -152,25 +151,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 0
---- !u!64 &-181045833053768334
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8471984861038302252}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5508885858934291763, guid: bb9ed90964bdd324f849d3012774e39e, type: 3}
