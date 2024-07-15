@@ -1,9 +1,11 @@
 <dependencies>
   <packages>
     <package>com.google.android.gms:play-services-ads:22.5.0</package>
+    <package>com.google.android.gms:play-services-ads:23.0.0</package>
     <package>com.google.android.gms:play-services-ads-identifier:18.0.1</package>
     <package>com.google.android.gms:play-services-basement:18.1.0</package>
     <package>com.google.android.ump:user-messaging-platform:2.1.0</package>
+    <package>com.ironsource.adapters:admobadapter:4.3.43</package>
     <package>com.ironsource.sdk:mediationsdk:8.2.0</package>
     <package>com.ironsource:adqualitysdk:7.20.1</package>
     <package>com.yandex.android:mobmetricalib:5.2.0</package>
