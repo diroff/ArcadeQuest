@@ -4,7 +4,7 @@ using UnityEngine;
 public class UIMetaLevelItems : MonoBehaviour
 {
     [SerializeField] private UIMetaItemSlot _slotPrefab;
-    [SerializeField] private Meta _meta;
+    [SerializeField] private MetaItems _meta;
 
     private List<UIMetaItemSlot> _slots = new List<UIMetaItemSlot>();
     private List<MetaItem> _items = new List<MetaItem>();

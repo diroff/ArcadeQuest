@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Meta : MonoBehaviour
+public class MetaItems : MonoBehaviour
 {
     [SerializeField] private List<MetaItem> _items;
     [SerializeField] private MetaSlotPanel _slotPanel;

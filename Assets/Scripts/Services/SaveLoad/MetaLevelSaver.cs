@@ -4,7 +4,7 @@ public class MetaLevelSaver : MonoBehaviour
 {
     [SerializeField] private LevelLoading _levelLoading;
     [SerializeField] private CurrentLevelData _levelData;
-    [SerializeField] private Meta _meta;
+    [SerializeField] private MetaItems _meta;
 
     private void OnEnable()
     {
