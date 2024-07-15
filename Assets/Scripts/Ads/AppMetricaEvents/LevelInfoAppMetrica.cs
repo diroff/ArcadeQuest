@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelInfoAppMetrica : MonoBehaviour
 {
-    [SerializeField] private LevelTimer _levelTimer;
+    [SerializeField] private Timer _levelTimer;
 
     private string _eventName;
 
@@ -13,12 +13,12 @@ public class LevelInfoAppMetrica : MonoBehaviour
 
     private void OnEnable()
     {
-        _levelTimer.LevelEndedWithTime += SendEndData;
+        _levelTimer.TimerEnded += SendEndData;
     }
 
     private void OnDisable()
     {
-        _levelTimer.LevelEndedWithTime -= SendEndData;
+        _levelTimer.TimerEnded -= SendEndData;
     }
 
     private void Start()
@@ -35,6 +35,7 @@ public class LevelInfoAppMetrica : MonoBehaviour
 
         string levelStartInfo = $"{_eventName} : {_startData.LevelName}";
 
+        Debug.Log(levelStartInfo);
         AppMetrica.Instance.ReportEvent(levelStartInfo);
     }
 
@@ -46,7 +47,7 @@ public class LevelInfoAppMetrica : MonoBehaviour
         _endData.LevelName = SceneManager.GetActiveScene().name;
         _endData.LevelTime = time;
 
-        string levelEndInfo = $"{_eventName} : {_endData.LevelName}:{_endData.LevelTime} seconds";
+        string levelEndInfo = $"{_eventName} : {_endData.LevelName} : {_endData.LevelTime} seconds";
 
         Debug.Log(levelEndInfo);
         AppMetrica.Instance.ReportEvent(levelEndInfo);
