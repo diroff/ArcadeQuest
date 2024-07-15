@@ -6,7 +6,7 @@ public class LevelInfoAppMetrica : MonoBehaviour
 {
     [SerializeField] private LevelTimer _levelTimer;
 
-    private string _eventName = "LevelStarted";
+    private string _eventName;
 
     private LevelStartData _startData;
     private LevelEndData _endData;
@@ -28,6 +28,8 @@ public class LevelInfoAppMetrica : MonoBehaviour
 
     public void SendStartData()
     {
+        _eventName = "LevelStarted";
+
         _startData = new LevelStartData();
         _startData.LevelName = SceneManager.GetActiveScene().name;
 
@@ -38,11 +40,15 @@ public class LevelInfoAppMetrica : MonoBehaviour
 
     public void SendEndData(float time)
     {
+        _eventName = "LevelFinished";
+
         _endData = new LevelEndData();
         _endData.LevelName = SceneManager.GetActiveScene().name;
+        _endData.LevelTime = time;
 
-        string levelEndInfo = $"{_eventName} : {_endData.LevelName}";
+        string levelEndInfo = $"{_eventName} : {_endData.LevelName}:{_endData.LevelTime} seconds";
 
+        Debug.Log(levelEndInfo);
         AppMetrica.Instance.ReportEvent(levelEndInfo);
     }
 }
