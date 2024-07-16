@@ -5,8 +5,10 @@ using UnityEngine.Events;
 public class Item : MonoBehaviour, IInteractable
 {
     [SerializeField] private Sprite _icon;
+    [SerializeField] private AutoGUID _guid;
 
     private bool _isCollected = false;
+    private BoxCollider _boxCollider;
 
     public Sprite Icon => _icon;
     public bool IsCollected => _isCollected;
@@ -14,11 +16,14 @@ public class Item : MonoBehaviour, IInteractable
     public UnityAction ItemWasCollected;
     public UnityAction<string> ItemWasCollectedWithName;
 
-    private BoxCollider _boxCollider;
+    public string GUID => _guid.GUID;
 
     private void Awake()
     {
         _boxCollider = GetComponent<BoxCollider>();
+
+        if (_guid == null)
+            _guid = gameObject.AddComponent<AutoGUID>();
     }
 
     public virtual void Interact(Player player)
@@ -32,7 +37,8 @@ public class Item : MonoBehaviour, IInteractable
         _boxCollider.enabled = false;
 
         ItemWasCollected?.Invoke();
-        ItemWasCollectedWithName?.Invoke(gameObject.name);
+        ItemWasCollectedWithName?.Invoke(_guid.GUID);
+        Debug.Log("Was collected:" + _guid.GUID);
         _isCollected = true;
 
         Destroy(gameObject);

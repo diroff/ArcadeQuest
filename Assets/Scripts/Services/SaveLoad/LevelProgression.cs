@@ -7,10 +7,8 @@ public class LevelProgression : MonoBehaviour
     public const string Key = "LevelProgression";
 
     [SerializeField] private CurrentLevelData _currentLevelData;
-
     [SerializeField] private LevelItems _levelItems;
     [SerializeField] private LevelBonuses _levelBonuses;
-
     [SerializeField] private Player _player;
     [SerializeField] private Camera _camera;
 
@@ -25,8 +23,8 @@ public class LevelProgression : MonoBehaviour
         {
             if (data == default)
                 FirstLevelSave(SceneManager.GetActiveScene().name);
-
-            Load();
+            else
+                _levelData = data;
         });
 
         if (_levelData.Level != SceneManager.GetActiveScene().name)
@@ -42,8 +40,8 @@ public class LevelProgression : MonoBehaviour
         foreach (var item in _levelItems.Items)
             item.ItemWasCollectedWithName += SaveCollectedItem;
 
-        foreach (var item in _levelBonuses.Bonuses)
-            item.BonusTaked += SaveCollectedBonus;
+        foreach (var bonus in _levelBonuses.Bonuses)
+            bonus.BonusTaked += SaveCollectedBonus;
     }
 
     private void OnDisable()
@@ -51,8 +49,8 @@ public class LevelProgression : MonoBehaviour
         foreach (var item in _levelItems.Items)
             item.ItemWasCollectedWithName -= SaveCollectedItem;
 
-        foreach (var item in _levelBonuses.Bonuses)
-            item.BonusTaked -= SaveCollectedBonus;
+        foreach (var bonus in _levelBonuses.Bonuses)
+            bonus.BonusTaked -= SaveCollectedBonus;
     }
 
     private void Start()
@@ -68,16 +66,18 @@ public class LevelProgression : MonoBehaviour
 
     private void DestroyCollectedItems()
     {
-        if (_levelData.CollectedItems != null || _levelData.CollectedItems.Count != 0)
+        // Удаляем собранные предметы
+        foreach (var item in _levelItems.Items)
         {
-            foreach (var item in _levelData.CollectedItems)
-                GameObject.Find(item).GetComponent<Item>().Collect();
+            if (_levelData.CollectedItems.Contains(item.GUID))
+                item.Collect();
         }
 
-        if(_levelData.CollectedBonus != null || _levelData.CollectedBonus.Count != 0)
+        // Удаляем собранные бонусы
+        foreach (var bonus in _levelBonuses.Bonuses)
         {
-            foreach (var item in _levelData.CollectedBonus)
-                GameObject.Find(item).GetComponent<Bonus>().Collect();
+            if (_levelData.CollectedBonus.Contains(bonus.GUID))
+                bonus.Collect();
         }
     }
 
@@ -105,12 +105,12 @@ public class LevelProgression : MonoBehaviour
         _camera.transform.localRotation = new Quaternion(rotation.x, rotation.y, rotation.z, rotation.w);
     }
 
-    public void SaveCollectedItem(string itemName)
+    public void SaveCollectedItem(string itemGUID)
     {
-        if (_levelData.CollectedItems.Contains(itemName))
+        if (_levelData.CollectedItems.Contains(itemGUID))
             return;
 
-        _levelData.CollectedItems.Add(itemName);
+        _levelData.CollectedItems.Add(itemGUID);
 
         SavePlayerPlacement();
         SaveCameraPlacement();
@@ -118,12 +118,12 @@ public class LevelProgression : MonoBehaviour
         _storageService.Save(Key, _levelData);
     }
 
-    public void SaveCollectedBonus(string bonusName)
+    public void SaveCollectedBonus(string bonusGUID)
     {
-        if (_levelData.CollectedBonus.Contains(bonusName))
+        if (_levelData.CollectedBonus.Contains(bonusGUID))
             return;
 
-        _levelData.CollectedBonus.Add(bonusName);
+        _levelData.CollectedBonus.Add(bonusGUID);
 
         SavePlayerPlacement();
         SaveCameraPlacement();
@@ -133,32 +133,38 @@ public class LevelProgression : MonoBehaviour
 
     private void SavePlayerPlacement()
     {
-        _levelData.PlayerPosition = new CurrentPosition();
-        _levelData.PlayerRotation = new CurrentRotation();
+        _levelData.PlayerPosition = new CurrentPosition
+        {
+            x = _player.gameObject.transform.position.x,
+            y = _player.gameObject.transform.position.y,
+            z = _player.gameObject.transform.position.z
+        };
 
-        _levelData.PlayerPosition.x = _player.gameObject.transform.position.x;
-        _levelData.PlayerPosition.y = _player.gameObject.transform.position.y;
-        _levelData.PlayerPosition.z = _player.gameObject.transform.position.z;
-
-        _levelData.PlayerRotation.x = _player.gameObject.transform.rotation.x;
-        _levelData.PlayerRotation.y = _player.gameObject.transform.rotation.y;
-        _levelData.PlayerRotation.z = _player.gameObject.transform.rotation.z;
-        _levelData.PlayerRotation.w = _player.gameObject.transform.rotation.w;
+        _levelData.PlayerRotation = new CurrentRotation
+        {
+            x = _player.gameObject.transform.rotation.x,
+            y = _player.gameObject.transform.rotation.y,
+            z = _player.gameObject.transform.rotation.z,
+            w = _player.gameObject.transform.rotation.w
+        };
     }
 
     private void SaveCameraPlacement()
     {
-        _levelData.CameraPosition = new CurrentPosition();
-        _levelData.CameraRotation = new CurrentRotation();
+        _levelData.CameraPosition = new CurrentPosition
+        {
+            x = _camera.gameObject.transform.position.x,
+            y = _camera.gameObject.transform.position.y,
+            z = _camera.gameObject.transform.position.z
+        };
 
-        _levelData.CameraPosition.x = _camera.gameObject.transform.position.x;
-        _levelData.CameraPosition.y = _camera.gameObject.transform.position.y;
-        _levelData.CameraPosition.z = _camera.gameObject.transform.position.z;
-
-        _levelData.CameraRotation.x = _camera.gameObject.transform.rotation.x;
-        _levelData.CameraRotation.y = _camera.gameObject.transform.rotation.y;
-        _levelData.CameraRotation.z = _camera.gameObject.transform.rotation.z;
-        _levelData.CameraRotation.w = _camera.gameObject.transform.rotation.w;
+        _levelData.CameraRotation = new CurrentRotation
+        {
+            x = _camera.gameObject.transform.rotation.x,
+            y = _camera.gameObject.transform.rotation.y,
+            z = _camera.gameObject.transform.rotation.z,
+            w = _camera.gameObject.transform.rotation.w
+        };
     }
 
     public void Load()
@@ -171,21 +177,23 @@ public class LevelProgression : MonoBehaviour
 
     public void FirstLevelSave(string sceneName)
     {
-        CurrentLevel level = new CurrentLevel();
+        CurrentLevel level = new CurrentLevel
+        {
+            LevelName = sceneName
+        };
 
-        level.LevelName = sceneName;
         _currentLevelData.Save(sceneName);
 
-        LevelProgress levelProgress = new LevelProgress();
-        levelProgress.Level = sceneName;
-
-        levelProgress.CollectedItems = new List<string>();
-        levelProgress.CollectedBonus = new List<string>();
-
-        levelProgress.PlayerPosition = null;
-        levelProgress.PlayerRotation = null;
-        levelProgress.CameraPosition = null;
-        levelProgress.CameraRotation = null;
+        LevelProgress levelProgress = new LevelProgress
+        {
+            Level = sceneName,
+            CollectedItems = new List<string>(),
+            CollectedBonus = new List<string>(),
+            PlayerPosition = null,
+            PlayerRotation = null,
+            CameraPosition = null,
+            CameraRotation = null
+        };
 
         _storageService.Save(Key, levelProgress);
     }
@@ -202,7 +210,7 @@ public class LevelProgress
     public string Level;
     public List<string> CollectedItems = new List<string>();
     public List<string> CollectedBonus = new List<string>();
-    
+
     public CurrentPosition PlayerPosition;
     public CurrentRotation PlayerRotation;
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8585264109818482341}
   - component: {fileID: 8605449453352531652}
   - component: {fileID: 1973303464883205347}
+  - component: {fileID: -7106379815751561076}
   m_Layer: 0
   m_Name: Chocolate Bar
   m_TagString: Untagged
@@ -139,6 +140,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 6fe94bd25caf93d47806d088850ba353, type: 3}
+  _guid: {fileID: -7106379815751561076}
+--- !u!114 &-7106379815751561076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701316177915128046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80838ff9336f530449b5dab0151e973d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _guid: bffe0d72-52a3-4820-be4f-5ee42359b1b1
 --- !u!1001 &8704891116710654416
 PrefabInstance:
   m_ObjectHideFlags: 0
