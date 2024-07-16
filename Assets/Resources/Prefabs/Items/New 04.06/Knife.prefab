@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isRotating: 1
   _isScaling: 1
+  _rotationAxis: {x: 0, y: 0, z: 1}
   _rotatingSpeed: 75
   _scalingSpeed: 0.25
   _maxScaleMultiplier: 1.3
