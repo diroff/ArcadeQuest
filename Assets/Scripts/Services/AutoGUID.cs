@@ -16,7 +16,9 @@ public class AutoGUID : MonoBehaviour
         {
             if (string.IsNullOrEmpty(_guid))
             {
+#if UNITY_EDITOR
                 _guid = GenerateUniqueGUID();
+#endif
             }
             return _guid;
         }
@@ -25,21 +27,18 @@ public class AutoGUID : MonoBehaviour
 
     private void Awake()
     {
+#if UNITY_EDITOR
         if (string.IsNullOrEmpty(_guid))
         {
             _guid = GenerateUniqueGUID();
         }
-    }
-
-    public void SetGUID(string GUID)
-    {
-        _guid = GUID;
+#endif
     }
 
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        if (string.IsNullOrEmpty(_guid))
+        if (string.IsNullOrEmpty(_guid) || !IsGUIDUnique(_guid))
         {
             _guid = GenerateUniqueGUID();
             EditorUtility.SetDirty(this);
@@ -48,6 +47,11 @@ public class AutoGUID : MonoBehaviour
                 EditorSceneManager.MarkSceneDirty(gameObject.scene);
             }
         }
+    }
+
+    public void SetGUID(string GUID)
+    {
+        _guid = GUID;
     }
 
     private string GenerateUniqueGUID()
@@ -66,7 +70,7 @@ public class AutoGUID : MonoBehaviour
         AutoGUID[] allAutoGUIDs = FindObjectsOfType<AutoGUID>();
         foreach (AutoGUID autoGUID in allAutoGUIDs)
         {
-            if (autoGUID != this && autoGUID._guid == guidToCheck)
+            if (autoGUID != this && autoGUID.GUID == guidToCheck)
             {
                 return false;
             }
