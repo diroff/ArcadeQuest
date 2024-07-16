@@ -6,6 +6,8 @@ public class AnimationScript : MonoBehaviour
     [SerializeField] private bool _isRotating = true;
     [SerializeField] private bool _isScaling = true;
 
+    [SerializeField] private Vector3 _rotationAxis = Vector3.up;
+
     [SerializeField] private float _rotatingSpeed = 75f;
     [SerializeField] private float _scalingSpeed = 0.5f;
     [SerializeField] private float _maxScaleMultiplier = 1.5f;
@@ -54,7 +56,7 @@ public class AnimationScript : MonoBehaviour
 
     private void RotateObjectOnceTime()
     {
-        transform.Rotate(Vector3.up, _rotatingSpeed * Time.deltaTime, Space.Self);
+        transform.Rotate(_rotationAxis, _rotatingSpeed * Time.deltaTime, Space.Self);
     }
 
     private void ScaleObjectOnceTime()
