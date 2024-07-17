@@ -98,11 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c47cb9df2ebc846aa210f123547154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemId: 3
-  _itemIcon: {fileID: 21300000, guid: 2592bff444f611941b9147886d2dec64, type: 3}
+  _itemId: 14
+  _itemIcon: {fileID: 21300000, guid: 6fe94bd25caf93d47806d088850ba353, type: 3}
   _movingTime: 0.2
-  _positionOffset: {x: 0, y: 0, z: 0.2}
-  _rotationOnSlot: {x: 0, y: 0.043619387, z: 0, w: 0.99904823}
+  _positionOffset: {x: 0, y: 0, z: -0.6}
+  _rotationOnSlot: {x: 1.9106855e-15, y: 1, z: 0.00000004371139, w: -0.00000004371139}
   _maxAngularVelocity: 1
   _collisionLayerMask:
     serializedVersion: 2
