@@ -1,8 +1,7 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIItemPanel : MonoBehaviour
+public class UIItemPanel : MonoBehaviour // Combine with UIMetaItemsPanel!
 {
     [SerializeField] private int _maxItemsCount = 6;
 
@@ -26,7 +25,6 @@ public class UIItemPanel : MonoBehaviour
             UncenteringPanel();
     }
 
-    [ContextMenu("Center")]
     public void CenteringPanel()
     {
         _sizeFilter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
@@ -34,7 +32,6 @@ public class UIItemPanel : MonoBehaviour
         _transform.offsetMax = new Vector2(0, _transform.offsetMax.y);
     }
 
-    [ContextMenu("UnCenter")]
     public void UncenteringPanel()
     {
         _sizeFilter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;

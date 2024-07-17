@@ -3,7 +3,7 @@ using System.Net;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIItemSlot : MonoBehaviour
+public class UIItemSlot : MonoBehaviour //// Combine with UIMetaItemSlot!
 {
     [SerializeField] private Image _itemIcon;
 

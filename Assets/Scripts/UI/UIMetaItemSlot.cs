@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIMetaItemSlot : MonoBehaviour
+public class UIMetaItemSlot : MonoBehaviour // Combine with UIItemSlot!
 {
     [SerializeField] private Image _itemIcon;
     [SerializeField] private TextMeshProUGUI _itemCountText;
