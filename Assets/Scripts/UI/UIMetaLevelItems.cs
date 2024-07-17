@@ -4,6 +4,7 @@ using UnityEngine;
 public class UIMetaLevelItems : MonoBehaviour
 {
     [SerializeField] private UIMetaItemSlot _slotPrefab;
+    [SerializeField] private Transform _slotPlacement;
     [SerializeField] private MetaItems _meta;
 
     private List<UIMetaItemSlot> _slots = new List<UIMetaItemSlot>();
@@ -51,7 +52,7 @@ public class UIMetaLevelItems : MonoBehaviour
             items.Add(item);
         }
 
-        var itemSlot = Instantiate(_slotPrefab, transform);
+        var itemSlot = Instantiate(_slotPrefab, _slotPlacement);
         itemSlot.SetIcon(_items[0].ItemIcon);
         itemSlot.SetItemID(_items[0].ItemId);
         itemSlot.SetItemCount(itemCount);
