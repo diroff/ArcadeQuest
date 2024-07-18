@@ -38,7 +38,7 @@ public class LevelProgression : MonoBehaviour
     private void OnEnable()
     {
         foreach (var item in _levelItems.Items)
-            item.ItemWasCollectedWithID += SaveCollectedItem;
+            item.ItemWasCollectedWithSceneID += SaveCollectedItem;
 
         foreach (var bonus in _levelBonuses.Bonuses)
             bonus.BonusTaked += SaveCollectedBonus;
@@ -47,7 +47,7 @@ public class LevelProgression : MonoBehaviour
     private void OnDisable()
     {
         foreach (var item in _levelItems.Items)
-            item.ItemWasCollectedWithID -= SaveCollectedItem;
+            item.ItemWasCollectedWithSceneID -= SaveCollectedItem;
 
         foreach (var bonus in _levelBonuses.Bonuses)
             bonus.BonusTaked -= SaveCollectedBonus;

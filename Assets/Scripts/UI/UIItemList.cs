@@ -27,13 +27,13 @@ public class UIItemList : MonoBehaviour
     private void OnEnable()
     {
         foreach (var item in _levelItems.Items)
-            item.ItemWasCollectedWithID += ItemPanelRefresh;
+            item.ItemWasCollectedWithPrefabID += ItemPanelRefresh;
     }
 
     private void OnDisable()
     {
         foreach (var item in _levelItems.Items)
-            item.ItemWasCollectedWithID -= ItemPanelRefresh;
+            item.ItemWasCollectedWithPrefabID -= ItemPanelRefresh;
     }
 
     private void Start()

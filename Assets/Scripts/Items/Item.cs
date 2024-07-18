@@ -18,7 +18,8 @@ public class Item : MonoBehaviour, IInteractable
     public bool IsCollected => _isCollected;
 
     public UnityAction ItemWasCollected;
-    public UnityAction<int> ItemWasCollectedWithID;
+    public UnityAction<int> ItemWasCollectedWithSceneID;
+    public UnityAction<int> ItemWasCollectedWithPrefabID;
 
     private void Awake()
     {
@@ -36,7 +37,8 @@ public class Item : MonoBehaviour, IInteractable
         _boxCollider.enabled = false;
 
         ItemWasCollected?.Invoke();
-        ItemWasCollectedWithID?.Invoke(_id);
+        ItemWasCollectedWithSceneID?.Invoke(_id);
+        ItemWasCollectedWithPrefabID?.Invoke(_prefabID);
         _isCollected = true;
 
         Destroy(gameObject);
