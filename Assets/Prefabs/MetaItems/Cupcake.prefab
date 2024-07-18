@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemId: 4
-  _itemIcon: {fileID: 21300000, guid: eb234633021d66e489f679d60700a485, type: 3}
+  _itemIcon: {fileID: 21300000, guid: 3faf9a418b052e14bb46b257d02348b3, type: 3}
   _movingTime: 0.2
   _positionOffset: {x: 0.2, y: 0, z: 0.25}
   _rotationOnSlot: {x: 0, y: 0.008726535, z: 0, w: 0.9999619}

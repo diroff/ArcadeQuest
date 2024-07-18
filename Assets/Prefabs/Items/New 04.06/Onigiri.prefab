@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f322b0192dc4a044e9f650e6329edfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: 90975af81ce78fd41a2da3a9c306076c, type: 3}
+  _icon: {fileID: 21300000, guid: 5eedc4ddd13e20347bb96f984cbe7b4b, type: 3}
   _guid: {fileID: 7932940484421140164}
 --- !u!114 &7932940484421140164
 MonoBehaviour:

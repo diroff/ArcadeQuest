@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f322b0192dc4a044e9f650e6329edfe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: 8265d7098f4ed584d9747dbfefc881dc, type: 3}
+  _icon: {fileID: 21300000, guid: a0a882bd610cba4488cf560b55768632, type: 3}
   _guid: {fileID: 3586560341085561437}
 --- !u!114 &3586560341085561437
 MonoBehaviour:
