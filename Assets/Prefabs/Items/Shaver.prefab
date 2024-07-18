@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -3006496510634627585}
   - component: {fileID: 6814797996686302176}
   - component: {fileID: -6448636942706757936}
-  - component: {fileID: 475708123965446834}
   m_Layer: 0
   m_Name: Shaver
   m_TagString: Untagged
@@ -140,21 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 976294203364e054cb9b97478710b94a, type: 3}
-  _guid: {fileID: 475708123965446834}
+  _id: 0
   _prefabID: 27
---- !u!114 &475708123965446834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7885487846274019419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80838ff9336f530449b5dab0151e973d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _guid: ba5d1209-ceac-4e9b-bf9e-7702921c5347
 --- !u!1001 &4355721892329081738
 PrefabInstance:
   m_ObjectHideFlags: 0

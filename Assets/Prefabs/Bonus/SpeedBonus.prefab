@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8612102773197399629}
   - component: {fileID: 6600857922063973006}
   - component: {fileID: 8939056586391772504}
-  - component: {fileID: -190751662524855101}
   m_Layer: 0
   m_Name: SpeedBonus
   m_TagString: Untagged
@@ -123,7 +122,7 @@ MonoBehaviour:
   Value: 5
   BonusTime: 7
   Icon: {fileID: 21300000, guid: 5eda94a9dcf71e445ad17e3c065d1460, type: 3}
-  _guid: {fileID: -190751662524855101}
+  _id: 0
   BonusStarted:
     m_PersistentCalls:
       m_Calls: []
@@ -149,16 +148,3 @@ MonoBehaviour:
   _bonusIndicatorPrefab: {fileID: 4205207918023221198, guid: 7b4343d33a6bdb646803c4e9425277aa,
     type: 3}
   _uiPlacement: {fileID: 0}
---- !u!114 &-190751662524855101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5242382290484765579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80838ff9336f530449b5dab0151e973d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _guid: 44123358-7f4f-45d7-96df-ab3c586409a8

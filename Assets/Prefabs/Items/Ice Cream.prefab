@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2769901265409699135}
   - component: {fileID: 2093880026826329744}
   - component: {fileID: 8584400646876222080}
-  - component: {fileID: -8240513614795874875}
   m_Layer: 0
   m_Name: Ice Cream
   m_TagString: Untagged
@@ -140,21 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 5152b8468cdd4544090de56c12f164fe, type: 3}
-  _guid: {fileID: -8240513614795874875}
+  _id: 0
   _prefabID: 20
---- !u!114 &-8240513614795874875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086235619782962548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80838ff9336f530449b5dab0151e973d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _guid: 76592324-b4f1-4e7c-909a-1bbda9a56af0
 --- !u!1001 &794739221033438950
 PrefabInstance:
   m_ObjectHideFlags: 0

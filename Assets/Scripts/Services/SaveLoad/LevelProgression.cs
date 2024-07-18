@@ -38,7 +38,7 @@ public class LevelProgression : MonoBehaviour
     private void OnEnable()
     {
         foreach (var item in _levelItems.Items)
-            item.ItemWasCollectedWithName += SaveCollectedItem;
+            item.ItemWasCollectedWithID += SaveCollectedItem;
 
         foreach (var bonus in _levelBonuses.Bonuses)
             bonus.BonusTaked += SaveCollectedBonus;
@@ -47,7 +47,7 @@ public class LevelProgression : MonoBehaviour
     private void OnDisable()
     {
         foreach (var item in _levelItems.Items)
-            item.ItemWasCollectedWithName -= SaveCollectedItem;
+            item.ItemWasCollectedWithID -= SaveCollectedItem;
 
         foreach (var bonus in _levelBonuses.Bonuses)
             bonus.BonusTaked -= SaveCollectedBonus;
@@ -69,14 +69,14 @@ public class LevelProgression : MonoBehaviour
         // Удаляем собранные предметы
         foreach (var item in _levelItems.Items)
         {
-            if (_levelData.CollectedItems.Contains(item.GUID))
+            if (_levelData.CollectedItems.Contains(item.ID))
                 item.Collect();
         }
 
         // Удаляем собранные бонусы
         foreach (var bonus in _levelBonuses.Bonuses)
         {
-            if (_levelData.CollectedBonus.Contains(bonus.GUID))
+            if (_levelData.CollectedBonus.Contains(bonus.ID))
                 bonus.Collect();
         }
     }
@@ -105,12 +105,12 @@ public class LevelProgression : MonoBehaviour
         _camera.transform.localRotation = new Quaternion(rotation.x, rotation.y, rotation.z, rotation.w);
     }
 
-    public void SaveCollectedItem(string itemGUID)
+    public void SaveCollectedItem(int itemID)
     {
-        if (_levelData.CollectedItems.Contains(itemGUID))
+        if (_levelData.CollectedItems.Contains(itemID))
             return;
 
-        _levelData.CollectedItems.Add(itemGUID);
+        _levelData.CollectedItems.Add(itemID);
 
         SavePlayerPlacement();
         SaveCameraPlacement();
@@ -118,12 +118,12 @@ public class LevelProgression : MonoBehaviour
         _storageService.Save(Key, _levelData);
     }
 
-    public void SaveCollectedBonus(string bonusGUID)
+    public void SaveCollectedBonus(int bonusID)
     {
-        if (_levelData.CollectedBonus.Contains(bonusGUID))
+        if (_levelData.CollectedBonus.Contains(bonusID))
             return;
 
-        _levelData.CollectedBonus.Add(bonusGUID);
+        _levelData.CollectedBonus.Add(bonusID);
 
         SavePlayerPlacement();
         SaveCameraPlacement();
@@ -187,8 +187,8 @@ public class LevelProgression : MonoBehaviour
         LevelProgress levelProgress = new LevelProgress
         {
             Level = sceneName,
-            CollectedItems = new List<string>(),
-            CollectedBonus = new List<string>(),
+            CollectedItems = new List<int>(),
+            CollectedBonus = new List<int>(),
             PlayerPosition = null,
             PlayerRotation = null,
             CameraPosition = null,
@@ -208,8 +208,8 @@ public class LevelProgression : MonoBehaviour
 public class LevelProgress
 {
     public string Level;
-    public List<string> CollectedItems = new List<string>();
-    public List<string> CollectedBonus = new List<string>();
+    public List<int> CollectedItems = new List<int>();
+    public List<int> CollectedBonus = new List<int>();
 
     public CurrentPosition PlayerPosition;
     public CurrentRotation PlayerRotation;

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4386852850664008332}
   - component: {fileID: 7546225989543608770}
   - component: {fileID: 4658167758753679313}
-  - component: {fileID: -2895491415049408766}
   m_Layer: 0
   m_Name: KitchenProps_02
   m_TagString: Untagged
@@ -140,21 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: ef3b783848f22f24c8ef1b417d830866, type: 3}
-  _guid: {fileID: -2895491415049408766}
+  _id: 0
   _prefabID: 22
---- !u!114 &-2895491415049408766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5366650831601739498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80838ff9336f530449b5dab0151e973d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _guid: e7fcbee1-01fb-4990-8d4b-91d15b80a69d
 --- !u!1001 &7290662579794797376
 PrefabInstance:
   m_ObjectHideFlags: 0

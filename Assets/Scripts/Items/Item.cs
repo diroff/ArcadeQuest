@@ -5,28 +5,24 @@ using UnityEngine.Events;
 public class Item : MonoBehaviour, IInteractable
 {
     [SerializeField] private Sprite _icon;
-    [SerializeField] private AutoGUID _guid;
+    [SerializeField] private int _id;
     [SerializeField] private int _prefabID;
 
     private bool _isCollected = false;
     private BoxCollider _boxCollider;
 
     public Sprite Icon => _icon;
-    public string GUID => _guid.GUID;
+    public int ID => _id;
     public int PrefabID => _prefabID;
 
     public bool IsCollected => _isCollected;
 
     public UnityAction ItemWasCollected;
-    public UnityAction<string> ItemWasCollectedWithName;
     public UnityAction<int> ItemWasCollectedWithID;
 
     private void Awake()
     {
         _boxCollider = GetComponent<BoxCollider>();
-
-        if (_guid == null)
-            _guid = gameObject.AddComponent<AutoGUID>();
     }
 
     public virtual void Interact(Player player)
@@ -40,8 +36,7 @@ public class Item : MonoBehaviour, IInteractable
         _boxCollider.enabled = false;
 
         ItemWasCollected?.Invoke();
-        ItemWasCollectedWithName?.Invoke(_guid.GUID);
-        ItemWasCollectedWithID?.Invoke(_prefabID);
+        ItemWasCollectedWithID?.Invoke(_id);
         _isCollected = true;
 
         Destroy(gameObject);

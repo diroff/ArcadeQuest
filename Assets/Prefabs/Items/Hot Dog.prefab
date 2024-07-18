@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2888774472848984908}
   - component: {fileID: 2768530353547140903}
   - component: {fileID: -5944714861010176836}
-  - component: {fileID: -102315633677803327}
   m_Layer: 0
   m_Name: Hot Dog
   m_TagString: Untagged
@@ -140,21 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 66eaa44ff92588343b555df4709bfe47, type: 3}
-  _guid: {fileID: -102315633677803327}
+  _id: 0
   _prefabID: 18
---- !u!114 &-102315633677803327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181220566361747443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80838ff9336f530449b5dab0151e973d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _guid: be842b69-d6f4-436b-9523-2fc4a6af3c5f
 --- !u!1001 &7454021172020372152
 PrefabInstance:
   m_ObjectHideFlags: 0

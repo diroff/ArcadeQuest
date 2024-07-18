@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4812077306218190464}
   - component: {fileID: 4812077306218190465}
   - component: {fileID: 4812077306218190470}
-  - component: {fileID: -497747831627655448}
   m_Layer: 0
   m_Name: CylinderItem
   m_TagString: Untagged
@@ -122,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: b44c44d3a28e7e949be9fe4df84ff37a, type: 3}
-  _guid: {fileID: -497747831627655448}
+  _id: 0
   _prefabID: 12
 --- !u!54 &4812077306218190470
 Rigidbody:
@@ -151,19 +150,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-497747831627655448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4812077306218190471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80838ff9336f530449b5dab0151e973d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _guid: deb03432-ec20-4bec-9f8b-caefe343e1bc
 --- !u!1001 &2364468371052457957
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -6881092436633797301}
   - component: {fileID: 8665754645617837083}
   - component: {fileID: 7557495314004221046}
-  - component: {fileID: 8065441041905916383}
   m_Layer: 0
   m_Name: Heating_Machine
   m_TagString: Untagged
@@ -122,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: 1aac96c5bb442234cb04d4f923b29926, type: 3}
-  _guid: {fileID: 8065441041905916383}
+  _id: 0
   _prefabID: 17
 --- !u!114 &7557495314004221046
 MonoBehaviour:
@@ -142,19 +141,6 @@ MonoBehaviour:
   _rotatingSpeed: 75
   _scalingSpeed: 0.25
   _maxScaleMultiplier: 1.3
---- !u!114 &8065441041905916383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7590964634423934608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80838ff9336f530449b5dab0151e973d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _guid: d4651d4e-b4c3-40f6-82f4-5fa0bb97ff90
 --- !u!1001 &6388539493394557529
 PrefabInstance:
   m_ObjectHideFlags: 0

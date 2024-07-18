@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5528294631339030969}
   - component: {fileID: -2776895719055087178}
   - component: {fileID: -2342378300840619339}
-  - component: {fileID: 3586560341085561437}
   m_Layer: 0
   m_Name: Cake
   m_TagString: Untagged
@@ -140,21 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: a0a882bd610cba4488cf560b55768632, type: 3}
-  _guid: {fileID: 3586560341085561437}
+  _id: 0
   _prefabID: 5
---- !u!114 &3586560341085561437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7009146036524199079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80838ff9336f530449b5dab0151e973d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _guid: 23ec301b-5075-4b36-a238-bb7f974219dd
 --- !u!1001 &6331513479776035953
 PrefabInstance:
   m_ObjectHideFlags: 0

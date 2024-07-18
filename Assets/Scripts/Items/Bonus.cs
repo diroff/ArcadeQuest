@@ -9,13 +9,13 @@ public abstract class Bonus : MonoBehaviour, IInteractable
     [SerializeField] protected float BonusTime;
     [SerializeField] protected Sprite Icon;
 
-    [SerializeField] private AutoGUID _guid;
+    [SerializeField] private int _id;
 
     public UnityEvent BonusStarted;
     public UnityEvent BonusEnded;
     public UnityEvent<float, float> BonusTimeChanged;
 
-    public UnityAction <string> BonusTaked;
+    public UnityAction<int> BonusTaked;
 
     protected float CurrentTime;
     protected Player Player;
@@ -24,15 +24,12 @@ public abstract class Bonus : MonoBehaviour, IInteractable
     private MeshRenderer _meshRenderer;
 
     public Sprite BonusIcon => Icon;
-    public string GUID => _guid.GUID;
+    public int ID => _id;
 
     private void Awake()
     {
         _boxCollider = GetComponent<BoxCollider>();
         _meshRenderer = GetComponent<MeshRenderer>();
-
-        if (_guid == null)
-            _guid = gameObject.AddComponent<AutoGUID>();
     }
 
     protected virtual void Start()
@@ -53,7 +50,7 @@ public abstract class Bonus : MonoBehaviour, IInteractable
 
     public virtual void Interact(Player player)
     {
-        BonusTaked?.Invoke(_guid.GUID);
+        BonusTaked?.Invoke(_id);
         _boxCollider.enabled = false;
         _meshRenderer.enabled = false;
 
