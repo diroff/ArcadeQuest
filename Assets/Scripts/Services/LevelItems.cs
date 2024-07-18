@@ -29,7 +29,7 @@ public class LevelItems : MonoBehaviour
     {
         foreach (var item in _levelItems)
         {
-            if (item != null)
+            if (item == null)
                 continue;
 
             if (item.IsCollected)
