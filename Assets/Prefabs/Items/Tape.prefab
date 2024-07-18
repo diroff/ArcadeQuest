@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 21300000, guid: bf7198d2d4040eb44b4174ff1d879586, type: 3}
   _guid: {fileID: 6345902618267256116}
+  _prefabID: 30
 --- !u!114 &6345902618267256116
 MonoBehaviour:
   m_ObjectHideFlags: 0

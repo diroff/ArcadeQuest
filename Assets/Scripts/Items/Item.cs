@@ -6,17 +6,20 @@ public class Item : MonoBehaviour, IInteractable
 {
     [SerializeField] private Sprite _icon;
     [SerializeField] private AutoGUID _guid;
+    [SerializeField] private int _prefabID;
 
     private bool _isCollected = false;
     private BoxCollider _boxCollider;
 
     public Sprite Icon => _icon;
+    public string GUID => _guid.GUID;
+    public int PrefabID => _prefabID;
+
     public bool IsCollected => _isCollected;
 
     public UnityAction ItemWasCollected;
     public UnityAction<string> ItemWasCollectedWithName;
-
-    public string GUID => _guid.GUID;
+    public UnityAction<int> ItemWasCollectedWithID;
 
     private void Awake()
     {
@@ -38,7 +41,7 @@ public class Item : MonoBehaviour, IInteractable
 
         ItemWasCollected?.Invoke();
         ItemWasCollectedWithName?.Invoke(_guid.GUID);
-        Debug.Log("Was collected:" + _guid.GUID);
+        ItemWasCollectedWithID?.Invoke(_prefabID);
         _isCollected = true;
 
         Destroy(gameObject);

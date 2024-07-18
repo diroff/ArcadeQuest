@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Net;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIItemSlot : MonoBehaviour //// Combine with UIMetaItemSlot!
 {
     [SerializeField] private Image _itemIcon;
+    [SerializeField] private TextMeshProUGUI _itemCountText;
 
-    private Item _item;
-    private Canvas _mainCanvas;
     private UIItemList _itemList;
+
+    private Canvas _mainCanvas;
+
+    private int _itemCount;
+    private int _itemID;
+
+    public int ItemID => _itemID;
 
     private void Awake()
     {
@@ -17,21 +24,37 @@ public class UIItemSlot : MonoBehaviour //// Combine with UIMetaItemSlot!
         _itemList = GetComponentInParent<UIItemList>();
     }
 
-    private void OnDisable()
+    public void SetItemID(int id)
     {
-        _item.ItemWasCollected -= CompleteIcon;
+        _itemID = id;
     }
 
-    public void SetItem(Item item)
+    public void SetIcon(Sprite sprite)
     {
-        _item = item;
-        _itemIcon.sprite = _item.Icon;
-        _item.ItemWasCollected += CompleteIcon;
+        _itemIcon.sprite = sprite;
     }
 
-    private void CompleteIcon()
+    public void SetItemCount(int count)
+    {
+        if (count < 0)
+            return;
+
+        _itemCount = count;
+        _itemCountText.text = _itemCount.ToString();
+    }
+
+    public void CompleteIcon()
     {
         StartCoroutine(CollectItemAnimation());
+    }
+
+    public void RemoveItems(int count)
+    {
+        _itemCount -= count;
+        _itemCountText.text = _itemCount.ToString();
+
+        if (_itemCount <= 0)
+            Destroy(gameObject);
     }
 
     private IEnumerator CollectItemAnimation()

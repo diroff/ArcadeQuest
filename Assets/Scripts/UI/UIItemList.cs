@@ -1,10 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIItemList : MonoBehaviour
 {
     [SerializeField] private UIItemSlot _slotPrefab;
+    [SerializeField] private Transform _slotPlacement;
+
     [SerializeField] private LevelItems _levelItems;
+
+    private List<UIItemSlot> _slots = new List<UIItemSlot>();
+    private List<Item> _items = new List<Item>();
 
     private GridLayoutGroup _layoutGroup;
 
@@ -13,15 +19,68 @@ public class UIItemList : MonoBehaviour
     private void Awake()
     {
         _layoutGroup = GetComponent<GridLayoutGroup>();
-        CreateGrid();
+
+        foreach (var slot in _levelItems.Items)
+            _items.Add(slot);
     }
 
-    private void CreateGrid()
+    private void OnEnable()
     {
         foreach (var item in _levelItems.Items)
+            item.ItemWasCollectedWithID += ItemPanelRefresh;
+    }
+
+    private void OnDisable()
+    {
+        foreach (var item in _levelItems.Items)
+            item.ItemWasCollectedWithID -= ItemPanelRefresh;
+    }
+
+    private void Start()
+    {
+        CreateItemList();
+    }
+
+    private void CreateItemList()
+    {
+        if (_items.Count == 0)
+            return;
+
+        var itemId = _items[0].PrefabID;
+        int itemCount = 0;
+
+        List<Item> items = new List<Item>();
+
+        foreach (var item in _items)
         {
-            var slot = Instantiate(_slotPrefab, transform);
-            slot.SetItem(item);
+            if (item.PrefabID != itemId)
+                continue;
+
+            itemCount++;
+            items.Add(item);
+        }
+
+        var itemSlot = Instantiate(_slotPrefab, _slotPlacement);
+        itemSlot.SetIcon(_items[0].Icon);
+        itemSlot.SetItemID(_items[0].PrefabID);
+        itemSlot.SetItemCount(itemCount);
+
+        _slots.Add(itemSlot);
+
+        foreach (var item in items)
+            _items.Remove(item);
+
+        CreateItemList();
+    }
+
+    private void ItemPanelRefresh(int id)
+    {
+        foreach (var item in _slots)
+        {
+            if (item.ItemID != id)
+                continue;
+
+            item.RemoveItems(1);
         }
     }
 }

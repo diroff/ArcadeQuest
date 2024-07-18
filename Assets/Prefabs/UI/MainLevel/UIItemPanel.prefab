@@ -495,7 +495,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 128, y: 128}
+  m_CellSize: {x: 128, y: 168}
   m_Spacing: {x: 32, y: 32}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -527,6 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slotPrefab: {fileID: 4143006705208202981, guid: f8611cb99492bec4790db9fc99b4ba34,
     type: 3}
+  _slotPlacement: {fileID: 8878057790950472891}
   _levelItems: {fileID: 0}
 --- !u!114 &7425857856976752995
 MonoBehaviour:
