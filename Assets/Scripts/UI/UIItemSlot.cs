@@ -16,6 +16,8 @@ public class UIItemSlot : MonoBehaviour //// Combine with UIMetaItemSlot!
     private int _itemCount;
     private int _itemID;
 
+    private int _maxItemCount;
+
     public int ItemID => _itemID;
 
     private void Awake()
@@ -40,7 +42,12 @@ public class UIItemSlot : MonoBehaviour //// Combine with UIMetaItemSlot!
             return;
 
         _itemCount = count;
-        _itemCountText.text = _itemCount.ToString();
+        SetCurrentItemCountText();
+    }
+
+    public void SetMaxItemCount(int count)
+    {
+        _maxItemCount = count;
     }
 
     public void CompleteIcon()
@@ -51,10 +58,16 @@ public class UIItemSlot : MonoBehaviour //// Combine with UIMetaItemSlot!
     public void RemoveItems(int count)
     {
         _itemCount -= count;
-        _itemCountText.text = _itemCount.ToString();
+
+        SetCurrentItemCountText();
 
         if (_itemCount <= 0)
             Destroy(gameObject);
+    }
+
+    private void SetCurrentItemCountText()
+    {
+        _itemCountText.text = _itemCount + "/" + _maxItemCount;
     }
 
     private IEnumerator CollectItemAnimation()

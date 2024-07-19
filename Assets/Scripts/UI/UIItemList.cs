@@ -63,6 +63,7 @@ public class UIItemList : MonoBehaviour
         var itemSlot = Instantiate(_slotPrefab, _slotPlacement);
         itemSlot.SetIcon(_items[0].Icon);
         itemSlot.SetItemID(_items[0].PrefabID);
+        itemSlot.SetMaxItemCount(itemCount);
         itemSlot.SetItemCount(itemCount);
 
         _slots.Add(itemSlot);
