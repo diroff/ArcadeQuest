@@ -7,18 +7,21 @@ public class LevelInfoAppMetrica : MonoBehaviour
     [SerializeField] private Timer _levelTimer;
 
     private string _eventName;
+    private string _levelName;
 
-    private LevelStartData _startData;
-    private LevelEndData _endData;
+    private void Awake()
+    {
+        SetLevelName();
+    }
 
     private void OnEnable()
     {
-        _levelTimer.TimerEnded += SendEndData;
+        _levelTimer.TimerEnded += SetEndTime;
     }
 
     private void OnDisable()
     {
-        _levelTimer.TimerEnded -= SendEndData;
+        _levelTimer.TimerEnded -= SetEndTime;
     }
 
     private void Start()
@@ -30,37 +33,38 @@ public class LevelInfoAppMetrica : MonoBehaviour
     {
         _eventName = "LevelStarted";
 
-        _startData = new LevelStartData();
-        _startData.LevelName = SceneManager.GetActiveScene().name;
-
-        string levelStartInfo = $"{_eventName} : {_startData.LevelName}";
+        string levelStartInfo = $"{_eventName} : {_levelName}";
 
         Debug.Log(levelStartInfo);
         AppMetrica.Instance.ReportEvent(levelStartInfo);
     }
 
-    public void SendEndData(float time)
+    public void SetEndTime(float time)
     {
-        _eventName = "LevelFinished";
+        SendEndData();
 
-        _endData = new LevelEndData();
-        _endData.LevelName = SceneManager.GetActiveScene().name;
-        _endData.LevelTime = time;
+        _eventName = "LevelFinishedTime";
 
-        string levelEndInfo = $"{_eventName} : {_endData.LevelName} : {_endData.LevelTime} seconds";
+        int levelTime = Mathf.RoundToInt(time);
+
+        string levelEndInfo = $"{_eventName} : {_levelName} : {levelTime} seconds";
 
         Debug.Log(levelEndInfo);
         AppMetrica.Instance.ReportEvent(levelEndInfo);
     }
-}
 
-public class LevelStartData
-{
-    public string LevelName;
-}
+    public void SendEndData()
+    {
+        _eventName = "LevelFinished";
 
-public class LevelEndData
-{
-    public string LevelName;
-    public float LevelTime;
+        string levelEndInfo = $"{_eventName} : {_levelName}";
+
+        Debug.Log(levelEndInfo);
+        AppMetrica.Instance.ReportEvent(levelEndInfo);
+    }
+
+    private void SetLevelName()
+    {
+        _levelName = SceneManager.GetActiveScene().name;
+    }
 }
