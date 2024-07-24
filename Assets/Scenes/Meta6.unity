@@ -4898,7 +4898,7 @@ PrefabInstance:
     - target: {fileID: 1010198358055253960, guid: 21f776fb216d1d84fa5fb22e9d9a6082,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 250
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 1010198358055253960, guid: 21f776fb216d1d84fa5fb22e9d9a6082,
         type: 3}
@@ -4974,21 +4974,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UIMetaSlotPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523356998784858976, guid: 21f776fb216d1d84fa5fb22e9d9a6082,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523356998784858976, guid: 21f776fb216d1d84fa5fb22e9d9a6082,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4523356998784858976, guid: 21f776fb216d1d84fa5fb22e9d9a6082,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8878057790950472891, guid: 21f776fb216d1d84fa5fb22e9d9a6082,
         type: 3}
