@@ -1,39 +1,24 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UIItemPanel : MonoBehaviour // Combine with UIMetaItemsPanel!
+public class UIItemPanel : MonoBehaviour
 {
-    [SerializeField] private int _maxItemsCount = 6;
+    [SerializeField] private RectTransform _rectTransform;
+    [SerializeField] private RectTransform _viewportTransform;
 
-    [SerializeField] private RectTransform _transform;
-    [SerializeField] private ContentSizeFitter _sizeFilter;
-
-    private int _slotsCount;
-
-    private void OnTransformChildrenChanged()
+    private void Awake()
     {
-        AlignPanel();
+        _rectTransform = GetComponent<RectTransform>();
+        _viewportTransform = transform.parent.GetComponent<RectTransform>();
     }
 
-    private void AlignPanel()
+    private void OnRectTransformDimensionsChange()
     {
-        _slotsCount = GetComponentsInChildren<UIItemSlot>().Length;
-
-        if (_slotsCount <= _maxItemsCount)
-            CenteringPanel();
-        else
-            UncenteringPanel();
+        EnsureMinWidth();
     }
 
-    public void CenteringPanel()
+    private void EnsureMinWidth()
     {
-        _sizeFilter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
-        _transform.offsetMin = new Vector2(0, _transform.offsetMin.y);
-        _transform.offsetMax = new Vector2(0, _transform.offsetMax.y);
-    }
-
-    public void UncenteringPanel()
-    {
-        _sizeFilter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
+        if (_rectTransform.rect.width < _viewportTransform.rect.width)
+            _rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _viewportTransform.rect.width);
     }
 }
