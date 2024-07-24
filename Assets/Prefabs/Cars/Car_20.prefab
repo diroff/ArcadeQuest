@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7936513733066231655}
   - component: {fileID: 7549403867776816771}
   - component: {fileID: 8317802731550010302}
+  - component: {fileID: -6230892291912042493}
   m_Layer: 7
   m_Name: Car_20
   m_TagString: Obtacle
@@ -148,7 +149,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseMovementSpeed: 12
-  _isIndependent: 0
+--- !u!114 &-6230892291912042493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757932265695620599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &807155337858113643
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,4 +227,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11599e27df53c52459417b0243738aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _car: {fileID: 8317802731550010302}

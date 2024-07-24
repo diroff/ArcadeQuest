@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7179587827439178233}
   - component: {fileID: -6971024642154794593}
   - component: {fileID: 7118172208228144204}
+  - component: {fileID: -3447979427453115574}
   m_Layer: 0
   m_Name: Hot Dog Sausage
   m_TagString: Untagged
@@ -156,3 +157,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6191464146861290199, guid: 4ec97464389138e4db79070c23603356, type: 3}
+--- !u!114 &-3447979427453115574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9067020178580381961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

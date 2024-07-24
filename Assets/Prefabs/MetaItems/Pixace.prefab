@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3036226830149012649}
   - component: {fileID: 7531013967698940143}
   - component: {fileID: 4102508441130635902}
+  - component: {fileID: 3348895091137017775}
   m_Layer: 6
   m_Name: Pixace
   m_TagString: Untagged
@@ -156,3 +157,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6029386305152064225, guid: bc1ebebea84d79a4ab87072f7a432b5d, type: 3}
+--- !u!114 &3348895091137017775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771605565150008966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

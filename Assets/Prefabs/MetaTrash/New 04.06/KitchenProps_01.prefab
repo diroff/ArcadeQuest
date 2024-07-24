@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5600417331668517919}
   - component: {fileID: 4552805496657641060}
   - component: {fileID: 4493740060143444728}
+  - component: {fileID: 988221552288534633}
   m_Layer: 0
   m_Name: KitchenProps_01
   m_TagString: Untagged
@@ -151,3 +152,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3590175938511321419, guid: b038d5b88a4dfff459d931acc59c90f0, type: 3}
+--- !u!114 &988221552288534633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6457725450409641694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

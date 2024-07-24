@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3650852367568396997}
   - component: {fileID: 7883470922181876591}
   - component: {fileID: 4734939202676805486}
+  - component: {fileID: 3268319447772687572}
   m_Layer: 0
   m_Name: Sourdough Bread
   m_TagString: Untagged
@@ -141,6 +142,18 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: fb3d6197dd7541e4fa7dea529bd3a250, type: 3}
   _id: 0
   _prefabID: 28
+--- !u!114 &3268319447772687572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9203941624874197052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2866696865561550454
 PrefabInstance:
   m_ObjectHideFlags: 0

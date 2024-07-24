@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5026871674711251753}
   - component: {fileID: 710583682957857777}
   - component: {fileID: 8504382784440645077}
+  - component: {fileID: 3136828673018694846}
   m_Layer: 0
   m_Name: Mug
   m_TagString: Untagged
@@ -151,3 +152,15 @@ MonoBehaviour:
   _collisionLayerMask:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &3136828673018694846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

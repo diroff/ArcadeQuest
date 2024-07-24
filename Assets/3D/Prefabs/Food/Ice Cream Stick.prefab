@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2982518573815146760}
   - component: {fileID: 1045116170477329858}
   - component: {fileID: 3937764490103158606}
+  - component: {fileID: 7500297454457160931}
   m_Layer: 0
   m_Name: Ice Cream Stick
   m_TagString: Untagged
@@ -106,3 +107,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8489942671162445885, guid: d0e761fa9cd62964cbd7f8a6880a863c, type: 3}
+--- !u!114 &7500297454457160931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549242595186506775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

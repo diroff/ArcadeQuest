@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6219373257612156493}
   - component: {fileID: 8190728649072814727}
   - component: {fileID: 5300191546328875019}
+  - component: {fileID: -5584839173913995175}
   m_Layer: 0
   m_Name: Rhubarb Pie
   m_TagString: Untagged
@@ -106,3 +107,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3749728172008704810, guid: 45ec6a02813cea44cb7c88716c58bf1f, type: 3}
+--- !u!114 &-5584839173913995175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686426577453058898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

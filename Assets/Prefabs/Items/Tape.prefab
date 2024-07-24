@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 65923226156230326}
   - component: {fileID: -1549970946749433796}
   - component: {fileID: 8835572937379599640}
+  - component: {fileID: -7979001528848313473}
   m_Layer: 0
   m_Name: Tape
   m_TagString: Untagged
@@ -141,6 +142,18 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: bf7198d2d4040eb44b4174ff1d879586, type: 3}
   _id: 0
   _prefabID: 30
+--- !u!114 &-7979001528848313473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206594443558004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1982448755253218902
 PrefabInstance:
   m_ObjectHideFlags: 0

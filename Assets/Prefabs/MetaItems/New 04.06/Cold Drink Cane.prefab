@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 458905662694707286}
   - component: {fileID: 4038823450177749617}
   - component: {fileID: -4279647858066855442}
+  - component: {fileID: -3046765160862051029}
   m_Layer: 0
   m_Name: Cold Drink Cane
   m_TagString: Untagged
@@ -156,3 +157,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4309120516392261110, guid: 245e6a3bf1285cb469a90444d6110492, type: 3}
+--- !u!114 &-3046765160862051029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698126137467839663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

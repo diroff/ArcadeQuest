@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2304932462294540448}
   - component: {fileID: -4492523979513849492}
   - component: {fileID: -1279781349315814405}
+  - component: {fileID: -8252409423091727655}
   m_Layer: 0
   m_Name: Blade_Knife
   m_TagString: Untagged
@@ -141,6 +142,18 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: f8c185ad509028345bd118ba31f086b7, type: 3}
   _id: 0
   _prefabID: 1
+--- !u!114 &-8252409423091727655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577000004406976092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7045804255447359865
 PrefabInstance:
   m_ObjectHideFlags: 0
