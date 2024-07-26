@@ -5,16 +5,15 @@ public class MetaItem : MonoBehaviour
 {
     [SerializeField] private int _itemId;
     [SerializeField] private Sprite _itemIcon;
+    [SerializeField] private LayerMask _collisionLayerMask;
 
+    [Header("Animation Settings")]
     [SerializeField] private float _movingTime = 0.8f;
+    [SerializeField] private float _maxAngularVelocity = 1f;
 
+    [Header("Position in slot")]
     [SerializeField] private Vector3 _positionOffset;
     [SerializeField] private Quaternion _rotationOnSlot;
-
-    [SerializeField] private float _maxAngularVelocity = 1f;
-    [SerializeField] private LayerMask _collisionLayerMask;
-    
-    private ItemAnimation _animation;
 
     private Vector3 _mousePosition;
     private Vector3 _startPosition;
@@ -29,26 +28,25 @@ public class MetaItem : MonoBehaviour
 
     private float _startTime;
 
+    private ItemAnimation _animation;
     private Rigidbody _rigidbody;
+    private MeshCollider _meshCollider;
 
     private MetaSlotPanel _slotPanel;
     private MetaSlot _slot;
 
-    private MeshCollider _meshCollider;
-
     public int ItemId => _itemId;
     public Sprite ItemIcon => _itemIcon;
 
-    public MetaSlot MetaSlot => _slot;
+    public Quaternion RotationOnSlot => _rotationOnSlot;
 
     public bool IsCollected => _isCollected;
     public bool IsRestanding => _isRestanding;
     public bool IsOnSlot => _isOnSlot;
 
-    public MeshCollider MeshCollider => _meshCollider;
-    public Rigidbody Rigidbody => _rigidbody;
-    public Quaternion RotationOnSlot => _rotationOnSlot;
     public ItemAnimation Animation => _animation;
+    public Rigidbody Rigidbody => _rigidbody;
+    public MeshCollider MeshCollider => _meshCollider;
 
     public UnityAction ItemWasCollected;
     public UnityAction ItemWasDestroyed;
@@ -202,9 +200,12 @@ public class MetaItem : MonoBehaviour
         _rigidbody.isKinematic = true;
     }
 
-    public void SetClamp()
+    public void SetupRigidbody()
     {
         _isNeedClamp = !_isOnSlot;
+
+        _meshCollider.isTrigger = _isOnSlot;
+        _rigidbody.isKinematic = _isOnSlot;
     }
 
     public void DestroyItem()

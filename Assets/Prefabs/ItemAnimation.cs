@@ -19,13 +19,10 @@ public class ItemAnimation : MonoBehaviour
         float totalTime = _movingTime + timeModificator;
         float elapsedTime = 0f;
 
+        _metaItem.SetupRigidbody();
+
         while (elapsedTime < totalTime && _metaItem.IsRestanding)
         {
-            _metaItem.SetClamp();
-
-            _metaItem.MeshCollider.isTrigger = _metaItem.IsOnSlot;
-            _metaItem.Rigidbody.isKinematic = _metaItem.IsOnSlot;
-
             float t = elapsedTime / totalTime;
             Vector3 newPosition = Vector3.Lerp(startPoint, endPoint, t);
             Quaternion newRotation = Quaternion.Lerp(_metaItem.gameObject.transform.localRotation, endRotation, t);
@@ -38,6 +35,7 @@ public class ItemAnimation : MonoBehaviour
             yield return null;
         }
 
+        _metaItem.SetupRigidbody();
         _metaItem.gameObject.transform.position = endPoint;
         _metaItem.RestandPosition();
         _moveCoroutine = null;
