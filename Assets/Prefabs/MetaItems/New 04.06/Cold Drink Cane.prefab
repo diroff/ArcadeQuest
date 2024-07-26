@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4038823450177749617}
   - component: {fileID: -4279647858066855442}
   - component: {fileID: -3046765160862051029}
+  - component: {fileID: 3177224174025677218}
   m_Layer: 0
   m_Name: Cold Drink Cane
   m_TagString: Untagged
@@ -108,6 +109,7 @@ MonoBehaviour:
   _collisionLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  _animation: {fileID: 0}
 --- !u!54 &4038823450177749617
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,5 +169,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3177224174025677218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698126137467839663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5835a7e991f43ab4f842e4802c8e9a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -9097332307200478668}
   - component: {fileID: 2622547673877646337}
   - component: {fileID: -4604773785005272440}
+  - component: {fileID: -8729747601135283192}
   m_Layer: 0
   m_Name: Blueberry Jam
   m_TagString: Untagged
@@ -108,6 +109,7 @@ MonoBehaviour:
   _collisionLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  _animation: {fileID: 0}
 --- !u!54 &-9097332307200478668
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,5 +169,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45fb094b93aa0d145b83ee9cabada12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8729747601135283192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8471984861038302252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5835a7e991f43ab4f842e4802c8e9a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

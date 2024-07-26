@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MetaSlotPanel : MonoBehaviour
@@ -18,22 +19,14 @@ public class MetaSlotPanel : MonoBehaviour
 
     private void FindPairs(MetaItem item)
     {
-        int currentPairCount = 0;
-        List<MetaItem> pairs = new List<MetaItem>();    
+        var pairs = _slots
+                .Select(slot => slot.CurrentItem)
+                .Where(currentItem => currentItem != null && currentItem.ItemId == item.ItemId)
+                .ToList();
 
-        foreach (var pair in _slots)
-        {
-            if (pair.CurrentItem == null)
-                continue;
+        int currentPairCount = pairs.Count;
 
-            if (pair.CurrentItem.ItemId != item.ItemId)
-                continue;
-
-            currentPairCount++;
-            pairs.Add(pair.CurrentItem);
-        }
-
-        if (currentPairCount != _countToPaired)
+        if (currentPairCount < _countToPaired)
             return;
 
         foreach (var pair in pairs)
@@ -44,13 +37,10 @@ public class MetaSlotPanel : MonoBehaviour
 
     private IEnumerator CollectItems(List<MetaItem> items)
     {
-        while(items[items.Count - 1].IsRestanding)
-        {
-            yield return null;
-        }
+        yield return new WaitUntil(() => items.All(item => !item.IsRestanding));
 
         foreach (var item in items)
-            item.PlayCollectAnimation();
+            item.Animation.PlayCollectAnimation();
     }
 
     private MetaSlot GetFreeSlot()

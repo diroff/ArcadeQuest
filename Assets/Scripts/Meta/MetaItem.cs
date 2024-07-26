@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +13,8 @@ public class MetaItem : MonoBehaviour
 
     [SerializeField] private float _maxAngularVelocity = 1f;
     [SerializeField] private LayerMask _collisionLayerMask;
+    
+    private ItemAnimation _animation;
 
     private Vector3 _mousePosition;
     private Vector3 _startPosition;
@@ -42,6 +43,12 @@ public class MetaItem : MonoBehaviour
 
     public bool IsCollected => _isCollected;
     public bool IsRestanding => _isRestanding;
+    public bool IsOnSlot => _isOnSlot;
+
+    public MeshCollider MeshCollider => _meshCollider;
+    public Rigidbody Rigidbody => _rigidbody;
+    public Quaternion RotationOnSlot => _rotationOnSlot;
+    public ItemAnimation Animation => _animation;
 
     public UnityAction ItemWasCollected;
     public UnityAction ItemWasDestroyed;
@@ -54,6 +61,8 @@ public class MetaItem : MonoBehaviour
 
         _meshCollider = GetComponent<MeshCollider>();
         _rigidbody = GetComponent<Rigidbody>();
+        _animation = GetComponent<ItemAnimation>();
+        _animation.Initialize(_movingTime, this);
     }
 
     private void FixedUpdate()
@@ -143,9 +152,14 @@ public class MetaItem : MonoBehaviour
         return Camera.main.WorldToScreenPoint(transform.position);
     }
 
-    private void RestandPosition()
+    public void RestandPosition()
     {
         _isRestanding = false;
+    }
+
+    public void UnrestandPosition()
+    {
+        _isRestanding = true;
     }
 
     private void SetToSlot()
@@ -160,7 +174,9 @@ public class MetaItem : MonoBehaviour
 
         Vector3 targetPosition = _slot.GetPlacementPosition();
         targetPosition += _positionOffset;
-        StartCoroutine(MoveObjectCoroutine(transform.position, targetPosition, _rotationOnSlot));
+        
+        _isRestanding = true;
+        _animation.PlayMoveCoroutine(transform.position, targetPosition, _rotationOnSlot);
     }
 
     public void SetSlotPanel(MetaSlotPanel panel)
@@ -173,7 +189,8 @@ public class MetaItem : MonoBehaviour
         _slot = null;
         _isOnSlot = false;
 
-        StartCoroutine(MoveObjectCoroutine(transform.position, _startPosition, _startRotation));
+        _isRestanding = true;
+        _animation.PlayMoveCoroutine(transform.position, _startPosition, _startRotation);
     }
 
     public void CollectItem()
@@ -185,51 +202,15 @@ public class MetaItem : MonoBehaviour
         _rigidbody.isKinematic = true;
     }
 
-    private IEnumerator MoveObjectCoroutine(Vector3 startPoint, Vector3 endPoint, Quaternion endRotation, float timeModificator = 0f)
+    public void SetClamp()
     {
-        float totalTime = _movingTime + timeModificator;
-        _isRestanding = true;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < totalTime && _isRestanding)
-        {
-            _isNeedClamp = !_isOnSlot;
-            _meshCollider.isTrigger = _isOnSlot;
-            _rigidbody.isKinematic = _isOnSlot;
-
-            float t = elapsedTime / totalTime;
-            Vector3 newPosition = Vector3.Lerp(startPoint, endPoint, t);
-            Quaternion newRotation = Quaternion.Lerp(transform.localRotation, endRotation, t);
-
-            _rigidbody.MovePosition(newPosition);
-            _rigidbody.MoveRotation(newRotation);
-
-            elapsedTime += Time.deltaTime;
-
-            yield return null;
-        }
-
-        transform.position = endPoint;
-        _isRestanding = false;
+        _isNeedClamp = !_isOnSlot;
     }
 
-    private IEnumerator CollectAnimation()
+    public void DestroyItem()
     {
-        Vector3 targetPosition = transform.position;
-        targetPosition.z += 5f;
-
-        StartCoroutine(MoveObjectCoroutine(transform.position, targetPosition, _rotationOnSlot, 0.5f));
-
-        while (_isRestanding)
-            yield return null;
-
         ItemWasDestroyed?.Invoke();
         ItemWasDestroyedWithId?.Invoke(_itemId);
         Destroy(gameObject);
-    }
-
-    public void PlayCollectAnimation()
-    {
-        StartCoroutine(CollectAnimation());
     }
 }
