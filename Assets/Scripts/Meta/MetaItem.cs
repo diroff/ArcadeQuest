@@ -102,6 +102,11 @@ public class MetaItem : MonoBehaviour
             _isDraging = true;
         }
 
+        MoveItem();
+    }
+
+    private void MoveItem()
+    {
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition - _mousePosition);
         mouseWorldPosition.y = transform.position.y;
 
@@ -109,26 +114,7 @@ public class MetaItem : MonoBehaviour
         float distance = direction.magnitude;
 
         if (!Physics.Raycast(transform.position, direction.normalized, distance, _collisionLayerMask))
-        {
-            Vector3 targetPos = transform.position + direction;
-
-            _rigidbody.MovePosition(targetPos);
-        }
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        int layerMask = ~(1 << LayerMask.NameToLayer("MetaItem"));
-
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
-        {
-            MetaSlotPanel slotPanel = hit.collider.GetComponent<MetaSlotPanel>();
-
-            if (slotPanel == null)
-                return;
-
-            Interact();
-            _wasAddingOnSlot = true;
-        }
+            _rigidbody.MovePosition(transform.position + direction);
     }
 
     public void Interact()
