@@ -165,7 +165,10 @@ public class MetaItem : Item
     public override void Collect()
     {
         base.Collect();
-        _slot.DeleteItem();
+
+        if (_slot != null)
+            _slot.DeleteItem();
+
         _meshCollider.enabled = false;
         _rigidbody.isKinematic = true;
     }

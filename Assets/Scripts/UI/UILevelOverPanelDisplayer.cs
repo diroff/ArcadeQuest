@@ -7,12 +7,12 @@ public class UILevelOverPanelDisplayer : MonoBehaviour
 
     private void Start()
     {
-        _levelItems.AllItemsCollected += DisplayPanel;
+        _levelItems.LevelWasCompleted += DisplayPanel;
     }
 
     private void OnDisable()
     {
-        _levelItems.AllItemsCollected -= DisplayPanel;
+        _levelItems.LevelWasCompleted -= DisplayPanel;
     }
 
     private void DisplayPanel()

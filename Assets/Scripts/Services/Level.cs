@@ -64,4 +64,18 @@ public abstract class Level : MonoBehaviour
     {
         LevelCompleted();
     }
+
+    public void CollectItemsImmediately()
+    {
+        foreach(var item in LevelItems)
+        {
+            if (item == null)
+                continue;
+
+            if (item.IsCollected)
+                continue;
+
+            item.CollectImmediately();
+        }
+    }
 }

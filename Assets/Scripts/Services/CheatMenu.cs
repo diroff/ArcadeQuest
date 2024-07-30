@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CheatMenu : MonoBehaviour
@@ -8,12 +6,12 @@ public class CheatMenu : MonoBehaviour
     [SerializeField] private LevelProgression _levelProgression;
 
     [SerializeField] private LevelLoading _levelLoading;
-    [SerializeField] private MainLevel _levelItems;
+    [SerializeField] private Level _level;
     [SerializeField] private GameObject _UICheatMenu;
 
     public void SetMenuState()
     {
-        if(_UICheatMenu.activeSelf)
+        if (_UICheatMenu.activeSelf)
             _UICheatMenu.SetActive(false);
         else
             _UICheatMenu.SetActive(true);
@@ -33,11 +31,11 @@ public class CheatMenu : MonoBehaviour
 
     public void CompleteLevel()
     {
-        _levelItems.CompleteLevel();
+        _level.CompleteLevel();
     }
 
     public void CollectAllItems()
     {
-        _levelItems.CollectAllItems();
+        _level.CollectItemsImmediately();
     }
 }

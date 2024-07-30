@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7360670501628809408}
-  - component: {fileID: 8202215173146925240}
+  - component: {fileID: 777627877942682497}
   m_Layer: 0
-  m_Name: LevelProgression
+  m_Name: LevelProgressionMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8202215173146925240
+--- !u!114 &777627877942682497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,8 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1609404846795187950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8f7ff876039804eb82aaa4bbc7a38a, type: 3}
+  m_Script: {fileID: 11500000, guid: fd01018814c649c45bed57a08a24fa82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Level: {fileID: 0}
   CurrentLevelData: {fileID: 0}
+  _levelBonuses: {fileID: 0}
+  _player: {fileID: 0}
+  _camera: {fileID: 0}
