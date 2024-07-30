@@ -1,6 +1,6 @@
-public class UIMetaLevelItems : UIItemList
+public class UIMainItemList : UIItemList
 {
-    private UIMetaItemSlot _slot => _slotPrefab as UIMetaItemSlot;
+    private UIMainItemSlot _slot => _slotPrefab as UIMainItemSlot;
 
     protected override UIItemSlot CreateItemSlot(UIItemSlot slotPrefab)
     {

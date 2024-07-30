@@ -1,4 +1,4 @@
-public class UIMetaItemSlot : UIItemSlot // Combine with UIItemSlot!
+public class UIMetaItemSlot : UIItemSlot
 {
 
 }

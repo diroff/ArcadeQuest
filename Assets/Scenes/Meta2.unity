@@ -393,6 +393,11 @@ PrefabInstance:
       propertyPath: _meta
       value: 
       objectReference: {fileID: 1704291371}
+    - target: {fileID: 34482727374961872, guid: 21f776fb216d1d84fa5fb22e9d9a6082,
+        type: 3}
+      propertyPath: _level
+      value: 
+      objectReference: {fileID: 1704291371}
     - target: {fileID: 1010198358055253960, guid: 21f776fb216d1d84fa5fb22e9d9a6082,
         type: 3}
       propertyPath: m_Pivot.x
@@ -832,11 +837,11 @@ PrefabInstance:
       propertyPath: _levelItems
       value: 
       objectReference: {fileID: 1704291371}
-    - target: {fileID: 6213735194294864588, guid: ad779902ae31e734c9cbb3eb50b04d74,
+    - target: {fileID: 161214978643812835, guid: 5c8cb529b67c1cd4ebc6837c804dc938,
         type: 3}
-      propertyPath: _levelItems
-      value: 
-      objectReference: {fileID: 1704291371}
+      propertyPath: m_Name
+      value: TimeChecker
+      objectReference: {fileID: 0}
     - target: {fileID: 8946388846885507034, guid: 5c8cb529b67c1cd4ebc6837c804dc938,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -887,11 +892,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 161214978643812835, guid: 5c8cb529b67c1cd4ebc6837c804dc938,
+    - target: {fileID: 6213735194294864588, guid: ad779902ae31e734c9cbb3eb50b04d74,
         type: 3}
-      propertyPath: m_Name
-      value: TimeChecker
-      objectReference: {fileID: 0}
+      propertyPath: _levelItems
+      value: 
+      objectReference: {fileID: 1704291371}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

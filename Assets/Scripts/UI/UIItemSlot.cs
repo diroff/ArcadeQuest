@@ -9,6 +9,7 @@ public class UIItemSlot : MonoBehaviour
 
     protected int ItemCount;
     protected int ItemID;
+    protected int MaxItemCount;
 
     public int ID => ItemID;
 
@@ -22,6 +23,11 @@ public class UIItemSlot : MonoBehaviour
         ItemIcon.sprite = sprite;
     }
 
+    public void SetMaxItemCount(int count)
+    {
+        MaxItemCount = count;
+        Debug.Log("Max item count setted:" + MaxItemCount);
+    }
 
     public void SetItemCount(int count)
     {

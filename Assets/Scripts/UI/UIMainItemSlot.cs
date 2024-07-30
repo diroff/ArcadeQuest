@@ -1,23 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class UIMainItemSlot : UIItemSlot //// Combine with UIMetaItemSlot!
+public class UIMainItemSlot : UIItemSlot
 {
-    private UIItemList _itemList;
+    private UIMainItemList _itemList;
 
     private Canvas _mainCanvas;
-
-    private int _maxItemCount;
 
     private void Awake()
     {
         _mainCanvas = GetComponentInParent<Canvas>();
-        _itemList = GetComponentInParent<UIItemList>();
-    }
-
-    public void SetMaxItemCount(int count)
-    {
-        _maxItemCount = count;
+        _itemList = GetComponentInParent<UIMainItemList>();
     }
 
     public void CompleteIcon()
@@ -27,13 +20,13 @@ public class UIMainItemSlot : UIItemSlot //// Combine with UIMetaItemSlot!
 
     protected override void SetCurrentItemCountText()
     {
-        ItemCountText.text = ItemCount + "/" + _maxItemCount;
+        ItemCountText.text = ItemCount + "/" + MaxItemCount;
     }
 
     private IEnumerator CollectItemAnimation()
     {
         transform.SetAsFirstSibling();
-        _itemList.LayoutGroup.enabled = false;
+        //_itemList.LayoutGroup.enabled = false;
         transform.SetParent(_mainCanvas.transform);
 
         yield return new WaitForEndOfFrame();
@@ -58,7 +51,7 @@ public class UIMainItemSlot : UIItemSlot //// Combine with UIMetaItemSlot!
             yield return null;
         }
 
-        _itemList.LayoutGroup.enabled = true;
+        //_itemList.LayoutGroup.enabled = true;
 
         Destroy(gameObject);
     }
