@@ -3,7 +3,7 @@ using UnityEngine;
 public class UILevelOverPanelDisplayer : MonoBehaviour
 {
     [SerializeField] private GameObject _levelOverPanel;
-    [SerializeField] private MainLevel _levelItems;
+    [SerializeField] private Level _levelItems;
 
     private void Start()
     {
