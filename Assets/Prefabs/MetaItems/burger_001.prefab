@@ -141,15 +141,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67c47cb9df2ebc846aa210f123547154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemId: 3
-  _itemIcon: {fileID: 21300000, guid: 87b96a3ac2f93014489799d982073494, type: 3}
-  _movingTime: 0.2
-  _positionOffset: {x: 0, y: 0, z: 0.2}
-  _rotationOnSlot: {x: 0, y: 0.043619387, z: 0, w: 0.99904823}
-  _maxAngularVelocity: 1
+  ItemPrefabID: 4
+  ItemSceneID: 0
+  ItemIcon: {fileID: 21300000, guid: 87b96a3ac2f93014489799d982073494, type: 3}
   _collisionLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  _maxAngularVelocity: 1
+  _positionOffset: {x: 0, y: 0, z: 0.2}
+  _rotationOnSlot: {x: 0, y: 0.043619387, z: 0, w: 0.99904823}
 --- !u!54 &-199336851024577225
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -223,3 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5835a7e991f43ab4f842e4802c8e9a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _movingTime: 0.2

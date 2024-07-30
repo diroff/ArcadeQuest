@@ -21,7 +21,7 @@ public class MetaSlotPanel : MonoBehaviour
     {
         var pairs = _slots
                 .Select(slot => slot.CurrentItem)
-                .Where(currentItem => currentItem != null && currentItem.ItemId == item.ItemId)
+                .Where(currentItem => currentItem != null && currentItem.PrefabID == item.PrefabID)
                 .ToList();
 
         int currentPairCount = pairs.Count;
@@ -30,7 +30,7 @@ public class MetaSlotPanel : MonoBehaviour
             return;
 
         foreach (var pair in pairs)
-            pair.CollectItem();
+            pair.Collect();
 
         StartCoroutine(CollectItems(pairs));
     }

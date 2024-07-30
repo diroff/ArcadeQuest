@@ -5,11 +5,11 @@ using UnityEngine.Events;
 
 public class LevelItems : MonoBehaviour
 {
-    [SerializeField] private List<Item> _levelItems;
+    [SerializeField] private List<MainItem> _levelItems;
 
     private int _itemsCollectedCount = 0;
 
-    public List<Item> Items => _levelItems;
+    public List<MainItem> Items => _levelItems;
 
     public UnityAction AllItemsCollected;
 
@@ -53,7 +53,7 @@ public class LevelItems : MonoBehaviour
         AllItemsCollected?.Invoke();
     }
 
-    public Item GetNotCollectedItem()
+    public MainItem GetNotCollectedItem()
     {
         foreach (var item in _levelItems)
 

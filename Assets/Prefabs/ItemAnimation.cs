@@ -3,14 +3,15 @@ using UnityEngine;
 
 public class ItemAnimation : MonoBehaviour
 {
-    private float _movingTime;
+    [Header("Animation Settings")]
+    [SerializeField] private float _movingTime = 0.8f;
+
     private MetaItem _metaItem;
 
     private Coroutine _moveCoroutine;
 
-    public void Initialize(float movingTime, MetaItem metaItem)
+    public void Initialize(MetaItem metaItem)
     {
-        _movingTime = movingTime;
         _metaItem = metaItem;
     }
 
@@ -51,7 +52,7 @@ public class ItemAnimation : MonoBehaviour
         while (_metaItem.IsRestanding)
             yield return null;
 
-        _metaItem.DestroyItem();
+        _metaItem.Destroy();
     }
 
     public void PlayCollectAnimation()

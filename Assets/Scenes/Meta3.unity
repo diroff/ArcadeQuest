@@ -698,6 +698,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 179.085
       objectReference: {fileID: 0}
+    - target: {fileID: 6890795204284267121, guid: 838c31f0befe3424cbeb932996c17602,
+        type: 3}
+      propertyPath: ItemSceneID
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1105,6 +1110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624551175197915140, guid: ffb29f97d35e8d54ebad41a449e45fa5,
+        type: 3}
+      propertyPath: ItemSceneID
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1645,6 +1655,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8230338741747709135, guid: f340218183e447145b472a3f53ce68ab,
+        type: 3}
+      propertyPath: ItemSceneID
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1749,6 +1764,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1046103417}
     m_Modifications:
+    - target: {fileID: 6040882142826878803, guid: 734e6f9deb2ccf24d9e594b3ff11171c,
+        type: 3}
+      propertyPath: ItemSceneID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8471984861038302252, guid: 734e6f9deb2ccf24d9e594b3ff11171c,
         type: 3}
       propertyPath: m_Name
@@ -3039,6 +3059,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7624551175197915140, guid: ffb29f97d35e8d54ebad41a449e45fa5,
+        type: 3}
+      propertyPath: ItemSceneID
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3232,6 +3257,11 @@ PrefabInstance:
     - target: {fileID: 3789116289842449349, guid: f340218183e447145b472a3f53ce68ab,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230338741747709135, guid: f340218183e447145b472a3f53ce68ab,
+        type: 3}
+      propertyPath: ItemSceneID
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3998,6 +4028,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890795204284267121, guid: 838c31f0befe3424cbeb932996c17602,
+        type: 3}
+      propertyPath: ItemSceneID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

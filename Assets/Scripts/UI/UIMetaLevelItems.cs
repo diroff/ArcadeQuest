@@ -19,13 +19,13 @@ public class UIMetaLevelItems : MonoBehaviour
     private void OnEnable()
     {
         foreach (var item in _meta.Items)
-            item.ItemWasDestroyedWithId += ItemPanelRefresh;
+            item.ItemWasDestroyedWithPrefabID += ItemPanelRefresh;
     }
 
     private void OnDisable()
     {
         foreach (var item in _meta.Items)
-            item.ItemWasDestroyedWithId -= ItemPanelRefresh;
+            item.ItemWasDestroyedWithPrefabID -= ItemPanelRefresh;
     }
 
     private void Start()
@@ -38,14 +38,14 @@ public class UIMetaLevelItems : MonoBehaviour
         if (_items.Count == 0)
             return;
 
-        var itemId = _items[0].ItemId;
+        var itemId = _items[0].PrefabID;
         int itemCount = 0;
 
         List<MetaItem> items = new List<MetaItem>();
 
         foreach (var item in _items)
         {
-            if (item.ItemId != itemId)
+            if (item.PrefabID != itemId)
                 continue;
 
             itemCount++;
@@ -53,8 +53,8 @@ public class UIMetaLevelItems : MonoBehaviour
         }
 
         var itemSlot = Instantiate(_slotPrefab, _slotPlacement);
-        itemSlot.SetIcon(_items[0].ItemIcon);
-        itemSlot.SetItemID(_items[0].ItemId);
+        itemSlot.SetIcon(_items[0].Icon);
+        itemSlot.SetItemID(_items[0].PrefabID);
         itemSlot.SetItemCount(itemCount);
 
         _slots.Add(itemSlot);

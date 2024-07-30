@@ -1484,6 +1484,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1046103417}
     m_Modifications:
+    - target: {fileID: 2802069701527878705, guid: 721567fad890ebb4c83d0c3925f41020,
+        type: 3}
+      propertyPath: ItemSceneID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7479515015279054330, guid: 721567fad890ebb4c83d0c3925f41020,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2562,6 +2567,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 458905662694707286, guid: 1a683430143292e439d421df0aee03eb,
+        type: 3}
+      propertyPath: ItemSceneID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 698126137467839663, guid: 1a683430143292e439d421df0aee03eb,
         type: 3}
       propertyPath: m_Name
@@ -3257,6 +3267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458905662694707286, guid: 1a683430143292e439d421df0aee03eb,
+        type: 3}
+      propertyPath: ItemSceneID
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 698126137467839663, guid: 1a683430143292e439d421df0aee03eb,
         type: 3}

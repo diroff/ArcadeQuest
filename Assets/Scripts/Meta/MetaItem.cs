@@ -1,14 +1,8 @@
 using UnityEngine;
-using UnityEngine.Events;
 
-public class MetaItem : MonoBehaviour
+public class MetaItem : Item
 {
-    [SerializeField] private int _itemId;
-    [SerializeField] private Sprite _itemIcon;
     [SerializeField] private LayerMask _collisionLayerMask;
-
-    [Header("Animation Settings")]
-    [SerializeField] private float _movingTime = 0.8f;
     [SerializeField] private float _maxAngularVelocity = 1f;
 
     [Header("Position in slot")]
@@ -20,7 +14,6 @@ public class MetaItem : MonoBehaviour
     private Quaternion _startRotation;
 
     private bool _isOnSlot = false;
-    private bool _isCollected = false;
     private bool _isRestanding = false;
     private bool _isDraging = false;
     private bool _isNeedClamp = true;
@@ -35,22 +28,15 @@ public class MetaItem : MonoBehaviour
     private MetaSlotPanel _slotPanel;
     private MetaSlot _slot;
 
-    public int ItemId => _itemId;
-    public Sprite ItemIcon => _itemIcon;
-
     public Quaternion RotationOnSlot => _rotationOnSlot;
 
-    public bool IsCollected => _isCollected;
+    public bool IsCollected => ItemIsCollected;
     public bool IsRestanding => _isRestanding;
     public bool IsOnSlot => _isOnSlot;
 
     public ItemAnimation Animation => _animation;
     public Rigidbody Rigidbody => _rigidbody;
     public MeshCollider MeshCollider => _meshCollider;
-
-    public UnityAction ItemWasCollected;
-    public UnityAction ItemWasDestroyed;
-    public UnityAction<int> ItemWasDestroyedWithId;
 
     private void Awake()
     {
@@ -60,7 +46,7 @@ public class MetaItem : MonoBehaviour
         _meshCollider = GetComponent<MeshCollider>();
         _rigidbody = GetComponent<Rigidbody>();
         _animation = GetComponent<ItemAnimation>();
-        _animation.Initialize(_movingTime, this);
+        _animation.Initialize(this);
     }
 
     private void FixedUpdate()
@@ -158,7 +144,7 @@ public class MetaItem : MonoBehaviour
 
         Vector3 targetPosition = _slot.GetPlacementPosition();
         targetPosition += _positionOffset;
-        
+
         _isRestanding = true;
         _animation.PlayMoveCoroutine(transform.position, targetPosition, _rotationOnSlot);
     }
@@ -177,10 +163,9 @@ public class MetaItem : MonoBehaviour
         _animation.PlayMoveCoroutine(transform.position, _startPosition, _startRotation);
     }
 
-    public void CollectItem()
+    public override void Collect()
     {
-        _isCollected = true;
-        ItemWasCollected?.Invoke();
+        base.Collect();
         _slot.DeleteItem();
         _meshCollider.enabled = false;
         _rigidbody.isKinematic = true;
@@ -192,12 +177,5 @@ public class MetaItem : MonoBehaviour
 
         _meshCollider.isTrigger = _isOnSlot;
         _rigidbody.isKinematic = _isOnSlot;
-    }
-
-    public void DestroyItem()
-    {
-        ItemWasDestroyed?.Invoke();
-        ItemWasDestroyedWithId?.Invoke(_itemId);
-        Destroy(gameObject);
     }
 }

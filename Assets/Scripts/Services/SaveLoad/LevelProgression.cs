@@ -66,14 +66,12 @@ public class LevelProgression : MonoBehaviour
 
     private void DestroyCollectedItems()
     {
-        // Удаляем собранные предметы
         foreach (var item in _levelItems.Items)
         {
-            if (_levelData.CollectedItems.Contains(item.ID))
+            if (_levelData.CollectedItems.Contains(item.SceneID))
                 item.Collect();
         }
 
-        // Удаляем собранные бонусы
         foreach (var bonus in _levelBonuses.Bonuses)
         {
             if (_levelData.CollectedBonus.Contains(bonus.ID))

@@ -10,7 +10,7 @@ public class UIItemList : MonoBehaviour
     [SerializeField] private LevelItems _levelItems;
 
     private List<UIItemSlot> _slots = new List<UIItemSlot>();
-    private List<Item> _items = new List<Item>();
+    private List<MainItem> _items = new List<MainItem>();
 
     private GridLayoutGroup _layoutGroup;
 
@@ -49,7 +49,7 @@ public class UIItemList : MonoBehaviour
         var itemId = _items[0].PrefabID;
         int itemCount = 0;
 
-        List<Item> items = new List<Item>();
+        List<MainItem> items = new List<MainItem>();
 
         foreach (var item in _items)
         {
