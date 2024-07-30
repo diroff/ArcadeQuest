@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class MainLevelTimeChecker : Timer
+public class LevelTimeChecker : Timer
 {
-    [SerializeField] private MainLevel _levelItems;
+    [SerializeField] private Level _levelItems;
 
     private void OnEnable()
     {
