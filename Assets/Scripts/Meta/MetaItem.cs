@@ -30,7 +30,6 @@ public class MetaItem : Item
 
     public Quaternion RotationOnSlot => _rotationOnSlot;
 
-    public bool IsCollected => ItemIsCollected;
     public bool IsRestanding => _isRestanding;
     public bool IsOnSlot => _isOnSlot;
 

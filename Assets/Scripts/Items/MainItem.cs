@@ -4,7 +4,6 @@ using UnityEngine;
 public class MainItem : Item, IInteractable
 {
     private BoxCollider _boxCollider;
-    public bool IsCollected => ItemIsCollected;
 
     private void Awake()
     {

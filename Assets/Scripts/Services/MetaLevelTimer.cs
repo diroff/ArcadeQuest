@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MetaLevelTimer : Timer
 {
-    [SerializeField] private MetaItems _levelItems;
+    [SerializeField] private MetaLevel _levelItems;
 
     private void OnEnable()
     {

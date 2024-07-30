@@ -4,7 +4,7 @@ using UnityEngine;
 public class Hint : MonoBehaviour
 {
     [SerializeField] private CameraMovement _cameraMovement;
-    [SerializeField] private LevelItems _levelItems;
+    [SerializeField] private MainLevel _levelItems;
     [SerializeField] private MobAds _mobAds;
 
     private void OnEnable()

@@ -3,7 +3,7 @@ using UnityEngine;
 public class UIMetaLevelOverPanel : MonoBehaviour
 {
     [SerializeField] private GameObject _levelOverPanel;
-    [SerializeField] private MetaItems _meta;
+    [SerializeField] private MetaLevel _meta;
 
     [SerializeField] private UIMetaLevelOver _levelOver;
 

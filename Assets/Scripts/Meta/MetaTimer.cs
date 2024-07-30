@@ -6,7 +6,7 @@ public class MetaTimer : MonoBehaviour
 {
     [SerializeField] private float _levelTime;
 
-    [SerializeField] private MetaItems _meta;
+    [SerializeField] private MetaLevel _meta;
 
     public UnityAction<float, float> TimerWasUpdated;
     public UnityAction TimeWasOver;

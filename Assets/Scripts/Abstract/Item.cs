@@ -20,6 +20,8 @@ public class Item : MonoBehaviour
     public int PrefabID => ItemPrefabID;
     public int SceneID => ItemSceneID;
 
+    public bool IsCollected => ItemIsCollected;
+
     public virtual void Collect()
     {
         ItemIsCollected = true;

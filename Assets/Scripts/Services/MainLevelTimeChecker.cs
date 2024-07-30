@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MainLevelTimeChecker : Timer
 {
-    [SerializeField] private LevelItems _levelItems;
+    [SerializeField] private MainLevel _levelItems;
 
     private void OnEnable()
     {

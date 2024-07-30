@@ -4,16 +4,16 @@ public class LevelDataSaver : MonoBehaviour
 {
     [SerializeField] private LevelLoading _levelLoading;
     [SerializeField] private CurrentLevelData _levelData;
-    [SerializeField] private LevelItems _levelItems;
+    [SerializeField] private MainLevel _levelItems;
 
     private void OnEnable()
     {
-        _levelItems.AllItemsCollected += SaveLevelData;
+        _levelItems.LevelWasCompleted += SaveLevelData;
     }
 
     private void OnDisable()
     {
-        _levelItems.AllItemsCollected -= SaveLevelData;
+        _levelItems.LevelWasCompleted -= SaveLevelData;
     }
 
     private void SaveLevelData()

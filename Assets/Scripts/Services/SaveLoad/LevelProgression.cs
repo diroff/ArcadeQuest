@@ -7,7 +7,7 @@ public class LevelProgression : MonoBehaviour
     public const string Key = "LevelProgression";
 
     [SerializeField] private CurrentLevelData _currentLevelData;
-    [SerializeField] private LevelItems _levelItems;
+    [SerializeField] private MainLevel _levelItems;
     [SerializeField] private LevelBonuses _levelBonuses;
     [SerializeField] private Player _player;
     [SerializeField] private Camera _camera;

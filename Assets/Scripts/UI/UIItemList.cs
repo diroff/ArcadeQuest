@@ -7,7 +7,7 @@ public class UIItemList : MonoBehaviour
     [SerializeField] private UIItemSlot _slotPrefab;
     [SerializeField] private Transform _slotPlacement;
 
-    [SerializeField] private LevelItems _levelItems;
+    [SerializeField] private MainLevel _levelItems;
 
     private List<UIItemSlot> _slots = new List<UIItemSlot>();
     private List<MainItem> _items = new List<MainItem>();
@@ -21,7 +21,7 @@ public class UIItemList : MonoBehaviour
         _layoutGroup = GetComponent<GridLayoutGroup>();
 
         foreach (var slot in _levelItems.Items)
-            _items.Add(slot);
+            _items.Add(slot as MainItem);
     }
 
     private void OnEnable()

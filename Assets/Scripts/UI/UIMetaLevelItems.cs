@@ -5,7 +5,7 @@ public class UIMetaLevelItems : MonoBehaviour
 {
     [SerializeField] private UIMetaItemSlot _slotPrefab;
     [SerializeField] private Transform _slotPlacement;
-    [SerializeField] private MetaItems _meta;
+    [SerializeField] private MetaLevel _meta;
 
     private List<UIMetaItemSlot> _slots = new List<UIMetaItemSlot>();
     private List<MetaItem> _items = new List<MetaItem>();
@@ -13,7 +13,7 @@ public class UIMetaLevelItems : MonoBehaviour
     private void Awake()
     {
         foreach (var slot in _meta.Items)
-            _items.Add(slot);
+            _items.Add(slot as MetaItem);
     }
 
     private void OnEnable()

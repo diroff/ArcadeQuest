@@ -8,7 +8,7 @@ public class CheatMenu : MonoBehaviour
     [SerializeField] private LevelProgression _levelProgression;
 
     [SerializeField] private LevelLoading _levelLoading;
-    [SerializeField] private LevelItems _levelItems;
+    [SerializeField] private MainLevel _levelItems;
     [SerializeField] private GameObject _UICheatMenu;
 
     public void SetMenuState()

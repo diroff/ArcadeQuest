@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UIAdRewardButton : MonoBehaviour
 {
-    [SerializeField] private LevelItems _levelItems;
+    [SerializeField] private MainLevel _levelItems;
     [SerializeField] private MobAds _adMob;
     [SerializeField] private GameObject _button;
 
