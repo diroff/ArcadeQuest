@@ -1,4 +1,4 @@
-public class UIMetaLevelItems : UIItemList
+public class UIMetaItemList : UIItemList
 {
     private UIMetaItemSlot _slot => _slotPrefab as UIMetaItemSlot;
 
