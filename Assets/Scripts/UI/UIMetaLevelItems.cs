@@ -50,6 +50,7 @@ public class UIMetaLevelItems : MonoBehaviour
 
             itemCount++;
             items.Add(item);
+            Debug.Log("Item was added:" + item);
         }
 
         var itemSlot = Instantiate(_slotPrefab, _slotPlacement);
@@ -69,7 +70,7 @@ public class UIMetaLevelItems : MonoBehaviour
     {
         foreach (var item in _slots)
         {
-            if (item.ItemID != id)
+            if (item.ID != id)
                 continue;
 
             item.RemoveItems(1);

@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class UIItemList : MonoBehaviour
 {
-    [SerializeField] private UIItemSlot _slotPrefab;
+    [SerializeField] private UIMainItemSlot _slotPrefab;
     [SerializeField] private Transform _slotPlacement;
 
     [SerializeField] private MainLevel _levelItems;
 
-    private List<UIItemSlot> _slots = new List<UIItemSlot>();
+    private List<UIMainItemSlot> _slots = new List<UIMainItemSlot>();
     private List<MainItem> _items = new List<MainItem>();
 
     private GridLayoutGroup _layoutGroup;
@@ -22,6 +22,8 @@ public class UIItemList : MonoBehaviour
 
         foreach (var slot in _levelItems.Items)
             _items.Add(slot as MainItem);
+
+        CreateItemList();
     }
 
     private void OnEnable()
@@ -34,11 +36,6 @@ public class UIItemList : MonoBehaviour
     {
         foreach (var item in _levelItems.Items)
             item.ItemWasCollectedWithPrefabID -= ItemPanelRefresh;
-    }
-
-    private void Start()
-    {
-        CreateItemList();
     }
 
     private void CreateItemList()
@@ -78,7 +75,7 @@ public class UIItemList : MonoBehaviour
     {
         foreach (var item in _slots)
         {
-            if (item.ItemID != id)
+            if (item.ID != id)
                 continue;
 
             item.RemoveItems(1);

@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3e56e3780460f49bb9fbbccb9ea6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slotPrefab: {fileID: 4143006705208202981, guid: f8611cb99492bec4790db9fc99b4ba34,
+  _slotPrefab: {fileID: 4142762134853022769, guid: f8611cb99492bec4790db9fc99b4ba34,
     type: 3}
   _slotPlacement: {fileID: 8878057790950472891}
   _levelItems: {fileID: 0}
