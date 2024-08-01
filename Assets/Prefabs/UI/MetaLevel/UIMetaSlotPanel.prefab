@@ -290,7 +290,7 @@ MonoBehaviour:
   _slotPrefab: {fileID: 1948535915681662612, guid: 4d9cb65bcf68ace438091b70bb43a5d5,
     type: 3}
   _slotPlacement: {fileID: 8878057790950472891}
-  _meta: {fileID: 0}
+  _level: {fileID: 0}
 --- !u!114 &1908975961317150614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +340,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: -10}
+  m_SizeDelta: {x: 0, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &568284912236926868
 CanvasRenderer:

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UIItemPanel : MonoBehaviour
+public class UIWidthEnsurer : MonoBehaviour
 {
     [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private RectTransform _viewportTransform;
