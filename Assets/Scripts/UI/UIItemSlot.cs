@@ -49,8 +49,7 @@ public class UIItemSlot : MonoBehaviour
         if (ItemCount <= 0)
         {
             UIItemWasRemoved?.Invoke(this);
-            Debug.Log("Item will be destroyed");
-            //Destroy(gameObject);
+            ItemCountText.gameObject.SetActive(false);
         }
     }
 

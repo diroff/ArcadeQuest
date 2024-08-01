@@ -1546,6 +1546,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9153665109035999176, guid: 21f776fb216d1d84fa5fb22e9d9a6082,
+        type: 3}
+      propertyPath: _mainCanvas
+      value: 
+      objectReference: {fileID: 1829714131}
     - target: {fileID: 202525577119909125, guid: f669a34e7dc56a24a899be0955082506,
         type: 3}
       propertyPath: _meta

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class UIItemList : MonoBehaviour
 {
@@ -8,10 +9,14 @@ public class UIItemList : MonoBehaviour
     [SerializeField] protected Transform _slotPlacement;
     [SerializeField] protected Level _level;
 
+    [SerializeField] private GridLayoutGroup _gridLayout;
+
     protected List<UIItemSlot> _slots = new List<UIItemSlot>();
     protected List<Item> _items = new List<Item>();
 
     public UnityAction<List<UIItemSlot>> ItemListUIWasCreated;
+
+    public GridLayoutGroup GridLayout => _gridLayout;
 
     private void Awake()
     {

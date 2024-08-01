@@ -292,6 +292,7 @@ MonoBehaviour:
     type: 3}
   _slotPlacement: {fileID: 8878057790950472891}
   _level: {fileID: 0}
+  _gridLayout: {fileID: 8418010252410983884}
 --- !u!114 &1908975961317150614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +320,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemList: {fileID: 34482727374961872}
+  _mainCanvas: {fileID: 0}
+  _scaleFactor: {x: 0.3, y: 0.3, z: 0.3}
+  _animationTime: 0.4
 --- !u!1 &7528185175184771854
 GameObject:
   m_ObjectHideFlags: 0
