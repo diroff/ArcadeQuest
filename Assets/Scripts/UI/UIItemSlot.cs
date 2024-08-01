@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UIItemSlot : MonoBehaviour
@@ -10,6 +11,8 @@ public class UIItemSlot : MonoBehaviour
     protected int ItemCount;
     protected int ItemID;
     protected int MaxItemCount;
+
+    public UnityAction<UIItemSlot> UIItemWasRemoved;
 
     public int ID => ItemID;
 
@@ -26,7 +29,6 @@ public class UIItemSlot : MonoBehaviour
     public void SetMaxItemCount(int count)
     {
         MaxItemCount = count;
-        Debug.Log("Max item count setted:" + MaxItemCount);
     }
 
     public void SetItemCount(int count)
@@ -45,7 +47,11 @@ public class UIItemSlot : MonoBehaviour
         SetCurrentItemCountText();
 
         if (ItemCount <= 0)
-            Destroy(gameObject);
+        {
+            UIItemWasRemoved?.Invoke(this);
+            Debug.Log("Item will be destroyed");
+            //Destroy(gameObject);
+        }
     }
 
     protected virtual void SetCurrentItemCountText()

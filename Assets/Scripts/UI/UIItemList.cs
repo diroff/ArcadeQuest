@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class UIItemList : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class UIItemList : MonoBehaviour
 
     protected List<UIItemSlot> _slots = new List<UIItemSlot>();
     protected List<Item> _items = new List<Item>();
+
+    public UnityAction<List<UIItemSlot>> ItemListUIWasCreated;
 
     private void Awake()
     {
@@ -44,7 +47,10 @@ public class UIItemList : MonoBehaviour
     private void CreateItemList()
     {
         if (_items.Count == 0)
+        {
+            ItemListUIWasCreated?.Invoke(_slots);
             return;
+        }
 
         var itemId = _items[0].PrefabID;
         int itemCount = 0;

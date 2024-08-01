@@ -1,18 +1,50 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UIItemAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private UIItemList _itemList;
+
+    private List<UIItemSlot> _itemSlots;
+
+    private void OnEnable()
     {
-        
+        _itemList.ItemListUIWasCreated += OnItemListWasCreated;
+
+        if (_itemSlots == null)
+            return;
+
+        foreach (var item in _itemSlots)
+        {
+            item.UIItemWasRemoved += OnUIItemWasRemoved;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        _itemList.ItemListUIWasCreated -= OnItemListWasCreated;
+
+        if (_itemSlots == null)
+            return;
+
+        foreach (var item in _itemSlots)
+        {
+            item.UIItemWasRemoved -= OnUIItemWasRemoved;
+        }
+    }
+
+    private void OnItemListWasCreated(List<UIItemSlot> itemList)
+    {
+        _itemSlots = new List<UIItemSlot>(itemList);
+
+        foreach (var item in _itemSlots)
+        {
+            item.UIItemWasRemoved += OnUIItemWasRemoved;
+        }
+    }
+
+    private void OnUIItemWasRemoved(UIItemSlot slot)
+    {
+        Destroy(slot.gameObject);
     }
 }
