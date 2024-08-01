@@ -11,13 +11,8 @@ public class UIItemAnimation : MonoBehaviour
     {
         _itemList.ItemListUIWasCreated += OnItemListWasCreated;
 
-        if (_itemSlots == null)
-            return;
-
-        foreach (var item in _itemSlots)
-        {
-            item.UIItemWasRemoved += OnUIItemWasRemoved;
-        }
+        if (_itemSlots != null)
+            SubscribeOnItemList();
     }
 
     private void OnDisable()
@@ -37,14 +32,19 @@ public class UIItemAnimation : MonoBehaviour
     {
         _itemSlots = new List<UIItemSlot>(itemList);
 
-        foreach (var item in _itemSlots)
-        {
-            item.UIItemWasRemoved += OnUIItemWasRemoved;
-        }
+        SubscribeOnItemList();
     }
 
     private void OnUIItemWasRemoved(UIItemSlot slot)
     {
         Destroy(slot.gameObject);
+    }
+
+    private void SubscribeOnItemList()
+    {
+        foreach (var item in _itemSlots)
+        {
+            item.UIItemWasRemoved += OnUIItemWasRemoved;
+        }
     }
 }
