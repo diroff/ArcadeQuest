@@ -20,6 +20,6 @@ public class MainItem : Item, IInteractable
     {
         _boxCollider.enabled = false;
         base.Collect();
-        Destroy();
+        //Destroy();
     }
 }

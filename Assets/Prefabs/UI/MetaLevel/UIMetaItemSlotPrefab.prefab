@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 6314781153337296516}
   - component: {fileID: 1485005836945937050}
   - component: {fileID: 1948535915681662612}
+  - component: {fileID: 8908298550273557583}
   m_Layer: 5
   m_Name: UIMetaItemSlotPrefab
   m_TagString: Untagged
@@ -377,6 +378,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemIcon: {fileID: 1489570334017448311}
   ItemCountText: {fileID: 3031242067517967409}
+--- !u!114 &8908298550273557583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3245767542640693938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696056cf7c9e1e04788a97794d50dfb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slot: {fileID: 1948535915681662612}
+  _animationTime: 0.75
+  _moveDistance: 18
 --- !u!1 &5175789232759855130
 GameObject:
   m_ObjectHideFlags: 0

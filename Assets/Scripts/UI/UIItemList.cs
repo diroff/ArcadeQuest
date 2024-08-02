@@ -15,7 +15,6 @@ public class UIItemList : MonoBehaviour
     protected List<Item> _items = new List<Item>();
 
     public UnityAction<List<UIItemSlot>> ItemListUIWasCreated;
-    public UnityAction<UIItemSlot> ItemListChanged;
 
     public GridLayoutGroup GridLayout => _gridLayout;
 

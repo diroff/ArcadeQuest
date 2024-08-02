@@ -10,10 +10,12 @@ public class Item : MonoBehaviour
     protected bool ItemIsCollected = false;
 
     public UnityAction ItemWasCollected;
+    public UnityAction<Item> ConcreteItemWasCollected;
     public UnityAction<int> ItemWasCollectedWithSceneID;
     public UnityAction<int> ItemWasCollectedWithPrefabID;
 
     public UnityAction<int> ItemWasDestroyedWithPrefabID;
+    public UnityAction<Item> ConcreteItemWasDestroyed;
     public UnityAction ItemWasDestroyed;
 
     public Sprite Icon => ItemIcon;
@@ -27,6 +29,7 @@ public class Item : MonoBehaviour
         ItemIsCollected = true;
 
         ItemWasCollected?.Invoke();
+        ConcreteItemWasCollected?.Invoke(this);
         ItemWasCollectedWithSceneID?.Invoke(ItemSceneID);
         ItemWasCollectedWithPrefabID?.Invoke(PrefabID);
     }
@@ -35,6 +38,7 @@ public class Item : MonoBehaviour
     {
         ItemWasDestroyed?.Invoke();
         ItemWasDestroyedWithPrefabID?.Invoke(ItemPrefabID);
+        ConcreteItemWasDestroyed?.Invoke(this);
         Destroy(gameObject);
     }
 

@@ -15,8 +15,11 @@ public class UIItemSlot : MonoBehaviour
     protected int MaxItemCount;
 
     public UnityAction<UIItemSlot> UIItemWasRemoved;
+    public UnityAction ItemWasCollected;
 
     public List<Item> Item => SlotItems;
+
+    public Item LastCollectedItem { get; private set; }
 
     public void Initialize(List<Item> items)
     {
@@ -26,7 +29,10 @@ public class UIItemSlot : MonoBehaviour
         SetCurrentItemCountText();
 
         foreach (var item in SlotItems)
+        {
             item.ItemWasDestroyed += OnItemWasDestroyed;
+            item.ConcreteItemWasCollected += OnItemWasCollected;
+        }
     }
 
     private void OnEnable()
@@ -35,7 +41,10 @@ public class UIItemSlot : MonoBehaviour
             return;
 
         foreach (var item in SlotItems)
+        {
             item.ItemWasDestroyed += OnItemWasDestroyed;
+            item.ConcreteItemWasCollected += OnItemWasCollected;
+        }
     }
 
     private void OnDisable()
@@ -44,7 +53,16 @@ public class UIItemSlot : MonoBehaviour
             return;
 
         foreach (var item in SlotItems)
+        {
             item.ItemWasDestroyed -= OnItemWasDestroyed;
+            item.ConcreteItemWasCollected -= OnItemWasCollected;
+        }
+    }
+
+    private void OnItemWasCollected(Item item)
+    {
+        LastCollectedItem = item;
+        ItemWasCollected?.Invoke();
     }
 
     private void OnItemWasDestroyed()
