@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,39 +9,50 @@ public class UIItemSlot : MonoBehaviour
     [SerializeField] protected Image ItemIcon;
     [SerializeField] protected TextMeshProUGUI ItemCountText;
 
+    protected List<Item> SlotItems;
+
     protected int ItemCount;
-    protected int ItemID;
     protected int MaxItemCount;
 
     public UnityAction<UIItemSlot> UIItemWasRemoved;
 
-    public int ID => ItemID;
+    public List<Item> Item => SlotItems;
 
-    public void SetItemID(int id)
+    public void Initialize(List<Item> items)
     {
-        ItemID = id;
+        SlotItems = new List<Item>(items);
+        ItemIcon.sprite = SlotItems[0].Icon;
+        MaxItemCount = ItemCount = SlotItems.Count;
+        SetCurrentItemCountText();
+
+        foreach (var item in SlotItems)
+            item.ItemWasDestroyed += OnItemWasDestroyed;
     }
 
-    public void SetIcon(Sprite sprite)
+    private void OnEnable()
     {
-        ItemIcon.sprite = sprite;
-    }
-
-    public void SetMaxItemCount(int count)
-    {
-        MaxItemCount = count;
-    }
-
-    public void SetItemCount(int count)
-    {
-        if (count < 0)
+        if (SlotItems == null)
             return;
 
-        ItemCount = count;
-        SetCurrentItemCountText();
+        foreach (var item in SlotItems)
+            item.ItemWasDestroyed += OnItemWasDestroyed;
     }
 
-    public void RemoveItems(int count)
+    private void OnDisable()
+    {
+        if (SlotItems == null)
+            return;
+
+        foreach (var item in SlotItems)
+            item.ItemWasDestroyed -= OnItemWasDestroyed;
+    }
+
+    private void OnItemWasDestroyed()
+    {
+        RemoveItems(1);
+    }
+
+    protected void RemoveItems(int count)
     {
         ItemCount -= count;
 

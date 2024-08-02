@@ -15,6 +15,7 @@ public class UIItemList : MonoBehaviour
     protected List<Item> _items = new List<Item>();
 
     public UnityAction<List<UIItemSlot>> ItemListUIWasCreated;
+    public UnityAction<UIItemSlot> ItemListChanged;
 
     public GridLayoutGroup GridLayout => _gridLayout;
 
@@ -24,29 +25,6 @@ public class UIItemList : MonoBehaviour
             _items.Add(slot);
 
         CreateItemList();
-    }
-
-    private void OnEnable()
-    {
-        foreach (var item in _level.Items)
-            item.ItemWasDestroyedWithPrefabID += ItemPanelRefresh;
-    }
-
-    private void OnDisable()
-    {
-        foreach (var item in _level.Items)
-            item.ItemWasDestroyedWithPrefabID -= ItemPanelRefresh;
-    }
-
-    private void ItemPanelRefresh(int id)
-    {
-        foreach (var item in _slots)
-        {
-            if (item.ID != id)
-                continue;
-
-            item.RemoveItems(1);
-        }
     }
 
     private void CreateItemList()
@@ -60,7 +38,7 @@ public class UIItemList : MonoBehaviour
         var itemId = _items[0].PrefabID;
         int itemCount = 0;
 
-        List<Item> items = new List<Item>();
+        List<Item> concreteItemList = new List<Item>();
 
         foreach (var item in _items)
         {
@@ -68,16 +46,15 @@ public class UIItemList : MonoBehaviour
                 continue;
 
             itemCount++;
-            items.Add(item);
+            concreteItemList.Add(item);
         }
 
         var itemSlot = CreateItemSlot(_slotPrefab);
-        itemSlot.SetMaxItemCount(itemCount);
-        itemSlot.SetItemCount(itemCount);
+        itemSlot.Initialize(concreteItemList);
 
         _slots.Add(itemSlot);
 
-        foreach (var item in items)
+        foreach (var item in concreteItemList)
             _items.Remove(item);
 
         CreateItemList();
@@ -86,8 +63,6 @@ public class UIItemList : MonoBehaviour
     protected virtual UIItemSlot CreateItemSlot(UIItemSlot slotPrefab)
     {
         var itemSlot = Instantiate(slotPrefab, _slotPlacement);
-        itemSlot.SetIcon(_items[0].Icon);
-        itemSlot.SetItemID(_items[0].PrefabID);
 
         return itemSlot;
     }

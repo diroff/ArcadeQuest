@@ -4,7 +4,7 @@ public class UIMainItemList : UIItemList
 
     protected override UIItemSlot CreateItemSlot(UIItemSlot slotPrefab)
     {
-        slotPrefab = _slotPrefab;
+        slotPrefab = _slot;
 
         return base.CreateItemSlot(slotPrefab);
     }

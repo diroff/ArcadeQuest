@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class UIMainItemSlot : UIItemSlot
 {
     protected override void SetCurrentItemCountText()
