@@ -56,6 +56,15 @@ public class UIItemAnimation : MonoBehaviour
 
     private IEnumerator CollectItemAnimation(UIItemSlot slot)
     {
+        foreach(var item in slot.Item)
+        {
+            if (item.IsImmediatelyCollected)
+            {
+                Destroy(slot.gameObject);
+                yield break;
+            }
+        }
+
         slot.transform.SetAsFirstSibling();
         yield return new WaitForEndOfFrame();
         _itemList.GridLayout.enabled = false;

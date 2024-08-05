@@ -24,6 +24,8 @@ public class Item : MonoBehaviour
 
     public bool IsCollected => ItemIsCollected;
 
+    public bool IsImmediatelyCollected { get; private set; } = false;
+
     public virtual void Collect()
     {
         ItemIsCollected = true;
@@ -44,6 +46,7 @@ public class Item : MonoBehaviour
 
     public void CollectImmediately()
     {
+        IsImmediatelyCollected = true;
         Collect();
         Destroy();
     }

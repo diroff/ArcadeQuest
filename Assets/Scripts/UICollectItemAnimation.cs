@@ -28,7 +28,12 @@ public class UICollectItemAnimation : MonoBehaviour
         if (_currentItems.Count == 0)
             return;
 
-        StartCoroutine(CollectAnimation(_currentItems.Dequeue()));
+        var item = _currentItems.Dequeue();
+
+        if (item == null || item.IsImmediatelyCollected)
+            return;
+
+        StartCoroutine(CollectAnimation(item));
     }
 
     private IEnumerator CollectAnimation(Item item)

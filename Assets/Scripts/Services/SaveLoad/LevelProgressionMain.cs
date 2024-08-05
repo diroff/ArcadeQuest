@@ -40,7 +40,7 @@ public class LevelProgressionMain : LevelProgression
         foreach (var item in Level.Items)
         {
             if (LevelProgress.CollectedItems.Contains(item.SceneID))
-                item.Collect();
+                item.CollectImmediately();
         }
 
         foreach (var bonus in _levelBonuses.Bonuses)
