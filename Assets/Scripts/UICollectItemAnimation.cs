@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class UICollectItemAnimation : MonoBehaviour
 {
+    [SerializeField] private RectTransform _movePoint;
     [SerializeField] private UIItemSlot _slot;
 
     [SerializeField] private float _animationTime;
-    [SerializeField] private float _moveDistance;
 
     private Queue<Item> _currentItems = new Queue<Item>();
 
@@ -40,24 +40,27 @@ public class UICollectItemAnimation : MonoBehaviour
     {
         float startTime = Time.time;
 
-        Vector3 itemPosition = item.transform.position;
-
-        Vector3 start = itemPosition;
-        Vector3 end = new Vector3(itemPosition.x, itemPosition.y, itemPosition.z - _moveDistance);
+        Vector3 startPosition = item.transform.position;
 
         while (Time.time < startTime + _animationTime)
         {
             float elapsedTime = Time.time - startTime;
             float t = elapsedTime / _animationTime;
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
-            Vector3 newPosition = Vector3.Lerp(start, end, smoothT);
 
+            Vector3 screenPoint = RectTransformUtility.WorldToScreenPoint(null, _movePoint.position);
+            Vector3 end = Camera.main.ScreenToWorldPoint(new Vector3(screenPoint.x, screenPoint.y, Camera.main.nearClipPlane + 10));
+
+            Vector3 newPosition = Vector3.Lerp(startPosition, end, smoothT);
             item.transform.position = newPosition;
 
             yield return null;
         }
 
-        item.transform.position = end;
+        Vector3 finalScreenPoint = RectTransformUtility.WorldToScreenPoint(null, _movePoint.position);
+        Vector3 finalEnd = Camera.main.ScreenToWorldPoint(new Vector3(finalScreenPoint.x, finalScreenPoint.y, Camera.main.nearClipPlane + 10));
+
+        item.transform.position = finalEnd;
         item.Destroy();
     }
 }
