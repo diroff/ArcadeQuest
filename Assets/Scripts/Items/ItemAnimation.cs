@@ -7,8 +7,9 @@ public class ItemAnimation : MonoBehaviour
     [SerializeField] private float _movingTime = 0.8f;
 
     private MetaItem _metaItem;
-
     private Coroutine _moveCoroutine;
+
+    public bool IsCollectAnimationFinished { get; private set; }
 
     public void Initialize(MetaItem metaItem)
     {
@@ -17,6 +18,7 @@ public class ItemAnimation : MonoBehaviour
 
     private IEnumerator MoveObjectCoroutine(Vector3 startPoint, Vector3 endPoint, Quaternion endRotation, float timeModificator = 0f)
     {
+        IsCollectAnimationFinished = false;
         float totalTime = _movingTime + timeModificator;
         float elapsedTime = 0f;
 
@@ -40,25 +42,7 @@ public class ItemAnimation : MonoBehaviour
         _metaItem.gameObject.transform.position = endPoint;
         _metaItem.RestandPosition();
         _moveCoroutine = null;
-    }
-
-    private IEnumerator CollectAnimation()
-    {
-        Vector3 targetPosition = _metaItem.transform.position;
-        targetPosition.y += 5f;
-
-        StartCoroutine(MoveObjectCoroutine(transform.position, targetPosition, _metaItem.RotationOnSlot, 0.5f));
-
-        while (_metaItem.IsRestanding)
-            yield return null;
-
-        _metaItem.Destroy();
-    }
-
-    public void PlayCollectAnimation()
-    {
-        _metaItem.UnrestandPosition();
-        StartCoroutine(CollectAnimation());
+        IsCollectAnimationFinished = true;
     }
 
     public void PlayMoveCoroutine(Vector3 startPoint, Vector3 endPoint, Quaternion endRotation, float timeModificator = 0f)

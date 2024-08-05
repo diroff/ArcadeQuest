@@ -25,12 +25,14 @@ public class UICollectItemAnimation : MonoBehaviour
     {
         _currentItems.Enqueue(_slot.LastCollectedItem);
 
+        if (_currentItems.Count == 0)
+            return;
+
         StartCoroutine(CollectAnimation(_currentItems.Dequeue()));
     }
 
     private IEnumerator CollectAnimation(Item item)
     {
-        Debug.Log("Collect animation was started on ui shit");
         float startTime = Time.time;
 
         Vector3 itemPosition = item.transform.position;

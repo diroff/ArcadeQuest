@@ -168,7 +168,10 @@ public class MetaItem : Item
 
         if (_slot != null)
             _slot.DeleteItem();
+    }
 
+    public void DisablePhysic()
+    {
         _meshCollider.enabled = false;
         _rigidbody.isKinematic = true;
     }

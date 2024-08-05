@@ -30,17 +30,17 @@ public class MetaSlotPanel : MonoBehaviour
             return;
 
         foreach (var pair in pairs)
-            pair.Collect();
+            pair.DisablePhysic();
 
         StartCoroutine(CollectItems(pairs));
     }
 
     private IEnumerator CollectItems(List<MetaItem> items)
     {
-        yield return new WaitUntil(() => items.All(item => !item.IsRestanding));
+        yield return new WaitUntil(() => items.All(item => item.Animation.IsCollectAnimationFinished));
 
         foreach (var item in items)
-            item.Animation.PlayCollectAnimation();
+            item.Collect();
     }
 
     private MetaSlot GetFreeSlot()

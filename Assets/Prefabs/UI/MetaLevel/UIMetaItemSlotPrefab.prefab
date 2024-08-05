@@ -392,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slot: {fileID: 1948535915681662612}
   _animationTime: 0.75
-  _moveDistance: 18
+  _moveDistance: -17
 --- !u!1 &5175789232759855130
 GameObject:
   m_ObjectHideFlags: 0
