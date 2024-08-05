@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UICollectItemAnimation : MonoBehaviour
@@ -8,7 +9,7 @@ public class UICollectItemAnimation : MonoBehaviour
     [SerializeField] private float _animationTime;
     [SerializeField] private float _moveDistance;
 
-    private Item _currentItem;
+    private Queue<Item> _currentItems = new Queue<Item>();
 
     private void OnEnable()
     {
@@ -22,16 +23,17 @@ public class UICollectItemAnimation : MonoBehaviour
 
     public void OnItemListChanged()
     {
-        _currentItem = _slot.LastCollectedItem;
+        _currentItems.Enqueue(_slot.LastCollectedItem);
 
-        StartCoroutine(CollectAnimation());
+        StartCoroutine(CollectAnimation(_currentItems.Dequeue()));
     }
 
-    private IEnumerator CollectAnimation()
+    private IEnumerator CollectAnimation(Item item)
     {
+        Debug.Log("Collect animation was started on ui shit");
         float startTime = Time.time;
 
-        Vector3 itemPosition = _currentItem.transform.position;
+        Vector3 itemPosition = item.transform.position;
 
         Vector3 start = itemPosition;
         Vector3 end = new Vector3(itemPosition.x, itemPosition.y, itemPosition.z - _moveDistance);
@@ -43,12 +45,12 @@ public class UICollectItemAnimation : MonoBehaviour
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
             Vector3 newPosition = Vector3.Lerp(start, end, smoothT);
 
-            _currentItem.transform.position = newPosition;
+            item.transform.position = newPosition;
 
             yield return null;
         }
 
-        _currentItem.transform.position = end;
-        _currentItem.Destroy();
+        item.transform.position = end;
+        item.Destroy();
     }
 }
