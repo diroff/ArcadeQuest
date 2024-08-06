@@ -7,8 +7,7 @@ public class Creature : MonoBehaviour, IMoveableController
     [SerializeField] private float Acceleration = 5f;
     [SerializeField] private float Deceleration = 5f;
 
-    private CreatureAnimator _animator;
-    private float _moveAmount;
+    protected CreatureAnimator Animator;
 
     protected float CurrentMovementSpeed;
     protected float CurrentRotationSpeed;
@@ -17,12 +16,14 @@ public class Creature : MonoBehaviour, IMoveableController
     protected Vector3 SmoothMoveDirection;
     protected Rigidbody CreatureRigidbody;
 
+    private float _moveAmount;
+
     public Rigidbody RigidBody => CreatureRigidbody;
 
     protected virtual void Awake()
     {
         CreatureRigidbody = GetComponent<Rigidbody>();
-        _animator = GetComponent<CreatureAnimator>();
+        Animator = GetComponent<CreatureAnimator>();
     }
 
     protected virtual void Start()
@@ -40,7 +41,7 @@ public class Creature : MonoBehaviour, IMoveableController
     {
         HandleMovement();
         HandleRotation();
-        _animator.UpdateAnimatorValues(0, _moveAmount);
+        Animator.UpdateAnimatorValues(0, _moveAmount);
     }
 
     protected void HandleMovement()

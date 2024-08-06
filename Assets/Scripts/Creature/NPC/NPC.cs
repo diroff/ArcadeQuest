@@ -37,11 +37,6 @@ public class NPC : Creature
         {
             if (IsOnPoint())
             {
-                if (_destinationPoint != null)
-                {
-                    _destinationPoint.DoExitAction();
-                }
-
                 _destinationPoint = _points[_destinationPointIndex];
                 _destinationPoint.DoEnterAction();
                 _destinationPointIndex = (int)Mathf.Repeat(_destinationPointIndex + 1, _points.Length);
@@ -66,10 +61,9 @@ public class NPC : Creature
         ResetVelocity();
         _destinationPoint.DoWaitAction();
         yield return new WaitForSeconds(_destinationPoint.WaitTime);
-        _destinationPoint.DoExitAction();
-        yield return new WaitForSeconds(1f); // for switch animations
         _destinationPoint = null;
 
+        Animator.ContinueWalk();
         StartState(DoPatrol());
     }
 

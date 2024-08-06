@@ -157,10 +157,10 @@ RectTransform:
   - {fileID: 1294500280}
   m_Father: {fileID: 1501581134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 515, y: -685}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &15022951
 MonoBehaviour:
@@ -453,6 +453,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: French Fries
       objectReference: {fileID: 0}
+    - target: {fileID: 7820293957289039680, guid: 521a78919e5cc2541960aeed0a28cf6d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -520,6 +525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697588864816078017, guid: b9cd3c5ac27a9df41933076e320b1c3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -589,6 +599,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blade_Knife
       objectReference: {fileID: 0}
+    - target: {fileID: 7577000004406976092, guid: b178733ff1c626a45b36924d749f8820,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -606,6 +621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633786088095158143, guid: 689fbc83c77623a4eb2cfc89e40a695d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4118011470767936965, guid: 689fbc83c77623a4eb2cfc89e40a695d,
         type: 3}
@@ -725,6 +745,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterPump
       objectReference: {fileID: 0}
+    - target: {fileID: 8758205412903146980, guid: d13ad0c181f237948af1c9ea69f804a7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -742,6 +767,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650803615520471275, guid: 0b50d6a70d2f98d4b8c01c55cc2098d0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3376436469105222687, guid: 0b50d6a70d2f98d4b8c01c55cc2098d0,
         type: 3}
@@ -825,6 +855,84 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 0.00000087422785, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &345249422
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.3500004
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.110001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469941731829162281, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      propertyPath: m_Name
+      value: NPC_Red
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 537411566}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1074b0c06a5fd23438a2a079cdcfa55c, type: 3}
+--- !u!4 &345249423 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4398710459938738614, guid: 1074b0c06a5fd23438a2a079cdcfa55c,
+    type: 3}
+  m_PrefabInstance: {fileID: 345249422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &386555476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -887,6 +995,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shovel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031430313627143455, guid: 73b9733598c38ac46850a577e7fba344,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -956,6 +1069,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Banana
       objectReference: {fileID: 0}
+    - target: {fileID: 2230530226155236490, guid: 869b55c0dc2962d41a835b0eeb3c4b36,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -973,6 +1091,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cake
+      objectReference: {fileID: 0}
+    - target: {fileID: 422548851844474289, guid: 838c31f0befe3424cbeb932996c17602,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5948516571917201833, guid: 838c31f0befe3424cbeb932996c17602,
         type: 3}
@@ -1063,10 +1186,10 @@ RectTransform:
   - {fileID: 51863425}
   m_Father: {fileID: 1501581134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 515, y: -1185}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &488248134
 MonoBehaviour:
@@ -1225,6 +1348,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: burger_001
       objectReference: {fileID: 0}
+    - target: {fileID: 3272478168242429797, guid: ebe06d337aadaa747b26f42d9aea5511,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1316,13 +1444,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537411563}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.46401018, y: -0, z: -0, w: 0.88582987}
-  m_LocalPosition: {x: -5.5, y: 9.05518, z: 2.0765557}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.3330559, y: -0, z: -0, w: 0.94290715}
+  m_LocalPosition: {x: 0, y: 5.03, z: -5.45}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 55.292, y: 0, z: 0}
+  m_Father: {fileID: 345249423}
+  m_LocalEulerAnglesHint: {x: 38.909, y: 0, z: 0}
 --- !u!114 &537411567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1498,6 +1626,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Traffic cone
       objectReference: {fileID: 0}
+    - target: {fileID: 1211131776946646880, guid: b04a9ebd2ff41704c83c3df80b24d593,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5122109228110560754, guid: b04a9ebd2ff41704c83c3df80b24d593,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1565,6 +1698,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hammer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586584271579814, guid: 4a82ecbdf276203428bd332f1103e63e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8514916581583344876, guid: 4a82ecbdf276203428bd332f1103e63e,
         type: 3}
@@ -1634,6 +1772,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Croissant
       objectReference: {fileID: 0}
+    - target: {fileID: 8314310730893611135, guid: 807ab94c34521074b8f062a63376a9e5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8658606942636313285, guid: 807ab94c34521074b8f062a63376a9e5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1701,6 +1844,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hot Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181220566361747443, guid: 9568393b92a805f4e95ee66b6fce5435,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8845729851029386569, guid: 9568393b92a805f4e95ee66b6fce5435,
         type: 3}
@@ -1904,6 +2052,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupcake
       objectReference: {fileID: 0}
+    - target: {fileID: 465737446985211950, guid: f340218183e447145b472a3f53ce68ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3789116289842449349, guid: f340218183e447145b472a3f53ce68ab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2021,6 +2174,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KitchenProps_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6457725450409641694, guid: 49631361040b46f4889e95efdb1b1a3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2158,6 +2316,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife
       objectReference: {fileID: 0}
+    - target: {fileID: 5489145493786919654, guid: c331d4509e2a94446b4dedf64fcae8dd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2175,6 +2338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Carrot
+      objectReference: {fileID: 0}
+    - target: {fileID: 4997842828127838238, guid: 9a130a86b7f5e4048a626020fe2bd7ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5625056674407217828, guid: 9a130a86b7f5e4048a626020fe2bd7ea,
         type: 3}
@@ -2428,6 +2596,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ice Cream
       objectReference: {fileID: 0}
+    - target: {fileID: 1086235619782962548, guid: b4c1e64c274374143af324b08f5ad889,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2580,6 +2753,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Burger
       objectReference: {fileID: 0}
+    - target: {fileID: 212304048708420841, guid: 6d6fc1a6237ccaa4086dd424cf68135b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5256190392645989718, guid: 6d6fc1a6237ccaa4086dd424cf68135b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2698,6 +2876,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shaver
       objectReference: {fileID: 0}
+    - target: {fileID: 7885487846274019419, guid: 2c60ee17265beae4eb3998ae36ea10c5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2715,6 +2898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: donut_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510589511856487360, guid: 368cca4fffed2bd45b54a61e9ec0fab0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2287091408778207610, guid: 368cca4fffed2bd45b54a61e9ec0fab0,
         type: 3}
@@ -2968,6 +3156,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cold Drink Cane
       objectReference: {fileID: 0}
+    - target: {fileID: 698126137467839663, guid: f9783d0ff398f64488601f9e9239c811,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3158,6 +3351,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KitchenProps_02
       objectReference: {fileID: 0}
+    - target: {fileID: 5366650831601739498, guid: 4fb052047707ed645a77e875351e3a5c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3225,6 +3423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Car 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 633937249914614920, guid: 9e1cc104fb8e9614380e144d02463921,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3294,6 +3497,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sourdough Bread
       objectReference: {fileID: 0}
+    - target: {fileID: 9203941624874197052, guid: 27e5ede1368d02645a86e86a9ff44eeb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3333,10 +3541,10 @@ RectTransform:
   - {fileID: 2053209019}
   m_Father: {fileID: 1501581134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 515, y: -435}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608630916
 MonoBehaviour:
@@ -3495,6 +3703,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5228839559988039603, guid: 89ef373673b05894fb8d725b41657b83,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3512,6 +3725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Onigiri
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034246662423880362, guid: 32b87dd09d57aa447afd46cc6b5710cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3053512390027661497, guid: 32b87dd09d57aa447afd46cc6b5710cc,
         type: 3}
@@ -3595,6 +3813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mug
       objectReference: {fileID: 0}
+    - target: {fileID: 108274, guid: f30b04b488e907b4a88bf0e13b603528, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 455744, guid: f30b04b488e907b4a88bf0e13b603528, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.3874714
@@ -3652,6 +3874,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tape
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696372562044246884, guid: 6108541c9e8ecc8458bd2b32ea6d8e8e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7573123317138686330, guid: 6108541c9e8ecc8458bd2b32ea6d8e8e,
         type: 3}
@@ -3771,6 +3998,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soda
       objectReference: {fileID: 0}
+    - target: {fileID: 6696077696631876167, guid: 306d5eb75c2fbad4f9ab7884d9b41d1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3788,6 +4020,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pixace
+      objectReference: {fileID: 0}
+    - target: {fileID: 3771605565150008966, guid: d2a8af4729ac61f4ca7da3a4a25459b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7456674607202983519, guid: d2a8af4729ac61f4ca7da3a4a25459b2,
         type: 3}
@@ -3856,6 +4093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chocolate Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701316177915128046, guid: d5074a90c0fb80143aeb3bbf843422e1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5365404035893293652, guid: d5074a90c0fb80143aeb3bbf843422e1,
         type: 3}
@@ -3975,6 +4217,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hot Dog Sausage
       objectReference: {fileID: 0}
+    - target: {fileID: 9067020178580381961, guid: ee89dc9e801f22342b743aaacaca6207,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4059,10 +4306,10 @@ RectTransform:
   - {fileID: 1263172443}
   m_Father: {fileID: 1501581134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 515, y: -1685}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1836955344
 MonoBehaviour:
@@ -4176,7 +4423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1872085180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4294,10 +4541,10 @@ RectTransform:
   - {fileID: 885643006}
   m_Father: {fileID: 1501581134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 515, y: -935}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1962556409
 MonoBehaviour:
@@ -4540,6 +4787,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blueberry Jam
       objectReference: {fileID: 0}
+    - target: {fileID: 8471984861038302252, guid: e7e0c5815879f7c43abf8fd599c642d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9140435825951805078, guid: e7e0c5815879f7c43abf8fd599c642d4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4657,6 +4909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Glue
+      objectReference: {fileID: 0}
+    - target: {fileID: 9049574608055150809, guid: 1282c9e3b0971c64c8dee079bf7ddcc8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4860,6 +5117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plate
       objectReference: {fileID: 0}
+    - target: {fileID: 7528687838272703752, guid: 4217098a852c52645b03f585519d4aea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4899,10 +5161,10 @@ RectTransform:
   - {fileID: 1964743735}
   m_Father: {fileID: 1501581134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 515, y: -1435}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2121781405
 MonoBehaviour:
@@ -5134,6 +5396,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Multitool
       objectReference: {fileID: 0}
+    - target: {fileID: 5813968657998907319, guid: 66be300b89abcb04c84d096d14ee04e3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5173,10 +5440,10 @@ RectTransform:
   - {fileID: 1456330225}
   m_Father: {fileID: 1501581134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 515, y: -185}
+  m_SizeDelta: {x: 500, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2145055329
 MonoBehaviour:
@@ -5335,6 +5602,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heating_Machine
       objectReference: {fileID: 0}
+    - target: {fileID: 2920224167735580049, guid: 0ad48dd9dbf8e8748b8e0a7670d505ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5344,9 +5616,9 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 537411566}
   - {fileID: 623851163}
   - {fileID: 2130662972}
+  - {fileID: 345249422}
   - {fileID: 1336548325}
   - {fileID: 518276116}
   - {fileID: 477724752}

@@ -18,8 +18,8 @@ public class CreatureAnimator : MonoBehaviour
         _vertical = Animator.StringToHash("Vertical");
         _wait = Animator.StringToHash("Wait");
         _walk = Animator.StringToHash("Walk");
-        _phone = Animator.StringToHash("Phone");
         _happy = Animator.StringToHash("Happy");
+        _phone = Animator.StringToHash("Phone");
 
     }
 
@@ -64,21 +64,25 @@ public class CreatureAnimator : MonoBehaviour
 
     public void SetWaitPose()
     {
+        _animator.ResetTrigger(_walk);
         _animator.SetTrigger(_wait);
     }
 
     public void SetPhonePose()
     {
+        _animator.ResetTrigger(_walk);
         _animator.SetTrigger(_phone);
     }
 
     public void SetHappyPose()
     {
+        _animator.ResetTrigger(_walk);
         _animator.SetTrigger(_happy);
     }
 
     public void ContinueWalk()
     {
+        _animator.ResetTrigger(_walk);
         _animator.SetTrigger(_walk);
     }
 }
