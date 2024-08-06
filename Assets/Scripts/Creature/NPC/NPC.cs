@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class NPC : Creature
 {
-    [SerializeField] private Waypoint[] _points;
+    [SerializeField] private CreatureAnimator _animator;
 
+    [Header("Patrol settings")]
+    [SerializeField] private Waypoint[] _points;
     [SerializeField] private float _treshold = 1f;
 
     private IEnumerator _currentState;
@@ -63,7 +65,7 @@ public class NPC : Creature
         yield return new WaitForSeconds(_destinationPoint.WaitTime);
         _destinationPoint = null;
 
-        Animator.ContinueWalk();
+        _animator.ContinueWalk();
         StartState(DoPatrol());
     }
 

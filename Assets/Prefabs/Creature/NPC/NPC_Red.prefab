@@ -611,10 +611,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb62483b61505c46a470df7be78b8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseMovementSpeed: 6
-  BaseRotationSpeed: 8
+  BaseMovementSpeed: 7
+  BaseRotationSpeed: 6
   Acceleration: 5
   Deceleration: 5
+  _animator: {fileID: 8208236379352899113}
   _points:
   - {fileID: 0}
   - {fileID: 0}
@@ -633,6 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 6929211263628691146}
+  _baseMaxSpeedForAnimation: 7
 --- !u!1 &4628876815350428006
 GameObject:
   m_ObjectHideFlags: 0

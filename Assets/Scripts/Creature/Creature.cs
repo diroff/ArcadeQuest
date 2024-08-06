@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Creature : MonoBehaviour, IMoveableController
 {
@@ -6,8 +7,6 @@ public class Creature : MonoBehaviour, IMoveableController
     [SerializeField] protected float BaseRotationSpeed = 15f;
     [SerializeField] private float Acceleration = 5f;
     [SerializeField] private float Deceleration = 5f;
-
-    protected CreatureAnimator Animator;
 
     protected float CurrentMovementSpeed;
     protected float CurrentRotationSpeed;
@@ -20,10 +19,11 @@ public class Creature : MonoBehaviour, IMoveableController
 
     public Rigidbody RigidBody => CreatureRigidbody;
 
+    public UnityAction<float, float> SpeedWasChanged; 
+
     protected virtual void Awake()
     {
         CreatureRigidbody = GetComponent<Rigidbody>();
-        Animator = GetComponent<CreatureAnimator>();
     }
 
     protected virtual void Start()
@@ -41,7 +41,8 @@ public class Creature : MonoBehaviour, IMoveableController
     {
         HandleMovement();
         HandleRotation();
-        Animator.UpdateAnimatorValues(0, _moveAmount);
+
+        SpeedWasChanged?.Invoke(_moveAmount, CurrentMovementSpeed);
     }
 
     protected void HandleMovement()
@@ -51,7 +52,7 @@ public class Creature : MonoBehaviour, IMoveableController
         Vector3 movementVelocity = SmoothMoveDirection * CurrentMovementSpeed;
         CreatureRigidbody.velocity = movementVelocity;
 
-        _moveAmount = SmoothMoveDirection.magnitude;
+        _moveAmount = SmoothMoveDirection.magnitude * CurrentMovementSpeed;
     }
 
     protected void HandleRotation()

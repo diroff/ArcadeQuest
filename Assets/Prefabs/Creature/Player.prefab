@@ -76,8 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f6d70f2314c2542bb99c12ddf99b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseMovementSpeed: 12
-  BaseRotationSpeed: 30
+  BaseMovementSpeed: 10
+  BaseRotationSpeed: 20
   Acceleration: 7
   Deceleration: 5
 --- !u!114 &883292368952452143
@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 883292368082340395}
+  _baseMaxSpeedForAnimation: 10
 --- !u!65 &3605853206067384674
 BoxCollider:
   m_ObjectHideFlags: 0
