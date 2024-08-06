@@ -107,7 +107,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _maxAngularVelocity: 1
-  _positionOffset: {x: 0, y: 0, z: -0.4}
+  _positionOffset: {x: 0, y: 0, z: -0.5}
   _rotationOnSlot: {x: 0.49999997, y: 0.49999997, z: 0.49999997, w: 0.49999997}
 --- !u!54 &4038823450177749617
 Rigidbody:
