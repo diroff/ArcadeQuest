@@ -392,7 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movePoint: {fileID: 2698918113622229936}
   _slot: {fileID: 1948535915681662612}
-  _animationTime: 0.75
+  _animationTime: 0.8
+  _zOffset: 25
 --- !u!1 &5175789232759855130
 GameObject:
   m_ObjectHideFlags: 0

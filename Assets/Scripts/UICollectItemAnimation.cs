@@ -8,6 +8,7 @@ public class UICollectItemAnimation : MonoBehaviour
     [SerializeField] private UIItemSlot _slot;
 
     [SerializeField] private float _animationTime;
+    [SerializeField] private float _zOffset;
 
     private Queue<Item> _currentItems = new Queue<Item>();
 
@@ -49,7 +50,7 @@ public class UICollectItemAnimation : MonoBehaviour
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
 
             Vector3 screenPoint = RectTransformUtility.WorldToScreenPoint(null, _movePoint.position);
-            Vector3 end = Camera.main.ScreenToWorldPoint(new Vector3(screenPoint.x, screenPoint.y, Camera.main.nearClipPlane + 10));
+            Vector3 end = Camera.main.ScreenToWorldPoint(new Vector3(screenPoint.x, screenPoint.y, Camera.main.nearClipPlane + _zOffset));
 
             Vector3 newPosition = Vector3.Lerp(startPosition, end, smoothT);
             item.transform.position = newPosition;
@@ -58,7 +59,7 @@ public class UICollectItemAnimation : MonoBehaviour
         }
 
         Vector3 finalScreenPoint = RectTransformUtility.WorldToScreenPoint(null, _movePoint.position);
-        Vector3 finalEnd = Camera.main.ScreenToWorldPoint(new Vector3(finalScreenPoint.x, finalScreenPoint.y, Camera.main.nearClipPlane + 10));
+        Vector3 finalEnd = Camera.main.ScreenToWorldPoint(new Vector3(finalScreenPoint.x, finalScreenPoint.y, Camera.main.nearClipPlane + _zOffset));
 
         item.transform.position = finalEnd;
         item.Destroy();

@@ -153,6 +153,7 @@ MonoBehaviour:
   _movePoint: {fileID: 7901739094002075794}
   _slot: {fileID: 4142762134853022769}
   _animationTime: 0.8
+  _zOffset: 8
 --- !u!1 &6751384250062959753
 GameObject:
   m_ObjectHideFlags: 0
