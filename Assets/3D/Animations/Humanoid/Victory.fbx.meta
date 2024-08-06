@@ -19,8 +19,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
       rotation in copied configuration does not match rotation in animation file:\n\t'Base
-      HumanSpine3' : rotation error = 0.996088 deg\n\t'Base HumanLCollarbone' : rotation
-      error = 5.430848 deg\n\t'Base HumanRCollarbone' : rotation error = 5.648909
+      HumanSpine3' : rotation error = 4.691004 deg\n\t'Base HumanLCollarbone' : rotation
+      error = 14.062628 deg\n\t'Base HumanRCollarbone' : rotation error = 13.107293
       deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
@@ -43,11 +43,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: Victory
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 256
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
