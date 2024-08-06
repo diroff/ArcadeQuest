@@ -37,7 +37,7 @@ public class UICollectItemAnimation : MonoBehaviour
         StartCoroutine(CollectAnimation(item));
     }
 
-    private IEnumerator CollectAnimation(Item item)
+    protected virtual IEnumerator CollectAnimation(Item item)
     {
         float startTime = Time.time;
 

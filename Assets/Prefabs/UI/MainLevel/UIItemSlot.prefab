@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5243470913703388727}
   - component: {fileID: 5243470913703388725}
   - component: {fileID: 4142762134853022769}
-  - component: {fileID: 7326251137358010151}
+  - component: {fileID: 4116183443121899787}
   m_Layer: 5
   m_Name: UIItemSlot
   m_TagString: Untagged
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemIcon: {fileID: 3789918140847713753}
   ItemCountText: {fileID: 6681234062862561038}
---- !u!114 &7326251137358010151
+--- !u!114 &4116183443121899787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5243470913703388728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 696056cf7c9e1e04788a97794d50dfb8, type: 3}
+  m_Script: {fileID: 11500000, guid: de90f72201ee3c147bc6ff8696102270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _movePoint: {fileID: 7901739094002075794}
