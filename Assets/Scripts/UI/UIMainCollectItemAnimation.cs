@@ -7,7 +7,9 @@ public class UIMainCollectItemAnimation : UICollectItemAnimation
     {
         var itemAnimation = item.GetComponent<AnimationScript>();
         var itemParticle = item.GetComponentInChildren<ParticleSystem>();
+        var meshRenderer = item.GetComponent<MeshRenderer>();
 
+        meshRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         Destroy(itemAnimation);
         Destroy(itemParticle.gameObject);
 
