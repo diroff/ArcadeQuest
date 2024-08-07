@@ -5,6 +5,7 @@ public class ItemAnimation : MonoBehaviour
 {
     [Header("Animation Settings")]
     [SerializeField] private float _movingTime = 0.8f;
+    [SerializeField] private float _maxSpeed = 25f;
 
     private MetaItem _metaItem;
     private Coroutine _moveCoroutine;
@@ -19,7 +20,12 @@ public class ItemAnimation : MonoBehaviour
     private IEnumerator MoveObjectCoroutine(Vector3 startPoint, Vector3 endPoint, Quaternion endRotation, float timeModificator = 0f)
     {
         IsCollectAnimationFinished = false;
-        float totalTime = _movingTime + timeModificator;
+
+        float distance = Vector3.Distance(startPoint, endPoint);
+
+        float minTime = distance / _maxSpeed;
+        float totalTime = Mathf.Max(_movingTime + timeModificator, minTime);
+
         float elapsedTime = 0f;
 
         _metaItem.SetupRigidbody();
@@ -27,6 +33,7 @@ public class ItemAnimation : MonoBehaviour
         while (elapsedTime < totalTime && _metaItem.IsRestanding)
         {
             float t = elapsedTime / totalTime;
+
             Vector3 newPosition = Vector3.Lerp(startPoint, endPoint, t);
             Quaternion newRotation = Quaternion.Lerp(_metaItem.gameObject.transform.localRotation, endRotation, t);
 
@@ -41,9 +48,14 @@ public class ItemAnimation : MonoBehaviour
         _metaItem.SetupRigidbody();
         _metaItem.gameObject.transform.position = endPoint;
         _metaItem.RestandPosition();
+
+        if (!_metaItem.Rigidbody.isKinematic)
+            _metaItem.Rigidbody.velocity = Vector3.zero;
+
         _moveCoroutine = null;
         IsCollectAnimationFinished = true;
     }
+
 
     public void PlayMoveCoroutine(Vector3 startPoint, Vector3 endPoint, Quaternion endRotation, float timeModificator = 0f)
     {
