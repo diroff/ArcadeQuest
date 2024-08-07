@@ -9,6 +9,7 @@ public class UICollectItemAnimation : MonoBehaviour
 
     [SerializeField] private float _animationTime;
     [SerializeField] private float _zOffset;
+    [SerializeField] private float _animationScalingFactor;
 
     private Queue<Item> _currentItems = new Queue<Item>();
 
@@ -42,6 +43,8 @@ public class UICollectItemAnimation : MonoBehaviour
         float startTime = Time.time;
 
         Vector3 startPosition = item.transform.position;
+        Vector3 startScale = item.transform.localScale;
+        Vector3 endScale = new Vector3(startScale.x * _animationScalingFactor, startScale.y * _animationScalingFactor, startScale.z * _animationScalingFactor);
 
         while (Time.time < startTime + _animationTime)
         {
@@ -53,7 +56,10 @@ public class UICollectItemAnimation : MonoBehaviour
             Vector3 end = Camera.main.ScreenToWorldPoint(new Vector3(screenPoint.x, screenPoint.y, Camera.main.nearClipPlane + _zOffset));
 
             Vector3 newPosition = Vector3.Lerp(startPosition, end, smoothT);
+            Vector3 newScale = Vector3.Lerp(startScale, endScale, smoothT);
+
             item.transform.position = newPosition;
+            item.transform.localScale = newScale;
 
             yield return null;
         }
