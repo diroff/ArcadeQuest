@@ -6,6 +6,7 @@ public class UICollectItemAnimation : MonoBehaviour
 {
     [SerializeField] private RectTransform _movePoint;
     [SerializeField] private UIItemSlot _slot;
+    [SerializeField] private OverlayRenderer _overlayRenderer;
 
     [SerializeField] private float _animationTime;
     [SerializeField] private float _zOffset;
@@ -44,7 +45,12 @@ public class UICollectItemAnimation : MonoBehaviour
 
         Vector3 startPosition = item.transform.position;
         Vector3 startScale = item.transform.localScale;
-        Vector3 endScale = new Vector3(startScale.x * _animationScalingFactor, startScale.y * _animationScalingFactor, startScale.z * _animationScalingFactor);
+
+        Vector3 endScale = startScale * _animationScalingFactor;
+
+        _overlayRenderer.SetObjectToOverlay(item.gameObject);
+
+        Vector3 worldPointOnUI = Vector3.zero;
 
         while (Time.time < startTime + _animationTime)
         {
@@ -52,11 +58,16 @@ public class UICollectItemAnimation : MonoBehaviour
             float t = elapsedTime / _animationTime;
             float smoothT = Mathf.SmoothStep(0f, 1f, t);
 
-            Vector3 screenPoint = RectTransformUtility.WorldToScreenPoint(null, _movePoint.position);
-            Vector3 end = Camera.main.ScreenToWorldPoint(new Vector3(screenPoint.x, screenPoint.y, Camera.main.nearClipPlane + _zOffset));
+            Vector3 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, _movePoint.position);
+            float targetZ = Camera.main.nearClipPlane + _zOffset;
 
-            Vector3 newPosition = Vector3.Lerp(startPosition, end, smoothT);
-            Vector3 newScale = Vector3.Lerp(startScale, endScale, smoothT);
+            float minDistanceFromCamera = Mathf.Max(targetZ, Camera.main.nearClipPlane + 1f);
+            worldPointOnUI = Camera.main.ScreenToWorldPoint(new Vector3(screenPoint.x, screenPoint.y, minDistanceFromCamera));
+
+            Vector3 newPosition = Vector3.Lerp(startPosition, worldPointOnUI, smoothT);
+
+            float scaleAdjust = Mathf.Lerp(1f, 0.5f, smoothT);
+            Vector3 newScale = Vector3.Lerp(startScale, endScale, smoothT) * scaleAdjust;
 
             item.transform.position = newPosition;
             item.transform.localScale = newScale;
@@ -64,10 +75,8 @@ public class UICollectItemAnimation : MonoBehaviour
             yield return null;
         }
 
-        Vector3 finalScreenPoint = RectTransformUtility.WorldToScreenPoint(null, _movePoint.position);
-        Vector3 finalEnd = Camera.main.ScreenToWorldPoint(new Vector3(finalScreenPoint.x, finalScreenPoint.y, Camera.main.nearClipPlane + _zOffset));
-
-        item.transform.position = finalEnd;
+        item.transform.position = worldPointOnUI;
+        item.transform.localScale = endScale;
         item.Destroy();
     }
 }

@@ -155,10 +155,10 @@ MonoBehaviour:
   _slot: {fileID: 4142762134853022769}
   _overlayRenderer: {fileID: -9074442042935081771}
   _animationTime: 0.8
-  _zOffset: 8
-  _animationScalingFactor: 0.25
+  _zOffset: 5.5
+  _animationScalingFactor: 0.4
   _scalingAnimationTime: 0.5
-  _scaleFactor: 1.5
+  _scaleFactor: 1
 --- !u!114 &-9074442042935081771
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -391,12 +391,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 696056cf7c9e1e04788a97794d50dfb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movePoint: {fileID: 2698918113622229936}
+  _movePoint: {fileID: 6530327654563075524}
   _slot: {fileID: 1948535915681662612}
   _overlayRenderer: {fileID: 4975412147447241718}
   _animationTime: 0.8
-  _zOffset: 25
-  _animationScalingFactor: 1
+  _zOffset: 10
+  _animationScalingFactor: 0.75
 --- !u!114 &4975412147447241718
 MonoBehaviour:
   m_ObjectHideFlags: 0

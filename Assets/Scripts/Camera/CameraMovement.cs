@@ -7,8 +7,8 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private Vector3 _positionOffset;
     [SerializeField] private Quaternion _rotationOffset;
 
-    [SerializeField] private float _positionSmothing = 7f;
-    [SerializeField] private float _rotationSmothing = 5f;
+    [SerializeField] private float _positionSmoothing = 2f;
+    [SerializeField] private float _rotationSmoothing = 2f;
 
     public Vector3 PositionOffset => _positionOffset;
     public Quaternion RotationOffset => _rotationOffset;
@@ -56,13 +56,13 @@ public class CameraMovement : MonoBehaviour
 
     public void ChangePositionSmoothing(float value)
     {
-        _previousPositionSmoothing = _positionSmothing;
-        _positionSmothing = value;
+        _previousPositionSmoothing = _positionSmoothing;
+        _positionSmoothing = value;
     }
 
     public void UndoChangingPositionSmoothing()
     {
-        _positionSmothing = _previousPositionSmoothing;
+        _positionSmoothing = _previousPositionSmoothing;
     }
 
     private void Move()
@@ -70,8 +70,8 @@ public class CameraMovement : MonoBehaviour
         if (_target == null)
             _target = _defaultTarget;
 
-        _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + (_rotationOffset * _positionOffset), _positionSmothing * Time.deltaTime);
-        _nextRotation = Quaternion.Lerp(_camera.transform.rotation, _rotationOffset, _rotationSmothing * Time.deltaTime);
+        _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + (_rotationOffset * _positionOffset), _positionSmoothing * Time.deltaTime);
+        _nextRotation = Quaternion.Lerp(_camera.transform.rotation, _rotationOffset, _rotationSmoothing * Time.deltaTime);
 
         _camera.transform.position = _nextPosition;
         _camera.transform.rotation = _nextRotation;
