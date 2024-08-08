@@ -28,7 +28,7 @@ public class CameraMovement : MonoBehaviour
         _defaultTarget = _target;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         Move();
     }
@@ -70,8 +70,8 @@ public class CameraMovement : MonoBehaviour
         if (_target == null)
             _target = _defaultTarget;
 
-        _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + (_rotationOffset * _positionOffset), _positionSmothing);
-        _nextRotation = Quaternion.Lerp(_camera.transform.rotation, _rotationOffset, _rotationSmothing);
+        _nextPosition = Vector3.Lerp(_camera.transform.position, _target.transform.position + (_rotationOffset * _positionOffset), _positionSmothing * Time.deltaTime);
+        _nextRotation = Quaternion.Lerp(_camera.transform.rotation, _rotationOffset, _rotationSmothing * Time.deltaTime);
 
         _camera.transform.position = _nextPosition;
         _camera.transform.rotation = _nextRotation;
