@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 1485005836945937050}
   - component: {fileID: 1948535915681662612}
   - component: {fileID: 8908298550273557583}
+  - component: {fileID: 4975412147447241718}
   m_Layer: 5
   m_Name: UIMetaItemSlotPrefab
   m_TagString: Untagged
@@ -392,9 +393,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movePoint: {fileID: 2698918113622229936}
   _slot: {fileID: 1948535915681662612}
+  _overlayRenderer: {fileID: 4975412147447241718}
   _animationTime: 0.8
   _zOffset: 25
   _animationScalingFactor: 1
+--- !u!114 &4975412147447241718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3245767542640693938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3868b14b9fe320b4aa8fb9932aea396d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5175789232759855130
 GameObject:
   m_ObjectHideFlags: 0
