@@ -43,6 +43,8 @@ public class UICollectItemAnimation : MonoBehaviour
     {
         float startTime = Time.time;
 
+        _slot.transform.SetAsFirstSibling();
+
         Vector3 startPosition = item.transform.position;
         Vector3 startScale = item.transform.localScale;
 
