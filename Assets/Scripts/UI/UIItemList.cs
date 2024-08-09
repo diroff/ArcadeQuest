@@ -18,7 +18,7 @@ public class UIItemList : MonoBehaviour
 
     public GridLayoutGroup GridLayout => _gridLayout;
 
-    private void Awake()
+    private void Start()
     {
         foreach (var slot in _level.Items)
             _items.Add(slot);
