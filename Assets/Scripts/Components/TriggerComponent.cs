@@ -17,8 +17,6 @@ public class TriggerComponent : MonoBehaviour
             return;
 
         _enterAction?.Invoke();
-        Debug.Log("Enter trigger completed!");
-        Debug.Log(other.gameObject + " : is");
     }
 
     private void OnTriggerExit(Collider other)
@@ -30,7 +28,5 @@ public class TriggerComponent : MonoBehaviour
             return;
 
         _exitAction?.Invoke();
-        Debug.Log("Exit trigger completed!");
-        Debug.Log(other.gameObject + " : is");
     }
 }
