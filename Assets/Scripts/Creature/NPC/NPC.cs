@@ -35,6 +35,8 @@ public class NPC : Creature
 
     public IEnumerator DoPatrol()
     {
+        _animator.ContinueWalk();
+
         while (enabled)
         {
             if (IsOnPoint())
@@ -65,7 +67,6 @@ public class NPC : Creature
         yield return new WaitForSeconds(_destinationPoint.WaitTime);
         _destinationPoint = null;
 
-        _animator.ContinueWalk();
         StartState(DoPatrol());
     }
 
