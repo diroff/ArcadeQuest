@@ -49,11 +49,14 @@ public class Creature : MonoBehaviour, IMoveableController
     {
         SmoothMoveDirection = Vector3.MoveTowards(SmoothMoveDirection, MoveDirection, Time.deltaTime * (MoveDirection != Vector3.zero ? Acceleration : Deceleration));
 
+        Vector3 currentVelocity = CreatureRigidbody.velocity;
         Vector3 movementVelocity = SmoothMoveDirection * CurrentMovementSpeed;
-        CreatureRigidbody.velocity = movementVelocity;
+
+        CreatureRigidbody.velocity = new Vector3(movementVelocity.x, currentVelocity.y, movementVelocity.z);
 
         _moveAmount = SmoothMoveDirection.magnitude * CurrentMovementSpeed;
     }
+
 
     protected void HandleRotation()
     {
