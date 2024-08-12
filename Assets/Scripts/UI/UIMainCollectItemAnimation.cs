@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class UIMainCollectItemAnimation : UICollectItemAnimation
 {
+    [Header("Main item animation")]
     [SerializeField] private float _scalingAnimationTime = 1f;
     [SerializeField] private float _scaleFactor = 0.5f;
 
@@ -19,7 +20,7 @@ public class UIMainCollectItemAnimation : UICollectItemAnimation
         Vector3 startPosition = item.transform.position;
         Vector3 startScale = item.transform.localScale;
 
-        Vector3 endPosition = new Vector3(startPosition.x, startPosition.y + 1, startPosition.z);
+        Vector3 endPosition = new Vector3(startPosition.x, startPosition.y + 1.2f, startPosition.z);
         Vector3 endScale = new Vector3(startScale.x * _scaleFactor, startScale.y * _scaleFactor, startScale.z * _scaleFactor);
 
         while (Time.time < startTime + _scalingAnimationTime)

@@ -156,9 +156,9 @@ MonoBehaviour:
   _overlayRenderer: {fileID: -9074442042935081771}
   _animationTime: 0.8
   _zOffset: 5.5
-  _animationScalingFactor: 0.4
+  _animationScalingFactor: 0.3
   _scalingAnimationTime: 0.5
-  _scaleFactor: 1
+  _scaleFactor: 1.2
 --- !u!114 &-9074442042935081771
 MonoBehaviour:
   m_ObjectHideFlags: 0
