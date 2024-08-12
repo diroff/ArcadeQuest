@@ -24,6 +24,7 @@ public class Creature : MonoBehaviour, IMoveableController
     protected virtual void Awake()
     {
         CreatureRigidbody = GetComponent<Rigidbody>();
+        CreatureRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
     }
 
     protected virtual void Start()

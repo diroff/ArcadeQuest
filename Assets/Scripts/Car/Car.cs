@@ -22,6 +22,7 @@ public class Car : MonoBehaviour, IMoveableController
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.interpolation = RigidbodyInterpolation.Interpolate;
         _currentMovementSpeed = _baseMovementSpeed;
     }
 

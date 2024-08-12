@@ -82,8 +82,19 @@ public class CarPool : MonoBehaviour
         Car enemyToSpawn = _poolDictionary[prefab].Count == 0 ? Instantiate(prefab) : _poolDictionary[prefab].Dequeue();
 
         enemyToSpawn.gameObject.SetActive(true);
+
+        Rigidbody rigidbody = enemyToSpawn.GetComponent<Rigidbody>();
+        rigidbody.position = position;
+        rigidbody.rotation = rotation;
+
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+
         enemyToSpawn.transform.position = position;
         enemyToSpawn.transform.rotation = rotation;
+
+        rigidbody.WakeUp();
+
         enemyToSpawn.SetSpawner(spawner);
 
         _currentEnemies.Add(enemyToSpawn);
