@@ -71,6 +71,11 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         OnDrag(eventData);
     }
 
+    public void ResetValue()
+    {
+        DirectionChanged?.Invoke(Vector3.zero);
+    }
+
     public void OnDrag(PointerEventData eventData)
     {
         cam = null;
