@@ -58,8 +58,8 @@ public class LevelProgressionMain : LevelProgression
         var position = LevelProgress.PlayerPosition;
         var rotation = LevelProgress.PlayerRotation;
 
-        _player.transform.position = new Vector3(position.x, position.y, position.z);
-        _player.transform.localRotation = new Quaternion(rotation.x, rotation.y, rotation.z, rotation.w);
+        _player.RigidBody.position = new Vector3(position.x, position.y, position.z);
+        _player.RigidBody.rotation = new Quaternion(rotation.x, rotation.y, rotation.z, rotation.w);
     }
 
     private void SetCameraPosition()
