@@ -65,8 +65,22 @@ public class CameraMovement : MonoBehaviour
         _positionSmoothing = _previousPositionSmoothing;
     }
 
+    public bool IsAtTarget()
+    {
+        float positionTolerance = 0.01f;
+        float rotationTolerance = 1f;
+
+        bool isPositionClose = Vector3.Distance(_camera.transform.position, _nextPosition) <= positionTolerance;
+        bool isRotationClose = Quaternion.Angle(_camera.transform.rotation, _nextRotation) <= rotationTolerance;
+
+        return isPositionClose && isRotationClose;
+    }
+
     private void Move()
     {
+        if (Time.deltaTime == 0 || Time.timeScale == 0)
+            return;
+
         if (_target == null)
             _target = _defaultTarget;
 
