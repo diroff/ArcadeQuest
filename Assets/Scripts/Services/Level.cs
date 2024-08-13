@@ -6,7 +6,7 @@ public abstract class Level : MonoBehaviour
 {
     [SerializeField] protected List<Item> LevelItems;
 
-    private int _itemsCollected;
+    protected int _itemsCollected;
 
     public UnityAction LevelWasCompleted;
     public UnityAction AllItemsCollected;
@@ -16,29 +16,38 @@ public abstract class Level : MonoBehaviour
     protected void OnEnable()
     {
         foreach (var item in LevelItems)
-            item.ItemWasDestroyed += OnItemWasCollected;
+            item.ConcreteItemWasDestroyed += OnItemWasCollected;
     }
 
     protected void OnDisable()
     {
         foreach (var item in LevelItems)
-            item.ItemWasDestroyed -= OnItemWasCollected;
+            item.ConcreteItemWasDestroyed -= OnItemWasCollected;
     }
 
-    protected void OnItemWasCollected()
+    protected void OnItemWasCollected(Item item)
+    {
+        IncreaseCollectedItemCount(item);
+        ItemCountChecker();
+    }
+
+    protected virtual void IncreaseCollectedItemCount(Item item)
     {
         _itemsCollected++;
-
-        ItemCountChecker();
     }
 
     protected void ItemCountChecker()
     {
-        if (_itemsCollected != LevelItems.Count)
+        if (!IsAllItemsCollected())
             return;
 
         AllItemsCollected?.Invoke();
         LevelCompleted();
+    }
+
+    protected virtual bool IsAllItemsCollected()
+    {
+        return _itemsCollected == LevelItems.Count;
     }
 
     protected void LevelCompleted()

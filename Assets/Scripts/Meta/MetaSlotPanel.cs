@@ -54,7 +54,12 @@ public class MetaSlotPanel : MonoBehaviour
         yield return new WaitUntil(() => items.All(item => item.Animation.IsCollectAnimationFinished));
 
         foreach (var item in items)
-            item.Collect();
+        {
+            if (!item.IsLevelGoal)
+                item.CollectImmediately();
+            else
+                item.Collect();
+        }
     }
 
     private MetaSlot GetFreeSlot()

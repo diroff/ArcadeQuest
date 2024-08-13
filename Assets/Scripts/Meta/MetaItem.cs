@@ -9,6 +9,8 @@ public class MetaItem : Item
     [SerializeField] private Vector3 _positionOffset;
     [SerializeField] private Quaternion _rotationOnSlot;
 
+    [SerializeField] private bool _isLevelGoal = true;
+
     private Vector3 _mousePosition;
     private Vector3 _startPosition;
     private Quaternion _startRotation;
@@ -30,6 +32,7 @@ public class MetaItem : Item
 
     public Quaternion RotationOnSlot => _rotationOnSlot;
 
+    public bool IsLevelGoal => _isLevelGoal;
     public bool IsRestanding => _isRestanding;
     public bool IsOnSlot => _isOnSlot;
 

@@ -20,10 +20,15 @@ public class UIItemList : MonoBehaviour
 
     private void Start()
     {
-        foreach (var slot in _level.Items)
-            _items.Add(slot);
+        PrepareItemsForItemList();
 
         CreateItemList();
+    }
+
+    protected virtual void PrepareItemsForItemList()
+    {
+        foreach (var slot in _level.Items)
+            _items.Add(slot);
     }
 
     private void CreateItemList()
