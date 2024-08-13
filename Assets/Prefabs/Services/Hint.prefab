@@ -47,3 +47,4 @@ MonoBehaviour:
   _cameraMovement: {fileID: 0}
   _levelItems: {fileID: 0}
   _mobAds: {fileID: 0}
+  _newSmoothingValue: 3
