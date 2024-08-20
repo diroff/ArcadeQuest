@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: 5
   BonusTime: 7
-  Icon: {fileID: 21300000, guid: 5eda94a9dcf71e445ad17e3c065d1460, type: 3}
+  Icon: {fileID: 21300000, guid: 563a5777d8d226a42b65593d65066294, type: 3}
   _id: 0
   BonusStarted:
     m_PersistentCalls:
