@@ -27,7 +27,9 @@ public class MobAds : MonoBehaviour
 
     public void ShowRewardedAd()
     {
-        LoadRewardedAd();
+        AdShowing?.Invoke();
+
+/*        LoadRewardedAd();
 
         if (_rewardedAd != null && _rewardedAd.CanShowAd())
         {
@@ -39,7 +41,7 @@ public class MobAds : MonoBehaviour
         else
         {
             LoadRewardedAd();
-        }
+        }*/
     }
 
     public void LoadRewardedAd()
