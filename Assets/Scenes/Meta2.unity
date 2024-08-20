@@ -642,6 +642,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7881582564737083668, guid: 92e23f92e6a0d084bb09b045d5b78e1b,
         type: 3}
+      propertyPath: ItemPrefabID
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881582564737083668, guid: 92e23f92e6a0d084bb09b045d5b78e1b,
+        type: 3}
       propertyPath: _isLevelGoal
       value: 0
       objectReference: {fileID: 0}
@@ -2003,6 +2008,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7881582564737083668, guid: 92e23f92e6a0d084bb09b045d5b78e1b,
         type: 3}
+      propertyPath: ItemPrefabID
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881582564737083668, guid: 92e23f92e6a0d084bb09b045d5b78e1b,
+        type: 3}
       propertyPath: _isLevelGoal
       value: 0
       objectReference: {fileID: 0}
@@ -2114,6 +2124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ItemSceneID
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7881582564737083668, guid: e6a3d460dc6945c468a21aac119370ea,
+        type: 3}
+      propertyPath: ItemPrefabID
+      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2362,6 +2377,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ItemSceneID
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 458905662694707286, guid: 7b85224af5fcd4144bb7ddecd007a3a0,
+        type: 3}
+      propertyPath: ItemPrefabID
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 698126137467839663, guid: 7b85224af5fcd4144bb7ddecd007a3a0,
         type: 3}
@@ -2881,6 +2901,11 @@ PrefabInstance:
       propertyPath: ItemSceneID
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7881582564737083668, guid: e6a3d460dc6945c468a21aac119370ea,
+        type: 3}
+      propertyPath: ItemPrefabID
+      value: -3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3069,6 +3094,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ItemSceneID
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 458905662694707286, guid: 7b85224af5fcd4144bb7ddecd007a3a0,
+        type: 3}
+      propertyPath: ItemPrefabID
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 698126137467839663, guid: 7b85224af5fcd4144bb7ddecd007a3a0,
         type: 3}

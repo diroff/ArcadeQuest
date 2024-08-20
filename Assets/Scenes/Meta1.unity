@@ -249,6 +249,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3280993483604706074, guid: 54a13660194bca64ebeada62d37748d4,
         type: 3}
+      propertyPath: ItemPrefabID
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: -3280993483604706074, guid: 54a13660194bca64ebeada62d37748d4,
+        type: 3}
       propertyPath: _isLevelGoal
       value: 0
       objectReference: {fileID: 0}
@@ -1190,6 +1195,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 458905662694707286, guid: 1a683430143292e439d421df0aee03eb,
         type: 3}
+      propertyPath: ItemPrefabID
+      value: 103
+      objectReference: {fileID: 0}
+    - target: {fileID: 458905662694707286, guid: 1a683430143292e439d421df0aee03eb,
+        type: 3}
       propertyPath: _isLevelGoal
       value: 0
       objectReference: {fileID: 0}
@@ -1494,6 +1504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2050513779807074330, guid: 6d6fc1a6237ccaa4086dd424cf68135b,
         type: 3}
+      propertyPath: ItemPrefabID
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050513779807074330, guid: 6d6fc1a6237ccaa4086dd424cf68135b,
+        type: 3}
       propertyPath: _isLevelGoal
       value: 0
       objectReference: {fileID: 0}
@@ -1602,6 +1617,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ItemSceneID
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2050513779807074330, guid: 6d6fc1a6237ccaa4086dd424cf68135b,
+        type: 3}
+      propertyPath: ItemPrefabID
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 2050513779807074330, guid: 6d6fc1a6237ccaa4086dd424cf68135b,
         type: 3}
@@ -1791,6 +1811,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ItemSceneID
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 458905662694707286, guid: 1a683430143292e439d421df0aee03eb,
+        type: 3}
+      propertyPath: ItemPrefabID
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: 458905662694707286, guid: 1a683430143292e439d421df0aee03eb,
         type: 3}
@@ -2178,6 +2203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ItemSceneID
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -3280993483604706074, guid: 54a13660194bca64ebeada62d37748d4,
+        type: 3}
+      propertyPath: ItemPrefabID
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: -3280993483604706074, guid: 54a13660194bca64ebeada62d37748d4,
         type: 3}
