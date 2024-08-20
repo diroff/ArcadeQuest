@@ -109,6 +109,7 @@ MonoBehaviour:
   _maxAngularVelocity: 1
   _positionOffset: {x: 0, y: 0, z: -0.65}
   _rotationOnSlot: {x: -0.00000003090862, y: -0.70710677, z: -0.70710677, w: 0.00000003090862}
+  _isLevelGoal: 1
 --- !u!54 &7381684881313753678
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -183,3 +184,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movingTime: 0.2
+  _maxSpeed: 25
